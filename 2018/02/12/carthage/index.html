@@ -1,0 +1,71 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="author" content="Hack"><meta name="description" content="an iOS And Mac OS dev"><link rel="alternative" href="/atom.xml" title="Hack'Blog" type="application/atom+xml"><link rel="icon" href="/favicon.png"><title>carthage - Hack'Blog</title><link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css"><!--[if lt IE 9]><script>(function(a,b){a="abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output progress section summary template time video".split(" ");for(b=a.length-1;b>=0;b--)document.createElement(a[b])})()</script><![endif]--><script src="/js/jquery-3.1.1.min.js"></script><script src="/js/fancybox/jquery.fancybox.min.js"></script></head><body style="opacity:0"><header class="head"><h1 class="head-title u-fl"><a href="/">Hack'Blog</a></h1><nav class="head-nav u-fr"><ul class="head-nav__list"><li class="head-nav__item"><a class="head-nav__link" href="/archives">Archives（目录）</a></li></ul></nav></header><main class="main"><article class="post"><header class="post__head"> <time class="post__time" datetime="2018-02-12T01:15:34.000Z">February 12, 2018</time><h1 class="post__title"><a href="/2018/02/12/carthage/">carthage</a></h1><div class="post__main echo"><p>iOS-Carthage 安装以及使用</p>
+<h4 id="1、Carthage-简介"><a href="#1、Carthage-简介" class="headerlink" title="1、Carthage 简介"></a>1、Carthage 简介</h4><ul>
+<li>Carthage 类似于 CocoaPods，为用户管理第三方框架和依赖，但不会自动修改项目文件和生成配置</li>
+<li>Carthage 是去中心化的依赖管理工具，安装依赖时不需要去中心仓库获取 CocoaPods 所有依赖的索引，节省时间</li>
+<li>对项目无侵入性，Carthage 设计上也比较简单，利用的都是 Xcode 自身的功能，开发者在创建依赖时，相比CocoaPods 也简单许多</li>
+<li>Carthage 管理的依赖只需编译一次，项目干净编译时，不会再去重新编译依赖，节省时间</li>
+<li>自动将第三方框架编程为 Dynamic framework( 动态库 )</li>
+<li>与 CocoaPods 无缝集成，一个项目能同时拥有 CocoaPods 和 Carthage</li>
+</ul>
+<h4 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h4><ul>
+<li>仅支持 iOS8 +</li>
+<li>它只支持框架，所以不能用来针对 iOS 8 以前的系统版本进行开发</li>
+<li>支持的 Carthage 安装的第三方框架和依赖不如 CocoaPods 丰富</li>
+<li>无法在 Xcode 里定位到源码</li>
+<li>安装包的大小比用CocoaPods安装的包大</li>
+</ul>
+<p>安装 Homebrew</p>
+<p>可以使用 <a href="https://brew.sh/" target="_blank" rel="noopener">Homebrew</a> 来安装 Carthage</p>
+<blockquote>
+<p>将以上命令粘贴至终端<br>脚本会在执行前暂停，并说明将它将做什么。高级安装选项在 这里（需要OSX 10.5+）</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ /usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>安装完 homebrew 后执行下面命令，获取最新版本【可选】</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew update</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：如果遇到 Error: The /usr/local directory is not writable.错误，就执行以下命令 sudo chown -R $(whoami):admin /usr/local，再更新。</p>
+</blockquote>
+<h4 id="其他-brew-命令"><a href="#其他-brew-命令" class="headerlink" title="其他 brew 命令:"></a>其他 brew 命令:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">brew install git    // 使用brew安装软件</span><br><span class="line">brew uninstall wget // 使用brew卸载软件</span><br><span class="line">brew search /wge*/  // 使用brew查询软件，其中/wge*/是个正则表达式，需要包含在/中</span><br><span class="line">brew list           // 列出已安装的软件</span><br><span class="line">brew home           // 用浏览器打开brew的官方网站</span><br><span class="line">brew info           // 显示软件信息</span><br><span class="line">brew deps           // 显示包依赖</span><br></pre></td></tr></table></figure>
+<h4 id="2、安装-Carthage"><a href="#2、安装-Carthage" class="headerlink" title="2、安装 Carthage"></a>2、安装 Carthage</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew install carthage</span><br></pre></td></tr></table></figure>
+<p>安装 Carthage 之后，可查看版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">carthage version // 目前的版本号为:0.20.1</span><br></pre></td></tr></table></figure>
+<h4 id="3、使用-Carthage-安装依赖"><a href="#3、使用-Carthage-安装依赖" class="headerlink" title="3、使用 Carthage 安装依赖"></a>3、使用 Carthage 安装依赖</h4><p>进入项目所在文件夹</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ~/路径/项目文件夹</span><br></pre></td></tr></table></figure>
+<p>创建一个空的 Carthage 文件 Cartfile</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch Cartfile</span><br></pre></td></tr></table></figure>
+<p>使用 Xcode 打开 Cartfile 文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">open -a Xcode Cartfile</span><br></pre></td></tr></table></figure>
+<p>编辑 Cartfile【可手动打开进行编辑】</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">github &quot;Alamofire/Alamofire&quot; == 4.4.0</span><br></pre></td></tr></table></figure>
+<p>执行更新命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ carthage update --platform iOS</span><br></pre></td></tr></table></figure>
+<p>更新成功后，项目文件夹中会多出三个文件</p>
+<ul>
+<li>cartfile</li>
+<li>Cartfile.resolved</li>
+<li>Carthage/ </li>
+<li>Build/</li>
+<li>Checkouts/</li>
+</ul>
+<p>Carthage 会 clone 文件中对应的 git 第三方库，把每一个第三方库编译成二进制文件的 framework 文件。<br>其中 “–platform iOS” 命令是可选的，作用是保证只为 iOS 编译framework，如果不指定平台，会为全平台编译 framework 文件。如果想要了解更多的命令，可以运行 carthage help update查看。</p>
+<h4 id="4、添加-Frameworks-到项目中"><a href="#4、添加-Frameworks-到项目中" class="headerlink" title="4、添加 Frameworks 到项目中"></a>4、添加 Frameworks 到项目中</h4><ul>
+<li>点击”项目名称”–&gt; “TARGETS” –&gt; “General”，在最底部找到 “Linked Frameworks and Libraries”</li>
+<li>点击 + 号，选择左下角 Add Other… 按钮，选择项目下 Carthage/Build/iOS/Alamofire.framework 文件，点击 Open 加入到项目中</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">目的是告诉Xcode链接你的app到这个 framework，允许你在代码中使用</span><br></pre></td></tr></table></figure>
+<ul>
+<li>下一步选择菜单上的 Build Phases，点击左上角 + 号添加一个新的 Run Script，并添加以下命令：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/bin/carthage copy-frameworks</span><br></pre></td></tr></table></figure>
+<ul>
+<li>点击 Input Files 下面的 + 号为每一个 framework 添加访问路径</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">carthage copy-frameworks 命令剔除了额外的框架</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Import 框架名到控制器，Command + B 编译项目，如果成功，就可以使用了<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import Alamofire</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</div></header><footer class="post__foot u-cf"><ul class="post__tag u-fl"><li class="post__tag__item"><a class="post__tag__link" href="/tags/iOS-Carthage-安装以及使用/">iOS-Carthage 安装以及使用</a></li></ul></footer></article><div class="comments" id="lv-container" data-id="city" data-uid="your uid"><script>(function(d, s) {var j, e = d.getElementsByTagName(s)[0];if (typeof LivereTower === 'function') { return; } j = d.createElement(s);j.src = 'https://cdn-city.livere.com/js/embed.dist.js';j.async = true;e.parentNode.insertBefore(j, e);})(document, 'script');</script></div></main><footer class="foot"><div class="foot-copy">&copy; 2016-2018 Hack</div></footer><script src="/js/scroller.js"></script><script src="/js/main.js"></script></body></html>

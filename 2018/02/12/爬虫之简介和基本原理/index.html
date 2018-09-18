@@ -1,0 +1,55 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="author" content="Hack"><meta name="description" content="an iOS And Mac OS dev"><link rel="alternative" href="/atom.xml" title="Hack'Blog" type="application/atom+xml"><link rel="icon" href="/favicon.png"><title>爬虫之简介和基本原理 - Hack'Blog</title><link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css"><!--[if lt IE 9]><script>(function(a,b){a="abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output progress section summary template time video".split(" ");for(b=a.length-1;b>=0;b--)document.createElement(a[b])})()</script><![endif]--><script src="/js/jquery-3.1.1.min.js"></script><script src="/js/fancybox/jquery.fancybox.min.js"></script></head><body style="opacity:0"><header class="head"><h1 class="head-title u-fl"><a href="/">Hack'Blog</a></h1><nav class="head-nav u-fr"><ul class="head-nav__list"><li class="head-nav__item"><a class="head-nav__link" href="/archives">Archives（目录）</a></li></ul></nav></header><main class="main"><article class="post"><header class="post__head"> <time class="post__time" datetime="2018-02-12T07:56:37.000Z">February 12, 2018</time><h1 class="post__title"><a href="/2018/02/12/爬虫之简介和基本原理/">爬虫之简介和基本原理</a></h1><div class="post__main echo"><h3 id="爬虫简介"><a href="#爬虫简介" class="headerlink" title="爬虫简介"></a>爬虫简介</h3><blockquote>
+<p>爬虫，即网络爬虫，可理解为在网络上爬行的一直蜘蛛，互联网就比作一张大网，而爬虫便是在这张网上爬来爬去的蜘蛛，如果它遇到资源，那么它就会抓取下来。</p>
+</blockquote>
+<p>一句话形容爬虫：一段自定抓取互联网信息的程序</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1335668-4f072d4ea842f92f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>爬虫的作用<br>取互联网数据，为我所用！</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1335668-236e7de9711272c6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>简单爬虫架构</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1335668-db4d7eb3f4fa72e2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>运行流程</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1335668-d6e72bf10890b54f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="URL管理器"><a href="#URL管理器" class="headerlink" title="URL管理器"></a>URL管理器</h3><h4 id="URL简单介绍"><a href="#URL简单介绍" class="headerlink" title="URL简单介绍"></a>URL简单介绍</h4><blockquote>
+<p>URL，即统一资源定位符，也就是我们说的网址，统一资源定位符是对可以从互联网上得到的资源的位置和访问方法的一种简洁的表示，是互联网上标准资源的地址。互联网上的每个文件都有一个唯一的URL，它包含的信息指出文件的位置以及浏览器应该怎么处理它。</p>
+</blockquote>
+<p>URL的格式由三部分组成：</p>
+<ul>
+<li>①第一部分是协议(或称为服务方式)</li>
+<li>②第二部分是存有该资源的主机IP地址(有时也包括端口号)</li>
+<li>③第三部分是主机资源的具体地址，如目录和文件名等</li>
+</ul>
+<p>爬虫爬取数据时必须要有一个目标的URL才可以获取数据，因此，它是爬虫获取数据的基本依据</p>
+<p>URL管理器</p>
+<blockquote>
+<p>管理待抓取URL的集合和已抓取的URL集合</p>
+</blockquote>
+<p>目的：防止重复抓取、防止循环抓取</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1335668-8107d2782cc66e8f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h4 id="URL管理器几种常见实现方式"><a href="#URL管理器几种常见实现方式" class="headerlink" title="URL管理器几种常见实现方式"></a>URL管理器几种常见实现方式</h4><ul>
+<li>内存：Python 内存，set()</li>
+<li>关系数据库：MySQL</li>
+<li>缓存数据库：Redis</li>
+</ul>
+<h3 id="网页下载器"><a href="#网页下载器" class="headerlink" title="网页下载器"></a>网页下载器</h3><h4 id="Python-中常用网页下载器"><a href="#Python-中常用网页下载器" class="headerlink" title="Python 中常用网页下载器"></a>Python 中常用网页下载器</h4><ul>
+<li>urllib（Python3）</li>
+<li><a href="http://cn.python-requests.org/zh_CN/latest/" target="_blank" rel="noopener">Requests</a> （很强大的第三方库）</li>
+</ul>
+<h5 id="urllib-简单使用一"><a href="#urllib-简单使用一" class="headerlink" title="urllib 简单使用一"></a>urllib 简单使用一</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import urllib.request</span><br><span class="line"># 核心方法</span><br><span class="line">response = urllib.request.urlopen(&quot;http://www.baidu.com&quot;)</span><br><span class="line"># 输出请求结果</span><br><span class="line">print(response.read().decode(&apos;utf-8&apos;))</span><br></pre></td></tr></table></figure>
+<h5 id="urllib-简单使用二"><a href="#urllib-简单使用二" class="headerlink" title="urllib 简单使用二"></a>urllib 简单使用二</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import urllib.request</span><br><span class="line"># 创建request</span><br><span class="line">request = urllib.request.Request(&quot;http://www.baidu.com&quot;)</span><br><span class="line"># 获取相应体</span><br><span class="line">response = urllib.request.urlopen(request)</span><br><span class="line"># 输出</span><br><span class="line">print(response.read().decode(&quot;utf-8&quot;))</span><br></pre></td></tr></table></figure>
+<h3 id="网页解析器"><a href="#网页解析器" class="headerlink" title="网页解析器"></a>网页解析器</h3><blockquote>
+<p>从网页中获取有价值数据的工具</p>
+</blockquote>
+<p>图例：<br><img src="http://upload-images.jianshu.io/upload_images/1335668-c198b576ab63119f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h4 id="Python-常见网页解析器实现"><a href="#Python-常见网页解析器实现" class="headerlink" title="Python 常见网页解析器实现"></a>Python 常见网页解析器实现</h4><ul>
+<li>正则表达式：模糊匹配</li>
+<li>html.parser</li>
+<li><a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/" target="_blank" rel="noopener">BeautifulSoup</a></li>
+</ul>
+<h4 id="实战：通过用户输入词条和数量，爬取百度百科词条相关内容"><a href="#实战：通过用户输入词条和数量，爬取百度百科词条相关内容" class="headerlink" title="实战：通过用户输入词条和数量，爬取百度百科词条相关内容"></a>实战：通过用户输入词条和数量，爬取百度百科词条相关内容</h4><h4 id="目录结构："><a href="#目录结构：" class="headerlink" title="目录结构："></a>目录结构：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">|-- Baike_spider（文件夹）</span><br><span class="line">   |-- spider_main.py（爬虫调度器————程序入口，管理各个模块）</span><br><span class="line">   |-- url_manager.py（URL 管理器————管理 url）</span><br><span class="line">   |-- html_downloader.py （网页下载器————通过url获取网页内容）</span><br><span class="line">   |-- html_parser.py （网页解析器————通过网页内容解析出新的 url 和 新的内容）</span><br><span class="line">   |-- html_outputer.py （输出————将获取到的数据输出）</span><br></pre></td></tr></table></figure>
+<h5 id="用到的知识点："><a href="#用到的知识点：" class="headerlink" title="用到的知识点："></a>用到的知识点：</h5><ul>
+<li>使用 urllib 请求数据</li>
+<li>使用 BeautifulSoup 解析网页</li>
+<li>使用 re 正则匹配 url 数据</li>
+<li>使用 urljoin 将拼接 url</li>
+</ul>
+</div></header><footer class="post__foot u-cf"><ul class="post__tag u-fl"><li class="post__tag__item"><a class="post__tag__link" href="/tags/Python/">Python</a></li></ul></footer></article><div class="comments" id="lv-container" data-id="city" data-uid="your uid"><script>(function(d, s) {var j, e = d.getElementsByTagName(s)[0];if (typeof LivereTower === 'function') { return; } j = d.createElement(s);j.src = 'https://cdn-city.livere.com/js/embed.dist.js';j.async = true;e.parentNode.insertBefore(j, e);})(document, 'script');</script></div></main><footer class="foot"><div class="foot-copy">&copy; 2016-2018 Hack</div></footer><script src="/js/scroller.js"></script><script src="/js/main.js"></script></body></html>
