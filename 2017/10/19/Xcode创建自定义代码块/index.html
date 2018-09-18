@@ -1,0 +1,36 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="author" content="John Doe"><link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml"><link rel="icon" href="/favicon.png"><title>Xcode创建自定义代码块 - Hexo</title><link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css"><!--[if lt IE 9]><script>(function(a,b){a="abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output progress section summary template time video".split(" ");for(b=a.length-1;b>=0;b--)document.createElement(a[b])})()</script><![endif]--><script src="/js/jquery-3.1.1.min.js"></script><script src="/js/fancybox/jquery.fancybox.min.js"></script></head><body style="opacity:0"><header class="head"><h1 class="head-title u-fl"><a href="/">Hexo</a></h1><nav class="head-nav u-fr"><ul class="head-nav__list"><li class="head-nav__item"><a class="head-nav__link" href="/archives">カタログ/（目录）</a></li></ul></nav></header><main class="main"><article class="post"><header class="post__head"> <time class="post__time" datetime="2017-10-19T02:31:00.000Z">October 19, 2017</time><h1 class="post__title"><a href="/2017/10/19/Xcode创建自定义代码块/">Xcode创建自定义代码块</a></h1><div class="post__main echo"><p>由于项目、所用语言或者编码习惯的差别，不同的程序员习惯用的代码片段也不尽相同，这就有了自定义代码片段的需求，好在Xcode是支持该功能的。他的好处是使程序员以最快的速度输入很常用的代码片段，提高编程效率。</p>
+<p>该功能是从Xcode4开始引入的。在Xcode中的位置如下图所示：</p>
+<p>如上图，右边系统就定义很对的代码块，包括一些我们很常用的@interface 和@implementation的声明和实现。</p>
+<p>二、自定义我们常用的代码块步骤</p>
+<p>Ｅｇ：@property属性的定义是Cocoa程序开发中很常用的一个功能，下面就以此为例说明如何自定义代码片段。</p>
+<p>1、书写代码片段</p>
+<p>在声明@property属性的地方写下如下语句：</p>
+<p>@property (nonatomic, retain) &lt;#type#&gt; &lt;#name#&gt;;</p>
+<p>这里&lt;#type#&gt;和&lt;#name#&gt;起什么作用可以在后面的使用效果中看出来。<br><img src="http://upload-images.jianshu.io/upload_images/5977975-3f977414479d57c8.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>2、新建代码片段</p>
+<p>１）点击Code Snippet Library</p>
+<p>2)选择User 用户自定义</p>
+<p>3）出现如下空白界面</p>
+<p>4）把刚编辑好的代码选中，拖到上面的空白处，出现如下的编辑窗口</p>
+<p><img src="http://img.blog.csdn.net/20130929182943812?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3p6dmljdG9yeQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
+<p>图中从上到下的含义依次是：</p>
+<p>①Title</p>
+<p>代码片段的标题</p>
+<p>②Summary</p>
+<p>代码片段的描述文字</p>
+<p>③Platform</p>
+<p>可以使用代码片段的平台，有IOS/OS X/All三个选项</p>
+<p>④Language</p>
+<p>可以在哪些语言中使用该代码片段</p>
+<p>⑤Completion Shortcut</p>
+<p>代码片段的快捷方式，比如本文开头用到的dowhile，在这里，把属性设置的快捷方式设为property</p>
+<p>⑥Completion Scopes</p>
+<p>可以在哪些文件中使用当前代码片段，比如全部位置，头文件中等，当然可以添加多个支持的位置。</p>
+<p>最后的一个大得空白区域是对代码片段的效果预览。</p>
+<p>一切设置完成以后，点击该菜单右下角的Done按钮，新建工作就结束了。</p>
+<p>5）验证效果：我在代码里面输入”pro“ 即出现如下提示：（直接点击Enter键，一整条语句就自动补齐了）</p>
+<p><img src="http://img.blog.csdn.net/20130929183935093?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3p6dmljdG9yeQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
+<p>三、代码片段的备份</p>
+<p>Xcode中的代码片段默认放在下面的目录中：</p>
+<p>~/Library/Developer/Xcode/UserData/CodeSnippets</p>
+<p>我们可以将目录中的代码片段备份，也可以将其直接拷出来放在不同的电脑上使用，因此多台电脑之间的协作也毫无压力。</p>
+</div></header><footer class="post__foot u-cf"><ul class="post__tag u-fl"><li class="post__tag__item"><a class="post__tag__link" href="/tags/Xcode/">Xcode</a></li></ul></footer></article><div class="comments" id="lv-container" data-id="city" data-uid="your uid"><script>(function(d, s) {var j, e = d.getElementsByTagName(s)[0];if (typeof LivereTower === 'function') { return; } j = d.createElement(s);j.src = 'https://cdn-city.livere.com/js/embed.dist.js';j.async = true;e.parentNode.insertBefore(j, e);})(document, 'script');</script></div></main><footer class="foot"><div class="foot-copy">&copy; 2016-2018 John Doe</div></footer><script src="/js/scroller.js"></script><script src="/js/main.js"></script></body></html>
