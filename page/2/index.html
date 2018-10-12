@@ -1,425 +1,2011 @@
 <!DOCTYPE html>
-<html>
-  <head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-  <meta name="description" content="an iOS And Mac OS dev">
-  <meta name="keyword" content="hexo-theme, vuejs">
-  
-    <link rel="shortcut icon" href="/css/images/logo.png">
-  
-  <title>
-    
-      Hack&#39;Blog
-    
-  </title>
-  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
-  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css">
-<link rel="stylesheet" href="/css/plugins/gitment.css">
-  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
-  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
-  <script src="/js/qrious.js"></script>
-<script src="/js/gitment.js"></script>
-  
-  
-    <!-- MathJax support START -->
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
 
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <!-- MathJax support END -->
+
+
   
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="an iOS And Mac OS dev">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hack&#39;Blog">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+<meta property="og:site_name" content="Hack&#39;Blog">
+<meta property="og:description" content="an iOS And Mac OS dev">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hack&#39;Blog">
+<meta name="twitter:description" content="an iOS And Mac OS dev">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/page/2/"/>
+
+
+
+
+
+  <title>Hack'Blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 </head>
-<div class="wechat-share">
-  <img src="/css/images/logo.png" />
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+   page-home 
+ ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hack'Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">iOS And Mac OS dev</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
-  <body>
-    <header class="header fixed-header">
-  <div class="header-container">
-    <a class="home-link" href="/">
-      <div class="logo"></div>
-      <span>Hack'Blog</span>
-    </a>
-    <ul class="right-list">
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
       
-        <li class="list-item">
-          
-            <a href="/" class="item-link active">Home</a>
-          
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
         </li>
       
-        <li class="list-item">
-          
-            <a href="/tags/" class="item-link">Tags</a>
-          
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
         </li>
       
-        <li class="list-item">
-          
-            <a href="/archives/" class="item-link">Archives</a>
-          
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
         </li>
       
-        <li class="list-item">
-          
-            <a href="/project/" class="item-link">Projects</a>
-          
-        </li>
-      
-        <li class="list-item">
-          
-            <a href="/about/" class="item-link">About</a>
-          
-        </li>
+
       
     </ul>
-    <div class="menu">
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/14/个人简历/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hack">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hack'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/14/个人简历/" itemprop="url">个人简历</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-14T09:46:14+08:00">
+                2018-03-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="个人信息"><a href="#个人信息" class="headerlink" title="个人信息"></a>个人信息</h2><ul>
+<li><code>姓名</code>: 胡明涛</li>
+<li><code>性别</code>: 男</li>
+<li><code>年龄</code>: 27</li>
+<li><code>学校/学历</code>: 江西师范大学软件工程/本科</li>
+<li><code>工作年限</code>: 5年</li>
+<li><code>手机</code>: 186-0198-2565</li>
+<li><code>邮箱</code>: <a href="mailto:tommyyaphetshu@163.com" target="_blank" rel="noopener">tommyyaphetshu@163.com</a>  </li>
+<li><code>博客</code>:  旧-新-简书<br> <a href="http://blog.csdn.net/hmt20130412" target="_blank" rel="noopener">http://blog.csdn.net/hmt20130412</a><br> <a href="http://www.hmttommy.com/" target="_blank" rel="noopener">http://www.hmttommy.com/</a><br> <a href="http://www.jianshu.com/u/25bcb49275fa" target="_blank" rel="noopener">http://www.jianshu.com/u/25bcb49275fa</a></li>
+</ul>
+<h2 id="工作经历"><a href="#工作经历" class="headerlink" title="工作经历"></a>工作经历</h2><ol>
+<li><p><code>公司</code>: 深圳刷宝科技有限公司<br><code>时间</code>: 2015年7月-至今<br><code>职位</code>: iOS leader  </p>
+<ul>
+<li>负责组建iOS团队,制定iOS开发规范,辅助移动研发总监制定团队协作规范  </li>
+<li>负责淘金家app架构设计,需求研发以及上线流程  </li>
+<li>负责花薪C/花薪S app整体研发工作  </li>
+<li>负责花薪闪借app 研发  </li>
+<li>使用Swift重构淘金家app  </li>
+</ul>
+</li>
+<li><p><code>公司</code>: 深圳金蝶国际软件集团有限公司<br><code>时间</code>: 2014年11月-2015年7月<br><code>职位</code>: iOS开发工程师  </p>
+<ul>
+<li>负责部落app从测试版本到正式上线版本的开发和需求迭代(后期)  </li>
+<li>负责云之家app的需求迭代(前期)</li>
+</ul>
+</li>
+<li><p>深圳中青宝-魔盒项目部/2014年7月-2014年11月/负责飞兔云传项目2.0的整体全新开发/部门与集团矛盾,部门解散  </p>
+</li>
+<li>北京云扬思海科技有限公司/xxxx年xx月-2014年6月/iOS实习+开发工程师  </li>
+</ol>
+<h2 id="专业技能"><a href="#专业技能" class="headerlink" title="专业技能"></a>专业技能</h2><ul>
+<li>熟练Objective-C,熟悉Swift,具备良好的编程习惯和面向对象思想。  </li>
+<li>懂一些iOS体系架构、MVC、MVVM和一些常见的设计模式。</li>
+<li>熟悉iPhone SDK开发环境和iOS框架,熟练使用XCode等开发工具进行开发与调试。</li>
+<li>熟悉使用SVN和CocoaPods,了解Git,熟悉使用SourceTree。</li>
+<li>能够独立开发App,熟练掌握真机调试、APNS远程推送流程和应用上线流程。</li>
+<li>能够通过Google、stackoverflow等途径独立解决问题。</li>
+<li>了解 javascript,与朋友一起完成了”小程序-迷你桌游”的编写.  </li>
+<li>了解 java, 能够完成一些后台基本功能.  </li>
+</ul>
+<h2 id="技能树"><a href="#技能树" class="headerlink" title="技能树"></a>技能树</h2><p><img src="http://7qn7zn.com1.z0.glb.clouddn.com/%20%E6%8A%80%E8%83%BD%E6%A0%91.png" alt="jinengshu">  </p>
+<h2 id="主要项目"><a href="#主要项目" class="headerlink" title="主要项目"></a>主要项目</h2><p><a href="https://itunes.apple.com/cn/app/tao-jin-jia-wei-ku/id1048958774?mt=8" target="_blank" rel="noopener">淘金家</a><br><code>项目职能：负责此App开发至上线的所有工作,包括但不限于:</code>  </p>
+<ol>
+<li>构建项目框架—轻量级MVVM框架,设计业务层V-C-VM解耦</li>
+<li>引入YTKRequest,采取策略模式,完成网络层设计 </li>
+<li>负责所有图表的实现(采取PNChat)以及动画效果预研,研发</li>
+<li>利用xctool与xcodebuild编写自动化打包脚本 </li>
+<li>引入RAC做一些基础绑定效果  </li>
+</ol>
+<p><a href="https://itunes.apple.com/cn/app/hua-xin/id1123416165?mt=8" target="_blank" rel="noopener">花薪C</a><br><a href="https://itunes.apple.com/cn/app/花薪闪借/id1251255476?mt=8" target="_blank" rel="noopener">花薪闪借</a>(备注:独立借钱模块,重构流程)<br><a href="https://fir.im/huaxinSV2Test" target="_blank" rel="noopener">花薪S</a> (企业账户发布)<br><code>项目职能：负责这三个App开发至上线的所有工作,包括但不限于:</code> </p>
+<ol>
+<li>构建项目的整体框架,数据层/网络层/工具/视图封装/VC storyboard/APNS</li>
+<li>代码/版本管理及验收检查</li>
+<li>bug 修复</li>
+<li>上线 AppStore</li>
+<li>参与需求评审/审查/定型/再迭代,拆分模块,布置小组任务  </li>
+</ol>
+<p><a href="https://itunes.apple.com/cn/app/yun-zhi-jia-mian-fei-yi-dong/id595672427?mt=8" target="_blank" rel="noopener">云之家</a>(金蝶)<br><code>项目职责:</code>  </p>
+<ol>
+<li>负责云之家通讯录、定位签到等逻辑的实现重写</li>
+<li>负责数据分享平台的业务逻辑</li>
+<li>负责新版本UI重改以及复杂UI的设计与预研</li>
+<li>将原有的第三方网络请求ASI迁移为AFNetworking,重写网络层逻辑</li>
+<li>负责bug修复及日常维护</li>
+</ol>
+<p><a href="https://itunes.apple.com/cn/app/bu-luo-geng-hao-tuan-dui-xie/id946626039?mt=8" target="_blank" rel="noopener">部落</a>(金蝶)<br><code>项目职能</code>：  </p>
+<ol>
+<li>增加share extension新特性,实现图片分享</li>
+<li>增加类新浪微博的today extension新特性</li>
+<li>集成原生微信平台分享-登录功能</li>
+<li>使用masonry,全部整改成autolayout自动布局</li>
+<li>策略模式整改网络请求框架</li>
+<li>优化微博主页性能</li>
+</ol>
+<p><a href="https://itunes.apple.com/cn/app/fei-tu-yun-chuan/id929052456?mt=8" target="_blank" rel="noopener">飞兔云传2.0</a>(中青宝, 前段时间被下架了)<br><code>技术要点：</code></p>
+<ol>
+<li>使用ALAssetLibrary,获取手机系统相片和视频，自定义展示出来；</li>
+<li>使用Extension Today 实现类Clips 的widget；</li>
+<li>使用NSURLSession进行POST请求完成后台统计功能；</li>
+<li>使用keychain和开发者证书的appID实现UUID的唯一性，并转化为MD5格式；</li>
+<li>将手机系统通讯录资料进行VCF格式的生成和解析；</li>
+<li>使用UMSDK实现了一键分享功能；</li>
+<li>使用NSUserDefaults、archiver和unarchiver实现数据存储；</li>
+<li>使用UIPasteboard和后台代理实现后台获取系统剪切板实时同步app中；</li>
+<li>iPad端大体相同，只是UI布局不同（略）</li>
+</ol>
+<h2 id="个人评价"><a href="#个人评价" class="headerlink" title="个人评价"></a>个人评价</h2><ul>
+<li>对iOS开发有极高的热情，关注移动互联网发展趋势;</li>
+<li>工作认真、有耐心、有良好的执行力和较强的学习能力;</li>
+<li>有良好的沟通能力和团队合作意识，积极进取;</li>
+<li>爱代码, 更爱注释，对注释的感情深过代码本身</li>
+<li>有良好的审美能力，关注用户体验。  </li>
+</ul>
+
+          
+        
+      
     </div>
-    <div class="menu-mask">
-      <ul class="menu-list">
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/27/hexo更换电脑，如何继续写博客/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hack">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hack'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-          <li class="menu-item">
-            
-              <a href="/" class="menu-link mobile-active">Home</a>
-            
-          </li>
         
-          <li class="menu-item">
-            
-              <a href="/tags/" class="menu-link">Tags</a>
-            
-          </li>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/27/hexo更换电脑，如何继续写博客/" itemprop="url">hexo更换电脑，如何继续写博客</a></h1>
         
-          <li class="menu-item">
+
+        <div class="post-meta">
+          <span class="post-time">
             
-              <a href="/archives/" class="menu-link">Archives</a>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-27T16:38:49+08:00">
+                2018-02-27
+              </time>
             
-          </li>
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
         
-          <li class="menu-item">
-            
-              <a href="/project/" class="menu-link">Projects</a>
-            
-          </li>
+          
+            <h5 id="1-将你原来电脑上已经配置好并生成的hexo目录拷到你的新电脑上，注意无需拷全部，只拷如下几个目录："><a href="#1-将你原来电脑上已经配置好并生成的hexo目录拷到你的新电脑上，注意无需拷全部，只拷如下几个目录：" class="headerlink" title="1.将你原来电脑上已经配置好并生成的hexo目录拷到你的新电脑上，注意无需拷全部，只拷如下几个目录："></a>1.将你原来电脑上已经配置好并生成的hexo目录拷到你的新电脑上，注意无需拷全部，只拷如下几个目录：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">_config.yml</span><br><span class="line">package.json</span><br><span class="line">scaffolds/</span><br><span class="line">source/</span><br><span class="line">themes/</span><br></pre></td></tr></table></figure>
+<p>将这些目录放到一个目录下，如：hexo／</p>
+<h5 id="2-在你的新电脑上首先配置hexo环境：安装Node-js"><a href="#2-在你的新电脑上首先配置hexo环境：安装Node-js" class="headerlink" title="2.在你的新电脑上首先配置hexo环境：安装Node.js"></a>2.在你的新电脑上首先配置hexo环境：安装Node.js</h5><h5 id="3-安装hexo，执行命令："><a href="#3-安装hexo，执行命令：" class="headerlink" title="3.安装hexo，执行命令："></a>3.安装hexo，执行命令：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo</span><br></pre></td></tr></table></figure>
+<h5 id="4-安装好之后，进入hexo／目录"><a href="#4-安装好之后，进入hexo／目录" class="headerlink" title="4.安装好之后，进入hexo／目录"></a>4.安装好之后，进入hexo／目录</h5><h5 id="5-模块安装，执行命令："><a href="#5-模块安装，执行命令：" class="headerlink" title="5.模块安装，执行命令："></a>5.模块安装，执行命令：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">npm install hexo-generator-feed --save</span><br><span class="line">npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure>
+<h5 id="6-部署，执行命令："><a href="#6-部署，执行命令：" class="headerlink" title="6.部署，执行命令："></a>6.部署，执行命令：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+<p>或者如果你把源文件放到了单独的分支里，也可以clone那个分支<br>然后在根目录执行如下命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo --save</span><br></pre></td></tr></table></figure></p>
+<p>并且根据相关报错信息删除对应文件然后不断执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo --save</span><br></pre></td></tr></table></figure>
+<p>直到安装成功为止</p>
+<p>小窍门：Mac 显示隐藏文件快捷键 Command + Shift + .</p>
+
+          
         
-          <li class="menu-item">
-            
-              <a href="/about/" class="menu-link">About</a>
-            
-          </li>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/14/pip报错解决方案/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hack">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hack'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-      </ul>
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/14/pip报错解决方案/" itemprop="url">pip报错解决方案</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-14T11:07:37+08:00">
+                2018-02-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>python3.6 pip无法安装插件</p>
+<p>pip is configured with locations that require TLS/SSL, however the ssl module in Python is not available.</p>
+<p>pip is configured with locations that require TLS/SSL, however the ssl module in Python is not available.<br>Collecting flask<br>Could not fetch URL <a href="https://pypi.python.org/simple/flask/" target="_blank" rel="noopener">https://pypi.python.org/simple/flask/</a>: There was a problem confirming the ssl certificate: Can’t connect to HTTPS URL because the SSL module is not available. - skipping<br>Could not find a version that satisfies the requirement flask (from versions: )<br>No matching distribution found for flask</p>
+<p>新版的pip 默认要求使用https了，</p>
+<p>pip 的源可以使用国内的源，下载速度会很快。</p>
+<p>参考这个 <a href="http://mirrors.aliyun.com/help/pypi" target="_blank" rel="noopener">http://mirrors.aliyun.com/help/pypi</a></p>
+<p>pip.conf中要有trusted-host，就可以不用https了。同时也可以解决你的问题。</p>
+<p>CentOS 7安装Python3.5<br><a href="http://www.linuxidc.com/Linux/2016-04/129784.htm" target="_blank" rel="noopener">http://www.linuxidc.com/Linux/2016-04/129784.htm</a></p>
+<p>在~/.pip/pip.conf文件中添加或修改<br>[global]<br>index-url = <a href="http://mirrors.aliyun.com/pypi/simple/" target="_blank" rel="noopener">http://mirrors.aliyun.com/pypi/simple/</a></p>
+<p>[install]<br>trusted-host=mirrors.aliyun.com</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/13/完美升级Mac自带Python/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hack">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hack'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/13/完美升级Mac自带Python/" itemprop="url">完美升级Mac自带Python2.7~3.6</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-13T16:48:42+08:00">
+                2018-02-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
+<p>Mac系统自带python2.7，本文目的是将自带的python升级到3.6版本。<br>网上有本多的做法是让python2.7和python3.X两个版本共存，博主并不知道，是两版本共存好，还是直接升级好，所以读者要慎重选择方法。</p>
+</blockquote>
+<blockquote>
+<p>关闭Rootless机制<br>由于Mac下的python2.7 默认是安装在／System目录下的。但是～～～Mac有个Rootless机制，默认不允许直接在／System下作修改。所以要先关闭Rootless机制。</p>
+</blockquote>
+<h3 id="关闭Rootless机制的方法"><a href="#关闭Rootless机制的方法" class="headerlink" title="关闭Rootless机制的方法:"></a>关闭Rootless机制的方法:</h3><h4 id="关闭"><a href="#关闭" class="headerlink" title="关闭:"></a>关闭:</h4><ul>
+<li>1）.重启电脑, 重启过程中按住command+R, 进入恢复模式 </li>
+<li>2）.打开terminal，键入: csrutil disable </li>
+<li>3）.重启电脑</li>
+</ul>
+<p>如果之后要再开启Rootless机制，方法如下： </p>
+<h4 id="开启"><a href="#开启" class="headerlink" title="开启:"></a>开启:</h4><ul>
+<li>1）.重启电脑, 重启过程中按住command+R, 进入恢复模式 </li>
+<li>2）.打开terminal，键入: csrutil enable </li>
+<li>3）.重启电脑</li>
+</ul>
+<h3 id="下载安装python3-6"><a href="#下载安装python3-6" class="headerlink" title="下载安装python3.6"></a>下载安装python3.6</h3><p>从<a href="https://www.python.org/downloads/" target="_blank" rel="noopener">官网</a><br>下载pkg版本，并安装。安装选默认路径，会安装到</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/Library/Frameworks/Python.framework/Versions/</span><br></pre></td></tr></table></figure>
+<p>目录下</p>
+<h3 id="删除python2-7"><a href="#删除python2-7" class="headerlink" title="删除python2.7"></a>删除python2.7</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rm -R /System/Library/Frameworks/Python.framework/Versions/2.7</span><br></pre></td></tr></table></figure>
+<h3 id="移动python3-6"><a href="#移动python3-6" class="headerlink" title="移动python3.6"></a>移动python3.6</h3><p>将python3.6安装到/System/Library/Frameworks/Python.framework/Versions/</p>
+<figure class="highlight plain"><figcaption><span>mv</span><a href="/Library/Frameworks/Python.framework/Versions/3.6">/System/Library/Frameworks/Python.framework/Versions</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line"></span><br><span class="line">### 修改文件所属的Group</span><br><span class="line"></span><br><span class="line">设置Group为wheel，原来系统自带的就是这样的。</span><br></pre></td></tr></table></figure>
+<p>sudo chown -R root:wheel /System/Library/Frameworks/Python.framework/Versions/3.6<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 更新一下Current的Link</span><br><span class="line"></span><br><span class="line">在Versions的目录里有一个Current的link，是指向当前的Python版本，原始是指向系统自带的Python2.7，我们把它删除后，link就失效了，所以需要重新链一下</span><br></pre></td></tr></table></figure></p>
+<p>sudo rm /System/Library/Frameworks/Python.framework/Versions/Current<br>sudo ln -s /System/Library/Frameworks/Python.framework/Versions/3.6 /System/Library/Frameworks/Python.framework/Versions/Current<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 重新链接可执行文件</span><br><span class="line"></span><br><span class="line">#### 先把系统原来的执行文件删掉</span><br></pre></td></tr></table></figure></p>
+<p>sudo rm /usr/bin/pydoc<br>sudo rm /usr/bin/python<br>sudo rm /usr/bin/pythonw<br>sudo rm /usr/bin/python-config<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#### 建立新的链接</span><br></pre></td></tr></table></figure></p>
+<p>sudo ln -s /System/Library/Frameworks/Python.framework/Versions/3.6/bin/pydoc3.6 /usr/bin/pydoc<br>sudo ln -s /System/Library/Frameworks/Python.framework/Versions/3.6/bin/python3.6 /usr/bin/python<br>sudo ln -s /System/Library/Frameworks/Python.framework/Versions/3.6/bin/pythonw3.6 /usr/bin/pythonw<br>sudo ln -s /System/Library/Frameworks/Python.framework/Versions/3.6/bin/python3.6m-config /usr/bin/python-config<br><code>`</code></p>
+<h4 id="更新-bash-profile文件"><a href="#更新-bash-profile文件" class="headerlink" title="更新.bash_profile文件"></a>更新.bash_profile文件</h4><p>默认的bash_profile里python的bin是指向/Library/Frameworks/Python.framework/Versions/3.6/<br>bin</p>
+<p>的。要改到/System/目录下</p>
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p>在命令行中，用pip -V和pip3 -V查看版本和位置。用python进入。<br>Mac下升级python2.7到python3.6，升级成功。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/13/完美安装Scrapy/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hack">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hack'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/13/完美安装Scrapy/" itemprop="url">完美安装Scrapy</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-13T11:04:08+08:00">
+                2018-02-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>一句代码完美安装Scrapy</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pip install scrapy --upgrade --ignore-installed six</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/12/爬虫之简介和基本原理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hack">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hack'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/12/爬虫之简介和基本原理/" itemprop="url">爬虫之简介和基本原理</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-12T15:56:37+08:00">
+                2018-02-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="爬虫简介"><a href="#爬虫简介" class="headerlink" title="爬虫简介"></a>爬虫简介</h3><blockquote>
+<p>爬虫，即网络爬虫，可理解为在网络上爬行的一直蜘蛛，互联网就比作一张大网，而爬虫便是在这张网上爬来爬去的蜘蛛，如果它遇到资源，那么它就会抓取下来。</p>
+</blockquote>
+<p>一句话形容爬虫：一段自定抓取互联网信息的程序</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1335668-4f072d4ea842f92f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>爬虫的作用<br>取互联网数据，为我所用！</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1335668-236e7de9711272c6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>简单爬虫架构</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1335668-db4d7eb3f4fa72e2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>运行流程</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1335668-d6e72bf10890b54f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="URL管理器"><a href="#URL管理器" class="headerlink" title="URL管理器"></a>URL管理器</h3><h4 id="URL简单介绍"><a href="#URL简单介绍" class="headerlink" title="URL简单介绍"></a>URL简单介绍</h4><blockquote>
+<p>URL，即统一资源定位符，也就是我们说的网址，统一资源定位符是对可以从互联网上得到的资源的位置和访问方法的一种简洁的表示，是互联网上标准资源的地址。互联网上的每个文件都有一个唯一的URL，它包含的信息指出文件的位置以及浏览器应该怎么处理它。</p>
+</blockquote>
+<p>URL的格式由三部分组成：</p>
+<ul>
+<li>①第一部分是协议(或称为服务方式)</li>
+<li>②第二部分是存有该资源的主机IP地址(有时也包括端口号)</li>
+<li>③第三部分是主机资源的具体地址，如目录和文件名等</li>
+</ul>
+<p>爬虫爬取数据时必须要有一个目标的URL才可以获取数据，因此，它是爬虫获取数据的基本依据</p>
+<p>URL管理器</p>
+<blockquote>
+<p>管理待抓取URL的集合和已抓取的URL集合</p>
+</blockquote>
+<p>目的：防止重复抓取、防止循环抓取</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1335668-8107d2782cc66e8f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h4 id="URL管理器几种常见实现方式"><a href="#URL管理器几种常见实现方式" class="headerlink" title="URL管理器几种常见实现方式"></a>URL管理器几种常见实现方式</h4><ul>
+<li>内存：Python 内存，set()</li>
+<li>关系数据库：MySQL</li>
+<li>缓存数据库：Redis</li>
+</ul>
+<h3 id="网页下载器"><a href="#网页下载器" class="headerlink" title="网页下载器"></a>网页下载器</h3><h4 id="Python-中常用网页下载器"><a href="#Python-中常用网页下载器" class="headerlink" title="Python 中常用网页下载器"></a>Python 中常用网页下载器</h4><ul>
+<li>urllib（Python3）</li>
+<li><a href="http://cn.python-requests.org/zh_CN/latest/" target="_blank" rel="noopener">Requests</a> （很强大的第三方库）</li>
+</ul>
+<h5 id="urllib-简单使用一"><a href="#urllib-简单使用一" class="headerlink" title="urllib 简单使用一"></a>urllib 简单使用一</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import urllib.request</span><br><span class="line"># 核心方法</span><br><span class="line">response = urllib.request.urlopen(&quot;http://www.baidu.com&quot;)</span><br><span class="line"># 输出请求结果</span><br><span class="line">print(response.read().decode(&apos;utf-8&apos;))</span><br></pre></td></tr></table></figure>
+<h5 id="urllib-简单使用二"><a href="#urllib-简单使用二" class="headerlink" title="urllib 简单使用二"></a>urllib 简单使用二</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import urllib.request</span><br><span class="line"># 创建request</span><br><span class="line">request = urllib.request.Request(&quot;http://www.baidu.com&quot;)</span><br><span class="line"># 获取相应体</span><br><span class="line">response = urllib.request.urlopen(request)</span><br><span class="line"># 输出</span><br><span class="line">print(response.read().decode(&quot;utf-8&quot;))</span><br></pre></td></tr></table></figure>
+<h3 id="网页解析器"><a href="#网页解析器" class="headerlink" title="网页解析器"></a>网页解析器</h3><blockquote>
+<p>从网页中获取有价值数据的工具</p>
+</blockquote>
+<p>图例：<br><img src="http://upload-images.jianshu.io/upload_images/1335668-c198b576ab63119f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h4 id="Python-常见网页解析器实现"><a href="#Python-常见网页解析器实现" class="headerlink" title="Python 常见网页解析器实现"></a>Python 常见网页解析器实现</h4><ul>
+<li>正则表达式：模糊匹配</li>
+<li>html.parser</li>
+<li><a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/" target="_blank" rel="noopener">BeautifulSoup</a></li>
+</ul>
+<h4 id="实战：通过用户输入词条和数量，爬取百度百科词条相关内容"><a href="#实战：通过用户输入词条和数量，爬取百度百科词条相关内容" class="headerlink" title="实战：通过用户输入词条和数量，爬取百度百科词条相关内容"></a>实战：通过用户输入词条和数量，爬取百度百科词条相关内容</h4><h4 id="目录结构："><a href="#目录结构：" class="headerlink" title="目录结构："></a>目录结构：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">|-- Baike_spider（文件夹）</span><br><span class="line">   |-- spider_main.py（爬虫调度器————程序入口，管理各个模块）</span><br><span class="line">   |-- url_manager.py（URL 管理器————管理 url）</span><br><span class="line">   |-- html_downloader.py （网页下载器————通过url获取网页内容）</span><br><span class="line">   |-- html_parser.py （网页解析器————通过网页内容解析出新的 url 和 新的内容）</span><br><span class="line">   |-- html_outputer.py （输出————将获取到的数据输出）</span><br></pre></td></tr></table></figure>
+<h5 id="用到的知识点："><a href="#用到的知识点：" class="headerlink" title="用到的知识点："></a>用到的知识点：</h5><ul>
+<li>使用 urllib 请求数据</li>
+<li>使用 BeautifulSoup 解析网页</li>
+<li>使用 re 正则匹配 url 数据</li>
+<li>使用 urljoin 将拼接 url</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/12/carthage/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hack">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hack'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/12/carthage/" itemprop="url">carthage</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-12T09:15:34+08:00">
+                2018-02-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>iOS-Carthage 安装以及使用</p>
+<h4 id="1、Carthage-简介"><a href="#1、Carthage-简介" class="headerlink" title="1、Carthage 简介"></a>1、Carthage 简介</h4><ul>
+<li>Carthage 类似于 CocoaPods，为用户管理第三方框架和依赖，但不会自动修改项目文件和生成配置</li>
+<li>Carthage 是去中心化的依赖管理工具，安装依赖时不需要去中心仓库获取 CocoaPods 所有依赖的索引，节省时间</li>
+<li>对项目无侵入性，Carthage 设计上也比较简单，利用的都是 Xcode 自身的功能，开发者在创建依赖时，相比CocoaPods 也简单许多</li>
+<li>Carthage 管理的依赖只需编译一次，项目干净编译时，不会再去重新编译依赖，节省时间</li>
+<li>自动将第三方框架编程为 Dynamic framework( 动态库 )</li>
+<li>与 CocoaPods 无缝集成，一个项目能同时拥有 CocoaPods 和 Carthage</li>
+</ul>
+<h4 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h4><ul>
+<li>仅支持 iOS8 +</li>
+<li>它只支持框架，所以不能用来针对 iOS 8 以前的系统版本进行开发</li>
+<li>支持的 Carthage 安装的第三方框架和依赖不如 CocoaPods 丰富</li>
+<li>无法在 Xcode 里定位到源码</li>
+<li>安装包的大小比用CocoaPods安装的包大</li>
+</ul>
+<p>安装 Homebrew</p>
+<p>可以使用 <a href="https://brew.sh/" target="_blank" rel="noopener">Homebrew</a> 来安装 Carthage</p>
+<blockquote>
+<p>将以上命令粘贴至终端<br>脚本会在执行前暂停，并说明将它将做什么。高级安装选项在 这里（需要OSX 10.5+）</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ /usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>安装完 homebrew 后执行下面命令，获取最新版本【可选】</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew update</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：如果遇到 Error: The /usr/local directory is not writable.错误，就执行以下命令 sudo chown -R $(whoami):admin /usr/local，再更新。</p>
+</blockquote>
+<h4 id="其他-brew-命令"><a href="#其他-brew-命令" class="headerlink" title="其他 brew 命令:"></a>其他 brew 命令:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">brew install git    // 使用brew安装软件</span><br><span class="line">brew uninstall wget // 使用brew卸载软件</span><br><span class="line">brew search /wge*/  // 使用brew查询软件，其中/wge*/是个正则表达式，需要包含在/中</span><br><span class="line">brew list           // 列出已安装的软件</span><br><span class="line">brew home           // 用浏览器打开brew的官方网站</span><br><span class="line">brew info           // 显示软件信息</span><br><span class="line">brew deps           // 显示包依赖</span><br></pre></td></tr></table></figure>
+<h4 id="2、安装-Carthage"><a href="#2、安装-Carthage" class="headerlink" title="2、安装 Carthage"></a>2、安装 Carthage</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew install carthage</span><br></pre></td></tr></table></figure>
+<p>安装 Carthage 之后，可查看版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">carthage version // 目前的版本号为:0.20.1</span><br></pre></td></tr></table></figure>
+<h4 id="3、使用-Carthage-安装依赖"><a href="#3、使用-Carthage-安装依赖" class="headerlink" title="3、使用 Carthage 安装依赖"></a>3、使用 Carthage 安装依赖</h4><p>进入项目所在文件夹</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ~/路径/项目文件夹</span><br></pre></td></tr></table></figure>
+<p>创建一个空的 Carthage 文件 Cartfile</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch Cartfile</span><br></pre></td></tr></table></figure>
+<p>使用 Xcode 打开 Cartfile 文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">open -a Xcode Cartfile</span><br></pre></td></tr></table></figure>
+<p>编辑 Cartfile【可手动打开进行编辑】</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">github &quot;Alamofire/Alamofire&quot; == 4.4.0</span><br></pre></td></tr></table></figure>
+<p>执行更新命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ carthage update --platform iOS</span><br></pre></td></tr></table></figure>
+<p>更新成功后，项目文件夹中会多出三个文件</p>
+<ul>
+<li>cartfile</li>
+<li>Cartfile.resolved</li>
+<li>Carthage/ </li>
+<li>Build/</li>
+<li>Checkouts/</li>
+</ul>
+<p>Carthage 会 clone 文件中对应的 git 第三方库，把每一个第三方库编译成二进制文件的 framework 文件。<br>其中 “–platform iOS” 命令是可选的，作用是保证只为 iOS 编译framework，如果不指定平台，会为全平台编译 framework 文件。如果想要了解更多的命令，可以运行 carthage help update查看。</p>
+<h4 id="4、添加-Frameworks-到项目中"><a href="#4、添加-Frameworks-到项目中" class="headerlink" title="4、添加 Frameworks 到项目中"></a>4、添加 Frameworks 到项目中</h4><ul>
+<li>点击”项目名称”–&gt; “TARGETS” –&gt; “General”，在最底部找到 “Linked Frameworks and Libraries”</li>
+<li>点击 + 号，选择左下角 Add Other… 按钮，选择项目下 Carthage/Build/iOS/Alamofire.framework 文件，点击 Open 加入到项目中</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">目的是告诉Xcode链接你的app到这个 framework，允许你在代码中使用</span><br></pre></td></tr></table></figure>
+<ul>
+<li>下一步选择菜单上的 Build Phases，点击左上角 + 号添加一个新的 Run Script，并添加以下命令：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/bin/carthage copy-frameworks</span><br></pre></td></tr></table></figure>
+<ul>
+<li>点击 Input Files 下面的 + 号为每一个 framework 添加访问路径</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">carthage copy-frameworks 命令剔除了额外的框架</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Import 框架名到控制器，Command + B 编译项目，如果成功，就可以使用了<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import Alamofire</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/29/php学习遇到问题集锦/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hack">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hack'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/29/php学习遇到问题集锦/" itemprop="url">No application encryption key has been specified.</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-29T10:56:12+08:00">
+                2018-01-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>环境：php7.1.10<br>laravel5.5<br>出现：<br><img src="https://images2017.cnblogs.com/blog/1102222/201711/1102222-20171104161629841-1764260339.png" alt=""></p>
+<p>解决：<br>在根目录下执行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php artisan key:generate</span><br></pre></td></tr></table></figure>
+<p>终端打印：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Application key [base64:LvcrejzLdgyaqyCDVQI/fUyUd6Ktf/JAL1szXdGiu30=] set successfully.</span><br></pre></td></tr></table></figure></p>
+<p>OK问题解决</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/14/phpstudy环境安装配置SSL证书方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hack">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hack'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/14/phpstudy环境安装配置SSL证书方法/" itemprop="url">phpstudy环境安装配置SSL证书方法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-14T17:28:35+08:00">
+                2017-12-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>phpstudy环境下如何安装配置SSL证书?有很多集成式的web服务器无法按照一般站点的配置来部署ssl证书，本文以集成式phpstudye为例(apache+mysql)，为大家介绍phpstudy环境安装配置SSL证书方法。</p>
+<p><img src="https://www.wosign.com/faq/images/phpstudy2016.jpg" alt=""></p>
+<p>首先，确保你的apache编译了ssl模块，这是支持ssl证书必要的条件(如果没有，请编译,打开phpstudy——设置——PHP模块扩展——php-openssl前面勾选上)。</p>
+<p>第一：进入到apache目录下，httpd.conf找到#LoadModule ssl_module modules/mod_ssl.so，去掉前面的注释符，使得ssl模块生效(如果该模块已去掉注释，请不用操作)。</p>
+<p>第二，找到网站配置文件vhosts.conf，一般在如下路径：D:\phpStudy\Apache\conf，按照80的配置，另起一个VirtualHost443，如下所示:</p>
+<p>Listen 443</p>
+<p>ServerName <a href="http://www.yourdomain.com" target="_blank" rel="noopener">www.yourdomain.com</a> #(和80一样)</p>
+<p>ServerAlias yourdomain.com #(和80一样)</p>
+<p>DocumentRoot “D:\phpStudy\WWW” #(和80一样)</p>
+<p>SSLEngine on</p>
+<p>SSLProtocol all -SSLv2 -SSLv3</p>
+<p>SSLCipherSuite AESGCM:ALL:!DH:!EXPORT:!RC4:+HIGH:!MEDIUM:!LOW:!aNULL:!eNULL</p>
+<p>SSLCertificateFile “C:\phpStudy\Apache\conf\ssl\2_yourdomainame.crt” #(服务器上公钥证书路径)</p>
+<p>SSLCertificateKeyFile “C:\phpStudy\Apache\conf\ssl\3_yourdomainame.key” #(服务器上私钥证书路径)</p>
+<p>SSLCertificateChainFile “C:\phpStudy\Apache\conf\ssl\1_root_bundle.crt” #(服务器上证书链路径)</p>
+<p>第三，重启apache(有可能报错，看一下443端口是否被防火墙拦截或被占用)</p>
+<p>第四，apache正常重启后，在浏览器里面输入<a href="https://yourdomain.com就能看到安全锁出来啦。" target="_blank" rel="noopener">https://yourdomain.com就能看到安全锁出来啦。</a></p>
+<p>第五，备份好您的SSL证书!</p>
+<p>以上就是phpstudy环境安装配置SSL证书方法，大家在部署的时候尽量找准自己的apache下的路径，上面的仅供参考!另，Linux下的环境同windows配置一样。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/11/升级xcode9-项目而无法调试/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hack">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hack'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/11/升级xcode9-项目而无法调试/" itemprop="url">升级xcode9,项目而无法调试</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-11T16:39:35+08:00">
+                2017-11-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>之前xcode版本调试都是ok的</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">p.p1 &#123;margin: 0.0px 0.0px 0.0px 12.0px; text-indent: -12.0px; font: 11.0px Menlo&#125;p.p2 &#123;margin: 0.0px 0.0px 0.0px 12.0px; text-indent: -12.0px; font: 11.0px Menlo; min-height: 13.0px&#125;span.s1 &#123;font: 11.0px 'PingFang SC'&#125;</span><br><span class="line">PhaseScriptExecution [CP]\ Copy\ Pods\ Resources /Users/lx/Library/Developer/Xcode/DerivedData/MyLibrary-ddrsgsrjpfocjoayxgljcmunezzw/Build/Intermediates.noindex/MyLibrary.build/Debug-iphoneos/MyLibrary.build/Script<span class="number">-788668</span>C26D171DEEC02CAE5E.sh</span><br><span class="line">cd /Users/lx/Desktop/MyLibrary/iphone/MyLibrary</span><br><span class="line">/bin/sh -c /Users/lx/Library/Developer/Xcode/DerivedData/MyLibrary-ddrsgsrjpfocjoayxgljcmunezzw/Build/Intermediates.noindex/MyLibrary.build/Debug-iphoneos/MyLibrary.build/Script<span class="number">-788668</span>C26D171DEEC02CAE5E.sh</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">/Users/lx/Desktop/MyLibrary/iphone/MyLibrary/Pods/MJRefresh/MJRefresh/MJRefresh.bundle</span><br><span class="line">/Users/lx/Desktop/MyLibrary/iphone/MyLibrary/Pods/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle</span><br><span class="line">/Users/lx/Desktop/MyLibrary/iphone/MyLibrary/Pods/UMengSocialCOM/Umeng_SDK_Social_iOS_ARM64_5<span class="number">.2</span><span class="number">.1</span>/UMSocial_Sdk_5<span class="number">.2</span><span class="number">.1</span>/UMSocialSDKResourcesNew.bundle</span><br><span class="line">/Users/lx/Desktop/MyLibrary/iphone/MyLibrary/Pods/UMengSocialCOM/Umeng_SDK_Social_iOS_ARM64_5<span class="number">.2</span><span class="number">.1</span>/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI/TencentOpenApi_IOS_Bundle.bundle</span><br><span class="line">/Users/lx/Desktop/MyLibrary/iphone/MyLibrary/Pods/UMengSocialCOM/Umeng_SDK_Social_iOS_ARM64_5<span class="number">.2</span><span class="number">.1</span>/UMSocial_Sdk_Extra_Frameworks/SinaSSO/WeiboSDK.bundle</span><br><span class="line">ibtool --reference-external-strings-file --errors --warnings --notices --minimum-deployment-target <span class="number">8.0</span> --output-format human-readable-text --compile /Users/lx/Library/Developer/Xcode/DerivedData/iLUXDAYEC-ddrsgsrjpfocjoayxgljcmunezzw/Build/Products/Debug-iphoneos/iLUXDAYEC.app/UMSCommentDetailController.nib /Users/lx/Desktop/MyLibrary/iphone/MyLibrary/Pods/UMengSocialCOM/Umeng_SDK_Social_iOS_ARM64_5<span class="number">.2</span><span class="number">.1</span>/UMSocial_Sdk_5<span class="number">.2</span><span class="number">.1</span>/SocialSDKXib/UMSCommentDetailController.xib --sdk /Users/lx/Desktop/个人/安装包/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11<span class="number">.0</span>.sdk --target-device iphone</span><br><span class="line"><span class="number">2017</span><span class="number">-09</span><span class="number">-22</span> <span class="number">11</span>:<span class="number">22</span>:<span class="number">24.608</span> ibtoold[<span class="number">28644</span>:<span class="number">1474589</span>] WARNING: Unhandled destination metrics: (null)</span><br><span class="line"><span class="number">2017</span><span class="number">-09</span><span class="number">-22</span> <span class="number">11</span>:<span class="number">22</span>:<span class="number">24.608</span> ibtoold[<span class="number">28644</span>:<span class="number">1474589</span>] WARNING: Unhandled destination metrics: (null)</span><br><span class="line"><span class="comment">/* com.apple.ibtool.document.warnings */</span></span><br><span class="line">/Users/lx/Desktop/MyLibrary/iphone/MyLibrary/Pods/UMengSocialCOM/Umeng_SDK_Social_iOS_ARM64_5<span class="number">.2</span><span class="number">.1</span>/UMSocial_Sdk_5<span class="number">.2</span><span class="number">.1</span>/SocialSDKXib/UMSCommentDetailController.xib:global: warning: This file is set to build <span class="keyword">for</span> a version older than the deployment target. Functionality may be limited. [<span class="number">9</span>]</span><br><span class="line"><span class="comment">/* com.apple.ibtool.document.errors */</span></span><br><span class="line">/Users/lx/Desktop/MyLibrary/iphone/MyLibrary/Pods/UMengSocialCOM/Umeng_SDK_Social_iOS_ARM64_5<span class="number">.2</span><span class="number">.1</span>/UMSocial_Sdk_5<span class="number">.2</span><span class="number">.1</span>/SocialSDKXib/UMSCommentDetailController.xib:global: error: Compiling IB documents <span class="keyword">for</span> earlier than iOS <span class="number">7</span> is no longer supported. [<span class="number">12</span>]</span><br><span class="line"><span class="comment">/* com.apple.ibtool.warnings */</span></span><br><span class="line">/Users/lx/Desktop/MyLibrary/iphone/MyLibrary/Pods/UMengSocialCOM/Umeng_SDK_Social_iOS_ARM64_5<span class="number">.2</span><span class="number">.1</span>/UMSocial_Sdk_5<span class="number">.2</span><span class="number">.1</span>/SocialSDKXib/UMSCommentDetailController.xib: warning: Internationalization is not available when compiling <span class="keyword">for</span> targets before iOS <span class="number">6.0</span></span><br><span class="line">Command /bin/sh failed with exit code <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>解决办法：点击Pods–&gt;找到友盟的文件夹 然后找到Resources 找到那一堆XIB 点击右侧展开属性栏 找到interface Builder Document 吧Builds For 换成7.0以后 </p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
   </div>
-</header>
 
-    <main class="app-body">
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2018/03/14/个人简历/">个人简历</a>
-      </h2>
-      <p class="article-date">March 14, 2018</p>
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
       
-      <div class="article-summary">
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Hack" />
+          <p class="site-author-name" itemprop="name">Hack</p>
+           
+              <p class="site-description motion-element" itemprop="description">an iOS And Mac OS dev</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">40</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">categories</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">tags</span>
+              
+            </div>
+          
+
+        </nav>
+
         
-          个人信息
-姓名: 胡明涛
-性别: 男
-年龄: 27
-学校/学历: 江西师范大学软件工程/本科
-工作年限: 5年
-手机: 186-0198-2565
-邮箱: tommyyaphetshu@163.com  
-博客:  旧-新-简书 http://blog.csdn.net/hmt2013041 ...
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
         
       </div>
-      <a class="more" href="/2018/03/14/个人简历/">Read more</a>
-    </article>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
   
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2018/02/27/hexo更换电脑，如何继续写博客/">hexo更换电脑，如何继续写博客</a>
-      </h2>
-      <p class="article-date">February 27, 2018</p>
-      
-      <div class="article-summary">
-        
-          1.将你原来电脑上已经配置好并生成的hexo目录拷到你的新电脑上，注意无需拷全部，只拷如下几个目录：12345_config.ymlpackage.jsonscaffolds/source/themes/
-将这些目录放到一个目录下，如：hexo／
-2.在你的新电脑上首先配置hexo环境：安装 ...
-        
-      </div>
-      <a class="more" href="/2018/02/27/hexo更换电脑，如何继续写博客/">Read more</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2018/02/14/pip报错解决方案/">pip报错解决方案</a>
-      </h2>
-      <p class="article-date">February 14, 2018</p>
-      
-      <div class="article-summary">
-        
-          python3.6 pip无法安装插件
-pip is configured with locations that require TLS/SSL, however the ssl module in Python is not available.
-pip is configured wi ...
-        
-      </div>
-      <a class="more" href="/2018/02/14/pip报错解决方案/">Read more</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2018/02/13/完美升级Mac自带Python/">完美升级Mac自带Python2.7~3.6</a>
-      </h2>
-      <p class="article-date">February 13, 2018</p>
-      
-        
-  <a href="/tags#Python" >
-    <span class="tag-code">Python</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          前言
-Mac系统自带python2.7，本文目的是将自带的python升级到3.6版本。网上有本多的做法是让python2.7和python3.X两个版本共存，博主并不知道，是两版本共存好，还是直接升级好，所以读者要慎重选择方法。
-
-
-关闭Rootless机制由于Mac下的python2.7 ...
-        
-      </div>
-      <a class="more" href="/2018/02/13/完美升级Mac自带Python/">Read more</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2018/02/13/完美安装Scrapy/">完美安装Scrapy</a>
-      </h2>
-      <p class="article-date">February 13, 2018</p>
-      
-        
-  <a href="/tags#Scrapy" >
-    <span class="tag-code">Scrapy</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          一句代码完美安装Scrapy
-1sudo pip install scrapy --upgrade --ignore-installed six
-        
-      </div>
-      <a class="more" href="/2018/02/13/完美安装Scrapy/">Read more</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2018/02/12/爬虫之简介和基本原理/">爬虫之简介和基本原理</a>
-      </h2>
-      <p class="article-date">February 12, 2018</p>
-      
-        
-  <a href="/tags#Python" >
-    <span class="tag-code">Python</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          爬虫简介
-爬虫，即网络爬虫，可理解为在网络上爬行的一直蜘蛛，互联网就比作一张大网，而爬虫便是在这张网上爬来爬去的蜘蛛，如果它遇到资源，那么它就会抓取下来。
-
-一句话形容爬虫：一段自定抓取互联网信息的程序
-
-爬虫的作用取互联网数据，为我所用！
-
-简单爬虫架构
-
-运行流程
-
-URL管理器URL简 ...
-        
-      </div>
-      <a class="more" href="/2018/02/12/爬虫之简介和基本原理/">Read more</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2018/02/12/carthage/">carthage</a>
-      </h2>
-      <p class="article-date">February 12, 2018</p>
-      
-        
-  <a href="/tags#iOS-Carthage 安装以及使用" >
-    <span class="tag-code">iOS-Carthage 安装以及使用</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          iOS-Carthage 安装以及使用
-1、Carthage 简介
-Carthage 类似于 CocoaPods，为用户管理第三方框架和依赖，但不会自动修改项目文件和生成配置
-Carthage 是去中心化的依赖管理工具，安装依赖时不需要去中心仓库获取 CocoaPods 所有依赖的索引，节省 ...
-        
-      </div>
-      <a class="more" href="/2018/02/12/carthage/">Read more</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2018/01/29/php学习遇到问题集锦/">No application encryption key has been specified.</a>
-      </h2>
-      <p class="article-date">January 29, 2018</p>
-      
-        
-  <a href="/tags#PHP" >
-    <span class="tag-code">PHP</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          环境：php7.1.10laravel5.5出现：
-解决：在根目录下执行：
-1php artisan key:generate
-终端打印：1Application key [base64:LvcrejzLdgyaqyCDVQI/fUyUd6Ktf/JAL1szXdGiu30=] set su ...
-        
-      </div>
-      <a class="more" href="/2018/01/29/php学习遇到问题集锦/">Read more</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2017/12/14/phpstudy环境安装配置SSL证书方法/">phpstudy环境安装配置SSL证书方法</a>
-      </h2>
-      <p class="article-date">December 14, 2017</p>
-      
-        
-  <a href="/tags#服务器" >
-    <span class="tag-code">服务器</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          phpstudy环境下如何安装配置SSL证书?有很多集成式的web服务器无法按照一般站点的配置来部署ssl证书，本文以集成式phpstudye为例(apache+mysql)，为大家介绍phpstudy环境安装配置SSL证书方法。
-
-首先，确保你的apache编译了ssl模块，这是支持ssl ...
-        
-      </div>
-      <a class="more" href="/2017/12/14/phpstudy环境安装配置SSL证书方法/">Read more</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2017/11/11/升级xcode9-项目而无法调试/">升级xcode9,项目而无法调试</a>
-      </h2>
-      <p class="article-date">November 11, 2017</p>
-      
-        
-  <a href="/tags#Xcode调试" >
-    <span class="tag-code">Xcode调试</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          之前xcode版本调试都是ok的
-123456789101112131415161718192021p.p1 &#123;margin: 0.0px 0.0px 0.0px 12.0px; text-indent: -12.0px; font: 11.0px Menlo&#125;p.p2  ...
-        
-      </div>
-      <a class="more" href="/2017/11/11/升级xcode9-项目而无法调试/">Read more</a>
-    </article>
-  
-
-  
-    <div class="guide-pager">
-  
-    <a href="/"><span class="page-arrow">← </span>Prev</a>
-  
-  
-    <a href="/page/3/">Next<span class="page-arrow"> →</span></a>
-  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hack</span>
 </div>
-  
-</main>
 
 
-    <div class="scroll-top">
-  <span class="arrow-icon"></span>
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
-    <footer class="app-footer">
-  <p class="copyright">
-    &copy; 2018 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
-    <br>
-    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
-  </p>
-</footer>
 
-<script>
-  function async(u, c) {
-    var d = document, t = 'script',
-      o = d.createElement(t),
-      s = d.getElementsByTagName(t)[0];
-    o.src = u;
-    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-    s.parentNode.insertBefore(o, s);
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
   }
 </script>
-<script>
-  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
-    FastClick.attach(document.body);
-  })
-</script>
 
-<script>
-  var hasLine = 'true';
-  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
-    $('figure pre').each(function(i, block) {
-      var figure = $(this).parents('figure');
-      if (hasLine === 'false') {
-        figure.find('.gutter').hide();
-      }
-      var lang = figure.attr('class').split(' ')[1] || 'code';
-      var codeHtml = $(this).html();
-      var codeTag = document.createElement('code');
-      codeTag.className = lang;
-      codeTag.innerHTML = codeHtml;
-      $(this).attr('class', '').empty().html(codeTag);
-      figure.attr('data-lang', lang.toUpperCase());
-      hljs.highlightBlock(block);
-    });
-  })
-</script>
-<!-- Baidu Tongji -->
 
-<script src="/js/script.js"></script>
-  </body>
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
 </html>

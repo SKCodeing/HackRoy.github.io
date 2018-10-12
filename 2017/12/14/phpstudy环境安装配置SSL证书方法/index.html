@@ -1,153 +1,338 @@
 <!DOCTYPE html>
-<html>
-  <head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-  <meta name="description" content="an iOS And Mac OS dev">
-  <meta name="keyword" content="hexo-theme, vuejs">
-  
-    <link rel="shortcut icon" href="/css/images/logo.png">
-  
-  <title>
-    
-      phpstudy环境安装配置SSL证书方法 | Hack&#39;Blog
-    
-  </title>
-  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
-  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css">
-<link rel="stylesheet" href="/css/plugins/gitment.css">
-  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
-  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
-  <script src="/js/qrious.js"></script>
-<script src="/js/gitment.js"></script>
-  
-  
-    <!-- MathJax support START -->
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
 
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <!-- MathJax support END -->
+
+
   
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="服务器," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="phpstudy环境下如何安装配置SSL证书?有很多集成式的web服务器无法按照一般站点的配置来部署ssl证书，本文以集成式phpstudye为例(apache+mysql)，为大家介绍phpstudy环境安装配置SSL证书方法。  首先，确保你的apache编译了ssl模块，这是支持ssl证书必要的条件(如果没有，请编译,打开phpstudy——设置——PHP模块扩展——php-openssl前">
+<meta name="keywords" content="服务器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="phpstudy环境安装配置SSL证书方法">
+<meta property="og:url" content="http://yoursite.com/2017/12/14/phpstudy环境安装配置SSL证书方法/index.html">
+<meta property="og:site_name" content="Hack&#39;Blog">
+<meta property="og:description" content="phpstudy环境下如何安装配置SSL证书?有很多集成式的web服务器无法按照一般站点的配置来部署ssl证书，本文以集成式phpstudye为例(apache+mysql)，为大家介绍phpstudy环境安装配置SSL证书方法。  首先，确保你的apache编译了ssl模块，这是支持ssl证书必要的条件(如果没有，请编译,打开phpstudy——设置——PHP模块扩展——php-openssl前">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://www.wosign.com/faq/images/phpstudy2016.jpg">
+<meta property="og:updated_time" content="2018-02-27T08:22:51.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="phpstudy环境安装配置SSL证书方法">
+<meta name="twitter:description" content="phpstudy环境下如何安装配置SSL证书?有很多集成式的web服务器无法按照一般站点的配置来部署ssl证书，本文以集成式phpstudye为例(apache+mysql)，为大家介绍phpstudy环境安装配置SSL证书方法。  首先，确保你的apache编译了ssl模块，这是支持ssl证书必要的条件(如果没有，请编译,打开phpstudy——设置——PHP模块扩展——php-openssl前">
+<meta name="twitter:image" content="https://www.wosign.com/faq/images/phpstudy2016.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/12/14/phpstudy环境安装配置SSL证书方法/"/>
+
+
+
+
+
+  <title>phpstudy环境安装配置SSL证书方法 | Hack'Blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 </head>
-<div class="wechat-share">
-  <img src="/css/images/logo.png" />
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hack'Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">iOS And Mac OS dev</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
-  <body>
-    <header class="header fixed-header">
-  <div class="header-container">
-    <a class="home-link" href="/">
-      <div class="logo"></div>
-      <span>Hack'Blog</span>
-    </a>
-    <ul class="right-list">
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
       
-        <li class="list-item">
-          
-            <a href="/" class="item-link">Home</a>
-          
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
         </li>
       
-        <li class="list-item">
-          
-            <a href="/tags/" class="item-link">Tags</a>
-          
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
         </li>
       
-        <li class="list-item">
-          
-            <a href="/archives/" class="item-link">Archives</a>
-          
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
         </li>
       
-        <li class="list-item">
-          
-            <a href="/project/" class="item-link">Projects</a>
-          
-        </li>
-      
-        <li class="list-item">
-          
-            <a href="/about/" class="item-link">About</a>
-          
-        </li>
+
       
     </ul>
-    <div class="menu">
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </div>
-    <div class="menu-mask">
-      <ul class="menu-list">
-        
-          <li class="menu-item">
-            
-              <a href="/" class="menu-link">Home</a>
-            
-          </li>
-        
-          <li class="menu-item">
-            
-              <a href="/tags/" class="menu-link">Tags</a>
-            
-          </li>
-        
-          <li class="menu-item">
-            
-              <a href="/archives/" class="menu-link">Archives</a>
-            
-          </li>
-        
-          <li class="menu-item">
-            
-              <a href="/project/" class="menu-link">Projects</a>
-            
-          </li>
-        
-          <li class="menu-item">
-            
-              <a href="/about/" class="menu-link">About</a>
-            
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-</header>
+  
 
-    <div id="article-banner">
-  <h2>phpstudy环境安装配置SSL证书方法</h2>
-  <p class="post-date">2017-12-14</p>
-  <div class="arrow-down">
-    <a href="javascript:;"></a>
-  </div>
-</div>
-<main class="app-body flex-box">
-  <!-- Article START -->
-  <article class="post-article">
-    <section class="markdown-content"><p>phpstudy环境下如何安装配置SSL证书?有很多集成式的web服务器无法按照一般站点的配置来部署ssl证书，本文以集成式phpstudye为例(apache+mysql)，为大家介绍phpstudy环境安装配置SSL证书方法。</p>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/14/phpstudy环境安装配置SSL证书方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hack">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hack'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">phpstudy环境安装配置SSL证书方法</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-14T17:28:35+08:00">
+                2017-12-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>phpstudy环境下如何安装配置SSL证书?有很多集成式的web服务器无法按照一般站点的配置来部署ssl证书，本文以集成式phpstudye为例(apache+mysql)，为大家介绍phpstudy环境安装配置SSL证书方法。</p>
 <p><img src="https://www.wosign.com/faq/images/phpstudy2016.jpg" alt=""></p>
 <p>首先，确保你的apache编译了ssl模块，这是支持ssl证书必要的条件(如果没有，请编译,打开phpstudy——设置——PHP模块扩展——php-openssl前面勾选上)。</p>
 <p>第一：进入到apache目录下，httpd.conf找到#LoadModule ssl_module modules/mod_ssl.so，去掉前面的注释符，使得ssl模块生效(如果该模块已去掉注释，请不用操作)。</p>
@@ -166,236 +351,337 @@
 <p>第四，apache正常重启后，在浏览器里面输入<a href="https://yourdomain.com就能看到安全锁出来啦。" target="_blank" rel="noopener">https://yourdomain.com就能看到安全锁出来啦。</a></p>
 <p>第五，备份好您的SSL证书!</p>
 <p>以上就是phpstudy环境安装配置SSL证书方法，大家在部署的时候尽量找准自己的apache下的路径，上面的仅供参考!另，Linux下的环境同windows配置一样。</p>
-</section>
-    <!-- Tags START -->
-    
-      <div class="tags">
-        <span>Tags:</span>
-        
-  <a href="/tags#服务器" >
-    <span class="tag-code">服务器</span>
-  </a>
 
-      </div>
-    
-    <!-- Tags END -->
-    <!-- NAV START -->
-    
-  <div class="nav-container">
-    <!-- reverse left and right to put prev and next in a more logic postition -->
-    
-      <a class="nav-left" href="/2017/11/11/升级xcode9-项目而无法调试/">
-        <span class="nav-arrow">← </span>
-        
-          升级xcode9,项目而无法调试
-        
-      </a>
+      
+    </div>
     
     
-      <a class="nav-right" href="/2018/01/29/php学习遇到问题集锦/">
-        
-          No application encryption key has been specified.
-        
-        <span class="nav-arrow"> →</span>
-      </a>
     
-  </div>
 
-    <!-- NAV END -->
-    <!-- 打赏 START -->
     
-      <div class="money-like">
-        <div class="reward-btn">
-          赏
-          <span class="money-code">
-            <span class="alipay-code">
-              <div class="code-image"></div>
-              <b>使用支付宝打赏</b>
-            </span>
-            <span class="wechat-code">
-              <div class="code-image"></div>
-              <b>使用微信打赏</b>
-            </span>
-          </span>
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/服务器/" rel="tag"># 服务器</a>
+          
         </div>
-        <p class="notice">若你觉得我的文章对你有帮助，欢迎点击上方按钮对我打赏</p>
-      </div>
-    
-    <!-- 打赏 END -->
-    <!-- 二维码 START -->
-    
-      <div class="qrcode">
-        <canvas id="share-qrcode"></canvas>
-        <p class="notice">扫描二维码，分享此文章</p>
-      </div>
-    
-    <!-- 二维码 END -->
-    
-      <!-- Gitment START -->
-      <div id="comments"></div>
-      <!-- Gitment END -->
-    
-  </article>
-  <!-- Article END -->
-  <!-- Catalog START -->
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/11/升级xcode9-项目而无法调试/" rel="next" title="升级xcode9,项目而无法调试">
+                <i class="fa fa-chevron-left"></i> 升级xcode9,项目而无法调试
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/29/php学习遇到问题集锦/" rel="prev" title="No application encryption key has been specified.">
+                No application encryption key has been specified. <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
   
-    <aside class="catalog-container">
-  <div class="toc-main">
-    <strong class="toc-title">Catalog</strong>
-    
-      <ol class="nav">none</ol>
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
     
   </div>
-</aside>
-  
-  <!-- Catalog END -->
-</main>
 
-<script>
-  (function () {
-    var url = 'http://yoursite.com/2017/12/14/phpstudy环境安装配置SSL证书方法/';
-    var banner = ''
-    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
-      $('#article-banner').css({
-        'background-image': 'url(' + banner + ')'
-      })
-    } else {
-      $('#article-banner').geopattern(url)
-    }
-    $('.header').removeClass('fixed-header')
 
-     // error image
-    $(".markdown-content img").on('error', function() {
-      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
-      $(this).css({
-        'cursor': 'default'
-      })
-    })
-
-    // zoom image
-    $(".markdown-content img").on('click', function() {
-      var src = $(this).attr('src')
-      if (src !== 'http://file.muyutech.com/error-img.png') {
-        var imageW = $(this).width()
-        var imageH = $(this).height()
+        </div>
         
-        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
-        zoom = zoom < 1 ? 1 : zoom
-        zoom = zoom > 2 ? 2 : zoom
-        var transY = (($(window).height() - imageH) / 2).toFixed(2)
-
-        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
-        $('.image-view-wrap').addClass('wrap-active')
-        $('.image-view-wrap img').css({
-          'width': `${imageW}`,
-          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
-        })
-        $('html').css('overflow', 'hidden')
-
-        $('.image-view-wrap').on('click', function() {
-          $(this).remove()
-          $('html').attr('style', '')
-        })
-      }
-    })
-
-    // qrcode
-    var qr = new QRious({
-      element: document.getElementById('share-qrcode'),
-      value: document.location.href
-    });
-
-    // gitment
-    var gitmentConfig = "HackRoy";
-    if (gitmentConfig !== 'undefined') {
-      var gitment = new Gitment({
-        id: "phpstudy环境安装配置SSL证书方法",
-        owner: "HackRoy",
-        repo: "github.com/HackRoy/HackRoy.github.io",
-        oauth: {
-          client_id: "aa6488edb70ee84134b3",
-          client_secret: "04d3bedc8d85293bc711c1817e0544cbdf14b809"
-        },
-        theme: {
-          render(state, instance) {
-            const container = document.createElement('div')
-            container.lang = "en-US"
-            container.className = 'gitment-container gitment-root-container'
-            container.appendChild(instance.renderHeader(state, instance))
-            container.appendChild(instance.renderEditor(state, instance))
-            container.appendChild(instance.renderComments(state, instance))
-            container.appendChild(instance.renderFooter(state, instance))
-            return container;
-          }
-        }
-      })
-      gitment.render(document.getElementById('comments'))
-    }
-  })();
-</script>
-
-<script>
-  var disqus_shortname = '';
+          
   
-  var disqus_url = 'http://yoursite.com/2017/12/14/phpstudy环境安装配置SSL证书方法/';
-  
-  (function(){
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//go.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
-</script>
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
 
-    <div class="scroll-top">
-  <span class="arrow-icon"></span>
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Hack" />
+          <p class="site-author-name" itemprop="name">Hack</p>
+           
+              <p class="site-description motion-element" itemprop="description">an iOS And Mac OS dev</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">40</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">categories</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">tags</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hack</span>
 </div>
-    <footer class="app-footer">
-  <p class="copyright">
-    &copy; 2018 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
-    <br>
-    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
-  </p>
-</footer>
 
-<script>
-  function async(u, c) {
-    var d = document, t = 'script',
-      o = d.createElement(t),
-      s = d.getElementsByTagName(t)[0];
-    o.src = u;
-    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-    s.parentNode.insertBefore(o, s);
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
   }
 </script>
-<script>
-  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
-    FastClick.attach(document.body);
-  })
-</script>
 
-<script>
-  var hasLine = 'true';
-  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
-    $('figure pre').each(function(i, block) {
-      var figure = $(this).parents('figure');
-      if (hasLine === 'false') {
-        figure.find('.gutter').hide();
-      }
-      var lang = figure.attr('class').split(' ')[1] || 'code';
-      var codeHtml = $(this).html();
-      var codeTag = document.createElement('code');
-      codeTag.className = lang;
-      codeTag.innerHTML = codeHtml;
-      $(this).attr('class', '').empty().html(codeTag);
-      figure.attr('data-lang', lang.toUpperCase());
-      hljs.highlightBlock(block);
-    });
-  })
-</script>
-<!-- Baidu Tongji -->
 
-<script src="/js/script.js"></script>
-  </body>
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
 </html>
