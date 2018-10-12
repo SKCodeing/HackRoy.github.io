@@ -1,1 +1,453 @@
-<!DOCTYPE html><html class="index" lang="zh-CN"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="author" content="Hack"><meta name="description" content="an iOS And Mac OS dev"><link rel="alternative" href="/atom.xml" title="Hack'Blog" type="application/atom+xml"><link rel="icon" href="/favicon.png"><title>Hack'Blog</title><link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css"><!--[if lt IE 9]><script>(function(a,b){a="abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output progress section summary template time video".split(" ");for(b=a.length-1;b>=0;b--)document.createElement(a[b])})()</script><![endif]--><script src="/js/jquery-3.1.1.min.js"></script><script src="/js/fancybox/jquery.fancybox.min.js"></script></head><body>   <div class="hide" id="particles-oli-wrapper"></div><div class="index-wrapper"><header class="head index hide"><h1 class="head-title u-fl">Hack'Blog</h1><nav class="head-nav u-fr"><ul class="head-nav__list"><li class="head-nav__item"><a class="head-nav__link" href="/archives">Archives（目录）</a></li></ul></nav></header></div><script src="/js/particles.min.js"></script><script src="/js/particles.oli.js"></script></body></html>
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="an iOS And Mac OS dev">
+  <meta name="keyword" content="hexo-theme, vuejs">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      Hack&#39;Blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/plugins/gitment.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="/js/qrious.js"></script>
+<script src="/js/gitment.js"></script>
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Hack'Blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link active">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">Projects</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link mobile-active">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">Projects</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <main class="app-body">
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2017/10/12/打包报错问题解决/">iOS自动化打包报错问题解决</a>
+      </h2>
+      <p class="article-date">October 12, 2017</p>
+      
+        
+  <a href="/tags#自动化" >
+    <span class="tag-code">自动化</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          
+这几天研究下iOS自动化打包遇到一些问题，在此记录一下😉
+
+
+详细内容请阅读全文😆
+
+问题112345678910111213141516xcodebuild -workspace HuLaVenue.xcworkspace -scheme HLCG -configuration De ...
+        
+      </div>
+      <a class="more" href="/2017/10/12/打包报错问题解决/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2017/10/11/Xcode控制台不打印NSLog/">Xcode控制台不打印NSLog</a>
+      </h2>
+      <p class="article-date">October 11, 2017</p>
+      
+        
+  <a href="/tags#iOS" >
+    <span class="tag-code">iOS</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          最近Xcode8发布了，发现Xcode8运行起来App后控制台打印出来一堆乱七八糟的Log，解决方法是
+Product -&gt; Scheme -&gt; Edit Scheme -&gt; Run -&gt; Arguments -&gt; Environment Variables
+增 ...
+        
+      </div>
+      <a class="more" href="/2017/10/11/Xcode控制台不打印NSLog/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2017/10/11/iPhone开发之：iPhoneX、iOS11适配/">iPhone开发之：iPhoneX、iOS11适配</a>
+      </h2>
+      <p class="article-date">October 11, 2017</p>
+      
+        
+  <a href="/tags#iOS" >
+    <span class="tag-code">iOS</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          iPhoneX屏幕尺寸相关变化123451.1 高度增加了145pt，变成812pt.1.2 屏幕圆角显示，注意至少留10pt边距。1.3 状态栏高度由20pt变成44pt，留意这个距离就能避开“刘海”的尴尬，相应的导航栏以上变化64-88。1.4 底部工具栏需要为home indicato ...
+        
+      </div>
+      <a class="more" href="/2017/10/11/iPhone开发之：iPhoneX、iOS11适配/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2017/10/10/系列之一/">iOS 开发RunTime系列之一</a>
+      </h2>
+      <p class="article-date">October 10, 2017</p>
+      
+        
+  <a href="/tags#RunTime" >
+    <span class="tag-code">RunTime</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          前言
+runtime是什么对于初学者，runtime如尼斯湖水怪一样，只存在于传说中，对于开发者，runtime是做好iOS开发，或是深刻掌握Objective C所必需理解的东西。大公司面试都喜欢问：你对runtime熟悉吗？并不是runtime在开发中经常用到，我认为它是OC最核心的部分 ...
+        
+      </div>
+      <a class="more" href="/2017/10/10/系列之一/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2017/10/09/通知是黑暗模式的设计吗？/">通知是黑暗模式的设计吗？</a>
+      </h2>
+      <p class="article-date">October 9, 2017</p>
+      
+        
+  <a href="/tags#PM" >
+    <span class="tag-code">PM</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          
+当每个APP都显示小红点时，你有没有感到有点奔溃。我曾经遇到过一次这种情况，这使我陷入沉思：通知到底是什么？它是另一种强迫用户甚至欺骗用户的设计模式吗？本文我将研究“假通知（pseudo-notification）”这种现象，并会得出未来如何设计通知的一些看法。
+
+
+###通知是什么？
+通 ...
+        
+      </div>
+      <a class="more" href="/2017/10/09/通知是黑暗模式的设计吗？/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2017/10/09/IT技术开发人员35岁之前应该做的十件事/">IT技术开发人员35岁之前应该做的十件事</a>
+      </h2>
+      <p class="article-date">October 9, 2017</p>
+      
+        
+  <a href="/tags#鸡汤" >
+    <span class="tag-code">鸡汤</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          作 者：蒋至乙
+原文出处：http://www.cnblogs.com/jackchiang
+　第一，学会本行业所需要的一切知识并有所发展。已故零件大王布鲁丹在他35岁时，已经成为零件行业的领袖，并且组建了年收入达千万美元的海湾与西部工业公司。每个人在年轻时都可能有过彻夜不眠、刻苦攻读，这在 ...
+        
+      </div>
+      <a class="more" href="/2017/10/09/IT技术开发人员35岁之前应该做的十件事/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2017/10/09/iOS程序员简历模板/">iOS程序员简历模板</a>
+      </h2>
+      <p class="article-date">October 9, 2017</p>
+      
+        
+  <a href="/tags#简历模板" >
+    <span class="tag-code">简历模板</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          iOS程序员简历模板本简历模板由国内首家互联网人才拍卖网站「 JobDeer.com 」提供。
+（括号里的是我们的顾问编写的说明，建议在简历书写完成后统一删除）
+先讲讲怎样才是一份好的技术简历首先，一份好的简历不光说明事实，更通过FAB模式来增强其说服力。
+
+Feature：是什么
+Adva ...
+        
+      </div>
+      <a class="more" href="/2017/10/09/iOS程序员简历模板/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2017/09/29/hexo常用命令笔记/">Hexo常用命令笔记</a>
+      </h2>
+      <p class="article-date">September 29, 2017</p>
+      
+        
+  <a href="/tags#hexo" >
+    <span class="tag-code">hexo</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          123npm install hexo -g #安装  npm update hexo -g #升级  hexo init #初始化
+
+简写
+
+12345hexo n &quot;我的博客&quot; == hexo new &quot;我的博客&quot; #新建文章hexo p == h ...
+        
+      </div>
+      <a class="more" href="/2017/09/29/hexo常用命令笔记/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2017/09/28/精品文献合集/">精品文献合集</a>
+      </h2>
+      <p class="article-date">September 28, 2017</p>
+      
+        
+  <a href="/tags#iOS" >
+    <span class="tag-code">iOS</span>
+  </a>
+
+  <a href="/tags#Python" >
+    <span class="tag-code">Python</span>
+  </a>
+
+  <a href="/tags#Android" >
+    <span class="tag-code">Android</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          
+掘金翻译计划 Android
+
+
+[译] Activity 的正确打开方式 (Liz 翻译)
+[译] 如何创建高度模块化的 Android 应用 (DeadLion 翻译)
+[译] 使用强大的 Mockito 测试框架来测试你的代码 (edvardhua 翻译)
+[译] Android 中 ...
+        
+      </div>
+      <a class="more" href="/2017/09/28/精品文献合集/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2017/09/28/注册、登录和token的安全之道/">注册、登录和token的安全之道</a>
+      </h2>
+      <p class="article-date">September 28, 2017</p>
+      
+        
+  <a href="/tags#PHP" >
+    <span class="tag-code">PHP</span>
+  </a>
+
+  <a href="/tags#Interface" >
+    <span class="tag-code">Interface</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          <blockquote>
+<p>注册、登录和 token 的安全之道</p>
+</blockquote>
+<p>最近想要做一个小项目，由于前后都是一个人，在登录和注册的接口上就被卡住了，因此想登录、注册、口令之间的关系，使用 PHP 实现登录注册模块，和访问口令。</p>
+        
+      </div>
+      <a class="more" href="/2017/09/28/注册、登录和token的安全之道/">Read more</a>
+    </article>
+  
+
+  
+    <div class="guide-pager">
+  
+    <a href="/page/3/"><span class="page-arrow">← </span>Prev</a>
+  
+  
+    <a class="unvisible" href="/">Next <span class="page-arrow">→</span></a>
+  
+</div>
+  
+</main>
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2018 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

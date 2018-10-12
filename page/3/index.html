@@ -1,1 +1,406 @@
-<!DOCTYPE html><html class="index" lang="zh-CN"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="author" content="Hack"><meta name="description" content="an iOS And Mac OS dev"><link rel="alternative" href="/atom.xml" title="Hack'Blog" type="application/atom+xml"><link rel="icon" href="/favicon.png"><title>Hack'Blog</title><link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css"><!--[if lt IE 9]><script>(function(a,b){a="abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output progress section summary template time video".split(" ");for(b=a.length-1;b>=0;b--)document.createElement(a[b])})()</script><![endif]--><script src="/js/jquery-3.1.1.min.js"></script><script src="/js/fancybox/jquery.fancybox.min.js"></script></head><body>   <div class="hide" id="particles-oli-wrapper"></div><div class="index-wrapper"><header class="head index hide"><h1 class="head-title u-fl">Hack'Blog</h1><nav class="head-nav u-fr"><ul class="head-nav__list"><li class="head-nav__item"><a class="head-nav__link" href="/archives">Archives（目录）</a></li></ul></nav></header></div><script src="/js/particles.min.js"></script><script src="/js/particles.oli.js"></script></body></html>
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="an iOS And Mac OS dev">
+  <meta name="keyword" content="hexo-theme, vuejs">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      Hack&#39;Blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/plugins/gitment.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="/js/qrious.js"></script>
+<script src="/js/gitment.js"></script>
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Hack'Blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link active">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">Projects</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link mobile-active">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">Projects</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <main class="app-body">
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2017/11/10/ERROR/">ERROR ITMS-90034:"Missing or invalid signature.</a>
+      </h2>
+      <p class="article-date">November 10, 2017</p>
+      
+      <div class="article-summary">
+        
+          
+上传AppStore遇到的奇葩问题之ERROR ITMS-90034: “Missing or invalid signature.
+
+今天上传AppStore时遇到了ERROR ITMS-90034: “Missing or invalid signature. 这个错误,找了一些资料也 ...
+        
+      </div>
+      <a class="more" href="/2017/11/10/ERROR/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2017/11/04/学习资料备忘录/">学习资料备忘录</a>
+      </h2>
+      <p class="article-date">November 4, 2017</p>
+      
+      <div class="article-summary">
+        
+          博客天猫无线-基础业务团队主力维护的博客 ：苹果核
+LuaViewSDK. LuaViewSDK是什么？
+LuaViewSDK 主要解决两个问题
+相同的业务逻辑需要在 iOS 和 Android 平台各实现一次，除了成本还有体验的细微差别，是否有一种方案可以 Write once run b ...
+        
+      </div>
+      <a class="more" href="/2017/11/04/学习资料备忘录/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2017/11/03/一个iOS程序员的BAT面试全记录（内含百度-网易-阿里面试真题）/">一个iOS程序员的BAT面试全记录（内含百度+网易+阿里面试真题）</a>
+      </h2>
+      <p class="article-date">November 3, 2017</p>
+      
+      <div class="article-summary">
+        
+          
+作为 iOS 开发者，虽然 Swift 已经发布了快两年，但是大公司转向 Swift 的动作还不明显，所以 Objective-C 几乎是必备项，Swift 都不一定能算是加分项。iOS 方面的知识也必不可少，虽然招聘信息上写着如果基础扎实，零 iOS 基础也可以，但是现实往往是比较残酷的 ...
+        
+      </div>
+      <a class="more" href="/2017/11/03/一个iOS程序员的BAT面试全记录（内含百度-网易-阿里面试真题）/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2017/11/02/获取控件相对屏幕的坐标位置/">获取控件相对屏幕的坐标位置</a>
+      </h2>
+      <p class="article-date">November 2, 2017</p>
+      
+        
+  <a href="/tags#iOS" >
+    <span class="tag-code">iOS</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          需求：需要获取的对象为view1，则该视图相对屏幕的位置可使用下面方法实现：
+12UIWindow * window  = [[[UIApplication sharedApplication] delegate] window];CGRect  rect       = [view1 co ...
+        
+      </div>
+      <a class="more" href="/2017/11/02/获取控件相对屏幕的坐标位置/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2017/11/02/如何复制NSView、UIButton/">如何复制NSView、UIButton</a>
+      </h2>
+      <p class="article-date">November 2, 2017</p>
+      
+        
+  <a href="/tags#ios" >
+    <span class="tag-code">ios</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          场景:
+
+一般我们使用ib设计器设计好一个NSView之后(通常用NSView组合多个控件), 需要复制一个NSView来重新布局显示.
+
+如果调用[view copy] 消息的话会抛异常.
+1[XXView copyWithZone:]: unrecognized selector sen ...
+        
+      </div>
+      <a class="more" href="/2017/11/02/如何复制NSView、UIButton/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2017/11/02/hexo的环境搭建/">关于HEXO安装失败的解决方法</a>
+      </h2>
+      <p class="article-date">November 2, 2017</p>
+      
+        
+  <a href="/tags#hexo" >
+    <span class="tag-code">hexo</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          目前国内npm源有问题；所以键入如下代码即可安装成功:
+12npm install -g cnpm --registry=https://registry.npm.taobao.orgcnpm install hexo-cli -g
+        
+      </div>
+      <a class="more" href="/2017/11/02/hexo的环境搭建/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2017/10/27/面试题/">iOS 面试题收藏录</a>
+      </h2>
+      <p class="article-date">October 27, 2017</p>
+      
+        
+  <a href="/tags#面试" >
+    <span class="tag-code">面试</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          由于很多同学在面试中总是被噱，群里很多同学都要求整理一份经典的 iOS 面试题，所以开了一份面试题收藏录，专门收藏 iOS 面试的经典题目，希望能够给各位 iOS coder 一些帮助，也祝大家能够早点面试成功，顺利进入自己理想的公司！
+###1、把 “www.zhidao.baidu.co ...
+        
+      </div>
+      <a class="more" href="/2017/10/27/面试题/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2017/10/19/Xcode创建自定义代码块/">Xcode创建自定义代码块</a>
+      </h2>
+      <p class="article-date">October 19, 2017</p>
+      
+        
+  <a href="/tags#Xcode" >
+    <span class="tag-code">Xcode</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          由于项目、所用语言或者编码习惯的差别，不同的程序员习惯用的代码片段也不尽相同，这就有了自定义代码片段的需求，好在Xcode是支持该功能的。他的好处是使程序员以最快的速度输入很常用的代码片段，提高编程效率。
+该功能是从Xcode4开始引入的。在Xcode中的位置如下图所示：
+如上图，右边系统就 ...
+        
+      </div>
+      <a class="more" href="/2017/10/19/Xcode创建自定义代码块/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2017/10/17/［基本解决］使用iOS模拟器iPhone 6结果编译出错：file was built for i386 which is not the architecture being linked x86_64/">使用iOS模拟器iPhone 6结果编译出错：file was built for i386 which is not the architecture being linked x86_64</a>
+      </h2>
+      <p class="article-date">October 17, 2017</p>
+      
+        
+  <a href="/tags#Xcode编译警告" >
+    <span class="tag-code">Xcode编译警告</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          Build Settings-》Build Active Architecture Only－》Debug的Yes改为No结果编译出现警告了：1Target ‘Pods-QorosSales’ of project ‘Pods’ was rejected as an implicit dep ...
+        
+      </div>
+      <a class="more" href="/2017/10/17/［基本解决］使用iOS模拟器iPhone 6结果编译出错：file was built for i386 which is not the architecture being linked x86_64/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2017/10/17/ library not found for -lPods的问题/">解决ld:library not found for -lPods的问题</a>
+      </h2>
+      <p class="article-date">October 17, 2017</p>
+      
+        
+  <a href="/tags#Pods的问题" >
+    <span class="tag-code">Pods的问题</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          最近计划把公司的项目重构一下，第一步就是引入CocoaPods(以下简称pods)来管理第三方库。但是这第一步就不是太顺利。首先建好Podfile，并在命令行中输入pod install，结果报以下错误
+12345[!] The XXX target overrides the &apos; ...
+        
+      </div>
+      <a class="more" href="/2017/10/17/ library not found for -lPods的问题/">Read more</a>
+    </article>
+  
+
+  
+    <div class="guide-pager">
+  
+    <a href="/page/2/"><span class="page-arrow">← </span>Prev</a>
+  
+  
+    <a href="/page/4/">Next<span class="page-arrow"> →</span></a>
+  
+</div>
+  
+</main>
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2018 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

@@ -1,4 +1,153 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="author" content="Hack"><meta name="description" content="an iOS And Mac OS dev"><link rel="alternative" href="/atom.xml" title="Hack'Blog" type="application/atom+xml"><link rel="icon" href="/favicon.png"><title>iOS 面试题收藏录 - Hack'Blog</title><link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css"><!--[if lt IE 9]><script>(function(a,b){a="abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output progress section summary template time video".split(" ");for(b=a.length-1;b>=0;b--)document.createElement(a[b])})()</script><![endif]--><script src="/js/jquery-3.1.1.min.js"></script><script src="/js/fancybox/jquery.fancybox.min.js"></script></head><body style="opacity:0"><header class="head"><h1 class="head-title u-fl"><a href="/">Hack'Blog</a></h1><nav class="head-nav u-fr"><ul class="head-nav__list"><li class="head-nav__item"><a class="head-nav__link" href="/archives">Archives（目录）</a></li></ul></nav></header><main class="main"><article class="post"><header class="post__head"> <time class="post__time" datetime="2017-10-27T06:24:43.000Z">October 27, 2017</time><h1 class="post__title"><a href="/2017/10/27/面试题/">iOS 面试题收藏录</a></h1><div class="post__main echo"><p>由于很多同学在面试中总是被噱，群里很多同学都要求整理一份经典的 iOS 面试题，所以开了一份面试题收藏录，专门收藏 iOS 面试的经典题目，希望能够给各位 iOS coder 一些帮助，也祝大家能够早点面试成功，顺利进入自己理想的公司！</p>
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="an iOS And Mac OS dev">
+  <meta name="keyword" content="hexo-theme, vuejs">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      iOS 面试题收藏录 | Hack&#39;Blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/plugins/gitment.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="/js/qrious.js"></script>
+<script src="/js/gitment.js"></script>
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Hack'Blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">Projects</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">Projects</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>iOS 面试题收藏录</h2>
+  <p class="post-date">2017-10-27</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><p>由于很多同学在面试中总是被噱，群里很多同学都要求整理一份经典的 iOS 面试题，所以开了一份面试题收藏录，专门收藏 iOS 面试的经典题目，希望能够给各位 iOS coder 一些帮助，也祝大家能够早点面试成功，顺利进入自己理想的公司！</p>
 <p>###1、把 “<a href="http://www.zhidao.baidu.com&quot;" target="_blank" rel="noopener">www.zhidao.baidu.com&quot;</a> 这样的字符串改成 “com/baidu/zhidao/www”###</p>
 <p>此题目来自百度的面试题，博爱不才，用了几分钟整理了答案，如果有问题，请及时联系本人更改，多谢</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> 题目：把 "www.zhidao.baidu.com" 这样的字符串改成 "com/baidu/zhidao/www"</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">- (<span class="keyword">void</span>)test1</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">NSString</span> *string1 = <span class="string">@"www.zhidao.baidu.com"</span>;</span><br><span class="line">    <span class="comment">// 1、根据小数点 '.' 拆分字符串成数组</span></span><br><span class="line">    <span class="built_in">NSArray</span> *stringArray = [string1 componentsSeparatedByString:<span class="string">@"."</span>];</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"拆分结果：%@"</span>, stringArray);</span><br><span class="line">    <span class="comment">// 2、数组倒叙排列</span></span><br><span class="line">    <span class="built_in">NSArray</span> *array = [[stringArray reverseObjectEnumerator] allObjects];</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"拆分结果2：%@"</span>, array);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 3、遍历倒叙后的数组，拼接 '/'</span></span><br><span class="line">    __block <span class="built_in">NSString</span> *string2 = <span class="string">@""</span>;</span><br><span class="line">    [array enumerateObjectsUsingBlock:^(<span class="built_in">NSString</span>  *_Nonnull obj, <span class="built_in">NSUInteger</span> idx, <span class="built_in">BOOL</span> * _Nonnull stop) &#123;</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">NSString</span> *str = obj;</span><br><span class="line">        <span class="comment">// 4、判断最后一位时，不要拼接 '/'</span></span><br><span class="line">        <span class="keyword">if</span> (idx != array.count<span class="number">-1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            str = [obj stringByAppendingString:<span class="string">@"/"</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        string2 = [string2 stringByAppendingString:str];</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"结果1：%@"</span>, string2);</span><br><span class="line">    &#125;];</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"最后结果：%@"</span>, string2);</span><br><span class="line">    <span class="comment">// 最后结果：com/baidu/zhidao/www</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 简单写法，感谢 群里 @哈尔滨-吴迪 大神提供的方案！</span></span><br><span class="line">- (<span class="keyword">void</span>)test2</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">NSString</span> *str = <span class="string">@"www.zhidao.baidu.com"</span>;</span><br><span class="line">    <span class="built_in">NSArray</span> *array = [str componentsSeparatedByString:<span class="string">@"."</span>];</span><br><span class="line">    <span class="built_in">NSArray</span> *resultArr = [[array reverseObjectEnumerator] allObjects];</span><br><span class="line">    <span class="built_in">NSString</span> *resultStr = [resultArr componentsJoinedByString:<span class="string">@"/"</span>];</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"最后结果：%@"</span>, resultStr);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">// swift 写法</span></span><br><span class="line">func test() -&gt; Void &#123;</span><br><span class="line">    let string1 = <span class="string">"www.zhidao.baidu.com"</span></span><br><span class="line">    let array = string1.components(separatedBy: <span class="string">"."</span>)</span><br><span class="line">    let resultArray = array.reversed().joined(separator: <span class="string">"/"</span>)</span><br><span class="line">        </span><br><span class="line">    print(<span class="string">"结果1：\(array)\n结果2：\(resultArray)"</span>);</span><br><span class="line">    <span class="comment">// 结果1：["www", "zhidao", "baidu", "com"]</span></span><br><span class="line">    <span class="comment">// 结果2：com/baidu/zhidao/www</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -12,4 +161,236 @@
 <p>所以，如果遇到此面试题，大家注意回答 跳转方式，不同的跳转方式执行顺序会不同！<br>详见 demo：【<a href="https://github.com/boai/iOS_PushPresentDemo】" target="_blank" rel="noopener">https://github.com/boai/iOS_PushPresentDemo】</a></p>
 <p>####3、使用 GCD 如何实现这个需求：A、B、C 三个任务并发，完成后执行任务 D（感谢群里@北京-QQ小冰 大神的答案）####</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)test</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"=== A ==="</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"=== B ==="</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"=== C ==="</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    dispatch_group_t group = dispatch_group_create();</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//    dispatch_group_async(group, dispatch_get_global_queue(0, 0), ^&#123;</span></span><br><span class="line">    <span class="comment">//        NSLog(@"=== 任务 D 完成 ===");</span></span><br><span class="line">    <span class="comment">//        NSLog(@"=== 任务 E 完成 ===");</span></span><br><span class="line">    <span class="comment">//        NSLog(@"=== 任务 F 完成 ===");</span></span><br><span class="line">    <span class="comment">//    &#125;);</span></span><br><span class="line">    <span class="comment">// 这里执行三次</span></span><br><span class="line">    <span class="built_in">dispatch_queue_t</span> aaa = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>);</span><br><span class="line">    dispatch_group_enter(group);</span><br><span class="line">    <span class="built_in">dispatch_async</span>(aaa,^&#123;</span><br><span class="line">        </span><br><span class="line">        dispatch_group_leave(group);</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"=== 任务 D 完成 ==="</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">dispatch_queue_t</span> bbb = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>);</span><br><span class="line">    dispatch_group_enter(group);</span><br><span class="line">    <span class="built_in">dispatch_async</span>(bbb,^&#123;</span><br><span class="line">        </span><br><span class="line">        dispatch_group_leave(group);</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"=== 任务 E 完成 ==="</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">dispatch_queue_t</span> ccc = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>);</span><br><span class="line">    dispatch_group_enter(group);</span><br><span class="line">    <span class="built_in">dispatch_async</span>(ccc,^&#123;</span><br><span class="line">        </span><br><span class="line">        dispatch_group_leave(group);</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"=== 任务 F 完成 ==="</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 三次结束</span></span><br><span class="line">    dispatch_group_notify(group, dispatch_get_main_queue(), ^&#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"=== 任务 M 完成 ==="</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//  打印结果：</span></span><br><span class="line"><span class="number">2017</span><span class="number">-10</span><span class="number">-26</span> <span class="number">16</span>:<span class="number">19</span>:<span class="number">07.898792</span>+<span class="number">0800</span> BAKit[<span class="number">3447</span>:<span class="number">1281688</span>] === 任务 D 完成 ===</span><br><span class="line"><span class="number">2017</span><span class="number">-10</span><span class="number">-26</span> <span class="number">16</span>:<span class="number">19</span>:<span class="number">07.898871</span>+<span class="number">0800</span> BAKit[<span class="number">3447</span>:<span class="number">1281688</span>] === 任务 E 完成 ===</span><br><span class="line"><span class="number">2017</span><span class="number">-10</span><span class="number">-26</span> <span class="number">16</span>:<span class="number">19</span>:<span class="number">07.898900</span>+<span class="number">0800</span> BAKit[<span class="number">3447</span>:<span class="number">1281633</span>] BAUIKitViewController：-[BAUIKitViewController ba_base_viewWillDisappear]</span><br><span class="line"><span class="number">2017</span><span class="number">-10</span><span class="number">-26</span> <span class="number">16</span>:<span class="number">19</span>:<span class="number">07.898914</span>+<span class="number">0800</span> BAKit[<span class="number">3447</span>:<span class="number">1281688</span>] === 任务 F 完成 ===</span><br><span class="line"><span class="number">2017</span><span class="number">-10</span><span class="number">-26</span> <span class="number">16</span>:<span class="number">19</span>:<span class="number">07.899002</span>+<span class="number">0800</span> BAKit[<span class="number">3447</span>:<span class="number">1281633</span>] BAKitVC_BAGridView：-[BAKitVC_BAGridView ba_base_viewWillAppear]</span><br><span class="line"><span class="number">2017</span><span class="number">-10</span><span class="number">-26</span> <span class="number">16</span>:<span class="number">19</span>:<span class="number">07.949885</span>+<span class="number">0800</span> BAKit[<span class="number">3447</span>:<span class="number">1281633</span>] === A ===</span><br><span class="line"><span class="number">2017</span><span class="number">-10</span><span class="number">-26</span> <span class="number">16</span>:<span class="number">19</span>:<span class="number">07.949950</span>+<span class="number">0800</span> BAKit[<span class="number">3447</span>:<span class="number">1281633</span>] === B ===</span><br><span class="line"><span class="number">2017</span><span class="number">-10</span><span class="number">-26</span> <span class="number">16</span>:<span class="number">19</span>:<span class="number">07.949961</span>+<span class="number">0800</span> BAKit[<span class="number">3447</span>:<span class="number">1281633</span>] === C ===</span><br><span class="line"><span class="number">2017</span><span class="number">-10</span><span class="number">-26</span> <span class="number">16</span>:<span class="number">19</span>:<span class="number">07.949985</span>+<span class="number">0800</span> BAKit[<span class="number">3447</span>:<span class="number">1281633</span>] === 任务 M 完成 ===</span><br></pre></td></tr></table></figure>
-</div></header><footer class="post__foot u-cf"><ul class="post__tag u-fl"><li class="post__tag__item"><a class="post__tag__link" href="/tags/面试/">面试</a></li></ul></footer></article><div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC8zMTEyNi83Njc1"><script>(function(d, s) {var j, e = d.getElementsByTagName(s)[0];if (typeof LivereTower === 'function') { return; } j = d.createElement(s);j.src = 'https://cdn-city.livere.com/js/embed.dist.js';j.async = true;e.parentNode.insertBefore(j, e);})(document, 'script');</script></div></main><footer class="foot"><div class="foot-copy">&copy; 2016-2018 Hack</div></footer><script src="/js/scroller.js"></script><script src="/js/main.js"></script></body></html>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#面试" >
+    <span class="tag-code">面试</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2017/10/19/Xcode创建自定义代码块/">
+        <span class="nav-arrow">← </span>
+        
+          Xcode创建自定义代码块
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2017/11/02/hexo的环境搭建/">
+        
+          关于HEXO安装失败的解决方法
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+      <div class="money-like">
+        <div class="reward-btn">
+          赏
+          <span class="money-code">
+            <span class="alipay-code">
+              <div class="code-image"></div>
+              <b>使用支付宝打赏</b>
+            </span>
+            <span class="wechat-code">
+              <div class="code-image"></div>
+              <b>使用微信打赏</b>
+            </span>
+          </span>
+        </div>
+        <p class="notice">若你觉得我的文章对你有帮助，欢迎点击上方按钮对我打赏</p>
+      </div>
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+      <div class="qrcode">
+        <canvas id="share-qrcode"></canvas>
+        <p class="notice">扫描二维码，分享此文章</p>
+      </div>
+    
+    <!-- 二维码 END -->
+    
+      <!-- Gitment START -->
+      <div id="comments"></div>
+      <!-- Gitment END -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="nav">none</ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2017/10/27/面试题/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+     // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+        
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+
+    // qrcode
+    var qr = new QRious({
+      element: document.getElementById('share-qrcode'),
+      value: document.location.href
+    });
+
+    // gitment
+    var gitmentConfig = "HackRoy";
+    if (gitmentConfig !== 'undefined') {
+      var gitment = new Gitment({
+        id: "iOS 面试题收藏录",
+        owner: "HackRoy",
+        repo: "github.com/HackRoy/HackRoy.github.io",
+        oauth: {
+          client_id: "aa6488edb70ee84134b3",
+          client_secret: "04d3bedc8d85293bc711c1817e0544cbdf14b809"
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement('div')
+            container.lang = "en-US"
+            container.className = 'gitment-container gitment-root-container'
+            container.appendChild(instance.renderHeader(state, instance))
+            container.appendChild(instance.renderEditor(state, instance))
+            container.appendChild(instance.renderComments(state, instance))
+            container.appendChild(instance.renderFooter(state, instance))
+            return container;
+          }
+        }
+      })
+      gitment.render(document.getElementById('comments'))
+    }
+  })();
+</script>
+
+<script>
+  var disqus_shortname = '';
+  
+  var disqus_url = 'http://yoursite.com/2017/10/27/面试题/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2018 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

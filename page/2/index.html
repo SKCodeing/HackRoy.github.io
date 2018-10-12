@@ -1,1 +1,425 @@
-<!DOCTYPE html><html class="index" lang="zh-CN"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="author" content="Hack"><meta name="description" content="an iOS And Mac OS dev"><link rel="alternative" href="/atom.xml" title="Hack'Blog" type="application/atom+xml"><link rel="icon" href="/favicon.png"><title>Hack'Blog</title><link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css"><!--[if lt IE 9]><script>(function(a,b){a="abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output progress section summary template time video".split(" ");for(b=a.length-1;b>=0;b--)document.createElement(a[b])})()</script><![endif]--><script src="/js/jquery-3.1.1.min.js"></script><script src="/js/fancybox/jquery.fancybox.min.js"></script></head><body>   <div class="hide" id="particles-oli-wrapper"></div><div class="index-wrapper"><header class="head index hide"><h1 class="head-title u-fl">Hack'Blog</h1><nav class="head-nav u-fr"><ul class="head-nav__list"><li class="head-nav__item"><a class="head-nav__link" href="/archives">Archives（目录）</a></li></ul></nav></header></div><script src="/js/particles.min.js"></script><script src="/js/particles.oli.js"></script></body></html>
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="an iOS And Mac OS dev">
+  <meta name="keyword" content="hexo-theme, vuejs">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      Hack&#39;Blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/plugins/gitment.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="/js/qrious.js"></script>
+<script src="/js/gitment.js"></script>
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Hack'Blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link active">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">Projects</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link mobile-active">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">Projects</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <main class="app-body">
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2018/03/14/个人简历/">个人简历</a>
+      </h2>
+      <p class="article-date">March 14, 2018</p>
+      
+      <div class="article-summary">
+        
+          个人信息
+姓名: 胡明涛
+性别: 男
+年龄: 27
+学校/学历: 江西师范大学软件工程/本科
+工作年限: 5年
+手机: 186-0198-2565
+邮箱: tommyyaphetshu@163.com  
+博客:  旧-新-简书 http://blog.csdn.net/hmt2013041 ...
+        
+      </div>
+      <a class="more" href="/2018/03/14/个人简历/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2018/02/27/hexo更换电脑，如何继续写博客/">hexo更换电脑，如何继续写博客</a>
+      </h2>
+      <p class="article-date">February 27, 2018</p>
+      
+      <div class="article-summary">
+        
+          1.将你原来电脑上已经配置好并生成的hexo目录拷到你的新电脑上，注意无需拷全部，只拷如下几个目录：12345_config.ymlpackage.jsonscaffolds/source/themes/
+将这些目录放到一个目录下，如：hexo／
+2.在你的新电脑上首先配置hexo环境：安装 ...
+        
+      </div>
+      <a class="more" href="/2018/02/27/hexo更换电脑，如何继续写博客/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2018/02/14/pip报错解决方案/">pip报错解决方案</a>
+      </h2>
+      <p class="article-date">February 14, 2018</p>
+      
+      <div class="article-summary">
+        
+          python3.6 pip无法安装插件
+pip is configured with locations that require TLS/SSL, however the ssl module in Python is not available.
+pip is configured wi ...
+        
+      </div>
+      <a class="more" href="/2018/02/14/pip报错解决方案/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2018/02/13/完美升级Mac自带Python/">完美升级Mac自带Python2.7~3.6</a>
+      </h2>
+      <p class="article-date">February 13, 2018</p>
+      
+        
+  <a href="/tags#Python" >
+    <span class="tag-code">Python</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          前言
+Mac系统自带python2.7，本文目的是将自带的python升级到3.6版本。网上有本多的做法是让python2.7和python3.X两个版本共存，博主并不知道，是两版本共存好，还是直接升级好，所以读者要慎重选择方法。
+
+
+关闭Rootless机制由于Mac下的python2.7 ...
+        
+      </div>
+      <a class="more" href="/2018/02/13/完美升级Mac自带Python/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2018/02/13/完美安装Scrapy/">完美安装Scrapy</a>
+      </h2>
+      <p class="article-date">February 13, 2018</p>
+      
+        
+  <a href="/tags#Scrapy" >
+    <span class="tag-code">Scrapy</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          一句代码完美安装Scrapy
+1sudo pip install scrapy --upgrade --ignore-installed six
+        
+      </div>
+      <a class="more" href="/2018/02/13/完美安装Scrapy/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2018/02/12/爬虫之简介和基本原理/">爬虫之简介和基本原理</a>
+      </h2>
+      <p class="article-date">February 12, 2018</p>
+      
+        
+  <a href="/tags#Python" >
+    <span class="tag-code">Python</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          爬虫简介
+爬虫，即网络爬虫，可理解为在网络上爬行的一直蜘蛛，互联网就比作一张大网，而爬虫便是在这张网上爬来爬去的蜘蛛，如果它遇到资源，那么它就会抓取下来。
+
+一句话形容爬虫：一段自定抓取互联网信息的程序
+
+爬虫的作用取互联网数据，为我所用！
+
+简单爬虫架构
+
+运行流程
+
+URL管理器URL简 ...
+        
+      </div>
+      <a class="more" href="/2018/02/12/爬虫之简介和基本原理/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2018/02/12/carthage/">carthage</a>
+      </h2>
+      <p class="article-date">February 12, 2018</p>
+      
+        
+  <a href="/tags#iOS-Carthage 安装以及使用" >
+    <span class="tag-code">iOS-Carthage 安装以及使用</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          iOS-Carthage 安装以及使用
+1、Carthage 简介
+Carthage 类似于 CocoaPods，为用户管理第三方框架和依赖，但不会自动修改项目文件和生成配置
+Carthage 是去中心化的依赖管理工具，安装依赖时不需要去中心仓库获取 CocoaPods 所有依赖的索引，节省 ...
+        
+      </div>
+      <a class="more" href="/2018/02/12/carthage/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2018/01/29/php学习遇到问题集锦/">No application encryption key has been specified.</a>
+      </h2>
+      <p class="article-date">January 29, 2018</p>
+      
+        
+  <a href="/tags#PHP" >
+    <span class="tag-code">PHP</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          环境：php7.1.10laravel5.5出现：
+解决：在根目录下执行：
+1php artisan key:generate
+终端打印：1Application key [base64:LvcrejzLdgyaqyCDVQI/fUyUd6Ktf/JAL1szXdGiu30=] set su ...
+        
+      </div>
+      <a class="more" href="/2018/01/29/php学习遇到问题集锦/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2017/12/14/phpstudy环境安装配置SSL证书方法/">phpstudy环境安装配置SSL证书方法</a>
+      </h2>
+      <p class="article-date">December 14, 2017</p>
+      
+        
+  <a href="/tags#服务器" >
+    <span class="tag-code">服务器</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          phpstudy环境下如何安装配置SSL证书?有很多集成式的web服务器无法按照一般站点的配置来部署ssl证书，本文以集成式phpstudye为例(apache+mysql)，为大家介绍phpstudy环境安装配置SSL证书方法。
+
+首先，确保你的apache编译了ssl模块，这是支持ssl ...
+        
+      </div>
+      <a class="more" href="/2017/12/14/phpstudy环境安装配置SSL证书方法/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2017/11/11/升级xcode9-项目而无法调试/">升级xcode9,项目而无法调试</a>
+      </h2>
+      <p class="article-date">November 11, 2017</p>
+      
+        
+  <a href="/tags#Xcode调试" >
+    <span class="tag-code">Xcode调试</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          之前xcode版本调试都是ok的
+123456789101112131415161718192021p.p1 &#123;margin: 0.0px 0.0px 0.0px 12.0px; text-indent: -12.0px; font: 11.0px Menlo&#125;p.p2  ...
+        
+      </div>
+      <a class="more" href="/2017/11/11/升级xcode9-项目而无法调试/">Read more</a>
+    </article>
+  
+
+  
+    <div class="guide-pager">
+  
+    <a href="/"><span class="page-arrow">← </span>Prev</a>
+  
+  
+    <a href="/page/3/">Next<span class="page-arrow"> →</span></a>
+  
+</div>
+  
+</main>
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2018 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>

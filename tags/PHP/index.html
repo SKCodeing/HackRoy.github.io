@@ -1,4 +1,427 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="author" content="Hack"><meta name="description" content="an iOS And Mac OS dev"><link rel="alternative" href="/atom.xml" title="Hack'Blog" type="application/atom+xml"><link rel="icon" href="/favicon.png"><title>PHP - Hack'Blog</title><link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css"><!--[if lt IE 9]><script>(function(a,b){a="abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output progress section summary template time video".split(" ");for(b=a.length-1;b>=0;b--)document.createElement(a[b])})()</script><![endif]--><script src="/js/jquery-3.1.1.min.js"></script><script src="/js/fancybox/jquery.fancybox.min.js"></script></head><body style="opacity:0"><header class="head"><h1 class="head-title u-fl"><a href="/">Hack'Blog</a></h1><nav class="head-nav u-fr"><ul class="head-nav__list"><li class="head-nav__item"><a class="head-nav__link" href="/archives">Archives（目录）</a></li></ul></nav></header><main class="main"><article class="post"><header class="post__head archive"><a href="/2018/01/29/php学习遇到问题集锦/"><time class="post__time" datetime="2018-01-29T02:56:12.000Z">January 29, 2018</time></a><h1 class="post__title archive"><a href="/2018/01/29/php学习遇到问题集锦/">No application encryption key has been specified.</a></h1></header><footer class="post__foot u-cf"><ul class="post__tag u-fl"><li class="post__tag__item"><a class="post__tag__link" href="/tags/PHP/">PHP</a></li></ul></footer></article><article class="post"><header class="post__head archive"><a href="/2017/09/28/注册、登录和token的安全之道/"><time class="post__time" datetime="2017-09-28T09:08:20.000Z">September 28, 2017</time></a><h1 class="post__title archive"><a href="/2017/09/28/注册、登录和token的安全之道/">注册、登录和token的安全之道</a></h1><div class="excerpt"><blockquote>
-<p>注册、登录和 token 的安全之道</p>
-</blockquote>
-<p>最近想要做一个小项目，由于前后都是一个人，在登录和注册的接口上就被卡住了，因此想登录、注册、口令之间的关系，使用 PHP 实现登录注册模块，和访问口令。</p></div></header><footer class="post__foot u-cf"><ul class="post__tag u-fl"><li class="post__tag__item"><a class="post__tag__link" href="/tags/PHP/">PHP</a></li><li class="post__tag__item"><a class="post__tag__link" href="/tags/Interface/">Interface</a></li></ul></footer></article></main><footer class="foot"><div class="foot-copy">&copy; 2016-2018 Hack</div></footer><script src="/js/scroller.js"></script><script src="/js/main.js"></script></body></html>
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="an iOS And Mac OS dev">
+  <meta name="keyword" content="hexo-theme, vuejs">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      Hack&#39;Blog
+    
+  </title>
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/plugins/gitment.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="/js/qrious.js"></script>
+<script src="/js/gitment.js"></script>
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Hack'Blog</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">Projects</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">Projects</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>Archives</h2>
+  <p class="post-date">文章归档</p>
+</div>
+<main class="app-body" id="archives">
+  
+  
+  
+    <section class="time-section">
+  <h1 class="section-year">
+    2018
+  </h1>
+  <div class="section-list">
+    
+    
+      <div class="section-list-item">
+        <a href="/2018/10/09/批量下载ts视频文件/" class="archive-title">批量下载ts视频文件</a>
+        <p class="archive-date">10-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/09/27/Avspeech支持的语言种类/" class="archive-title">Avspeech支持的语言种类</a>
+        <p class="archive-date">09-27</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/09/21/NSRunLoopCommonModes/" class="archive-title">NSRunLoopCommonModes</a>
+        <p class="archive-date">09-21</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/06/25/ios渐变色设置/" class="archive-title">ios渐变色设置</a>
+        <p class="archive-date">06-25</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/06/08/关于gitignore的一些笔记-忽略已经提交的文件/" class="archive-title">关于gitignore的一些笔记_忽略已经提交的文件</a>
+        <p class="archive-date">06-08</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/05/24/离屏渲染的研究/" class="archive-title">iOS 离屏渲染的研究</a>
+        <p class="archive-date">05-24</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/05/03/QQ互联相关/" class="archive-title">Unknown column &#39;conuintoken&#39; in &#39;field list&#39;</a>
+        <p class="archive-date">05-03</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/04/17/Version”/" class="archive-title">“Swift Language Version”</a>
+        <p class="archive-date">04-17</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/03/27/materials/" class="archive-title">materials</a>
+        <p class="archive-date">03-27</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/03/26/68/" class="archive-title">Linux平台下快速搭建FTP服务器</a>
+        <p class="archive-date">03-26</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/03/14/个人简历/" class="archive-title">个人简历</a>
+        <p class="archive-date">03-14</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/02/27/hexo更换电脑，如何继续写博客/" class="archive-title">hexo更换电脑，如何继续写博客</a>
+        <p class="archive-date">02-27</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/02/14/pip报错解决方案/" class="archive-title">pip报错解决方案</a>
+        <p class="archive-date">02-14</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/02/13/完美升级Mac自带Python/" class="archive-title">完美升级Mac自带Python2.7~3.6</a>
+        <p class="archive-date">02-13</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/02/13/完美安装Scrapy/" class="archive-title">完美安装Scrapy</a>
+        <p class="archive-date">02-13</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/02/12/爬虫之简介和基本原理/" class="archive-title">爬虫之简介和基本原理</a>
+        <p class="archive-date">02-12</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/02/12/carthage/" class="archive-title">carthage</a>
+        <p class="archive-date">02-12</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/01/29/php学习遇到问题集锦/" class="archive-title">No application encryption key has been specified.</a>
+        <p class="archive-date">01-29</p>
+      </div>
+    
+  </div>
+</section>
+  
+    <section class="time-section">
+  <h1 class="section-year">
+    2017
+  </h1>
+  <div class="section-list">
+    
+    
+      <div class="section-list-item">
+        <a href="/2017/12/14/phpstudy环境安装配置SSL证书方法/" class="archive-title">phpstudy环境安装配置SSL证书方法</a>
+        <p class="archive-date">12-14</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2017/11/11/升级xcode9-项目而无法调试/" class="archive-title">升级xcode9,项目而无法调试</a>
+        <p class="archive-date">11-11</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2017/11/10/ERROR/" class="archive-title">ERROR ITMS-90034:&#34;Missing or invalid signature.</a>
+        <p class="archive-date">11-10</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2017/11/04/学习资料备忘录/" class="archive-title">学习资料备忘录</a>
+        <p class="archive-date">11-04</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2017/11/03/一个iOS程序员的BAT面试全记录（内含百度-网易-阿里面试真题）/" class="archive-title">一个iOS程序员的BAT面试全记录（内含百度+网易+阿里面试真题）</a>
+        <p class="archive-date">11-03</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2017/11/02/获取控件相对屏幕的坐标位置/" class="archive-title">获取控件相对屏幕的坐标位置</a>
+        <p class="archive-date">11-02</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2017/11/02/如何复制NSView、UIButton/" class="archive-title">如何复制NSView、UIButton</a>
+        <p class="archive-date">11-02</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2017/11/02/hexo的环境搭建/" class="archive-title">关于HEXO安装失败的解决方法</a>
+        <p class="archive-date">11-02</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2017/10/27/面试题/" class="archive-title">iOS 面试题收藏录</a>
+        <p class="archive-date">10-27</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2017/10/19/Xcode创建自定义代码块/" class="archive-title">Xcode创建自定义代码块</a>
+        <p class="archive-date">10-19</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2017/10/17/［基本解决］使用iOS模拟器iPhone 6结果编译出错：file was built for i386 which is not the architecture being linked x86_64/" class="archive-title">使用iOS模拟器iPhone 6结果编译出错：file was built for i386 which is not the architecture being linked x86_64</a>
+        <p class="archive-date">10-17</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2017/10/17/ library not found for -lPods的问题/" class="archive-title">解决ld:library not found for -lPods的问题</a>
+        <p class="archive-date">10-17</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2017/10/12/打包报错问题解决/" class="archive-title">iOS自动化打包报错问题解决</a>
+        <p class="archive-date">10-12</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2017/10/11/Xcode控制台不打印NSLog/" class="archive-title">Xcode控制台不打印NSLog</a>
+        <p class="archive-date">10-11</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2017/10/11/iPhone开发之：iPhoneX、iOS11适配/" class="archive-title">iPhone开发之：iPhoneX、iOS11适配</a>
+        <p class="archive-date">10-11</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2017/10/10/系列之一/" class="archive-title">iOS 开发RunTime系列之一</a>
+        <p class="archive-date">10-10</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2017/10/09/通知是黑暗模式的设计吗？/" class="archive-title">通知是黑暗模式的设计吗？</a>
+        <p class="archive-date">10-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2017/10/09/IT技术开发人员35岁之前应该做的十件事/" class="archive-title">IT技术开发人员35岁之前应该做的十件事</a>
+        <p class="archive-date">10-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2017/10/09/iOS程序员简历模板/" class="archive-title">iOS程序员简历模板</a>
+        <p class="archive-date">10-09</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2017/09/29/hexo常用命令笔记/" class="archive-title">Hexo常用命令笔记</a>
+        <p class="archive-date">09-29</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2017/09/28/精品文献合集/" class="archive-title">精品文献合集</a>
+        <p class="archive-date">09-28</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2017/09/28/注册、登录和token的安全之道/" class="archive-title">注册、登录和token的安全之道</a>
+        <p class="archive-date">09-28</p>
+      </div>
+    
+  </div>
+</section>
+  
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/tags/PHP/index.html';
+    $('#article-banner').geopattern(url);
+    $('.header').removeClass('fixed-header');
+  })();
+</script>
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2018 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>
