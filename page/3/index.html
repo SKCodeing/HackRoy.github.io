@@ -263,6 +263,128 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/11/升级xcode9-项目而无法调试/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hack">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hack'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/11/升级xcode9-项目而无法调试/" itemprop="url">升级xcode9,项目而无法调试</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-11T16:39:35+08:00">
+                2017-11-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>之前xcode版本调试都是ok的</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">p.p1 &#123;margin: 0.0px 0.0px 0.0px 12.0px; text-indent: -12.0px; font: 11.0px Menlo&#125;p.p2 &#123;margin: 0.0px 0.0px 0.0px 12.0px; text-indent: -12.0px; font: 11.0px Menlo; min-height: 13.0px&#125;span.s1 &#123;font: 11.0px 'PingFang SC'&#125;</span><br><span class="line">PhaseScriptExecution [CP]\ Copy\ Pods\ Resources /Users/lx/Library/Developer/Xcode/DerivedData/MyLibrary-ddrsgsrjpfocjoayxgljcmunezzw/Build/Intermediates.noindex/MyLibrary.build/Debug-iphoneos/MyLibrary.build/Script<span class="number">-788668</span>C26D171DEEC02CAE5E.sh</span><br><span class="line">cd /Users/lx/Desktop/MyLibrary/iphone/MyLibrary</span><br><span class="line">/bin/sh -c /Users/lx/Library/Developer/Xcode/DerivedData/MyLibrary-ddrsgsrjpfocjoayxgljcmunezzw/Build/Intermediates.noindex/MyLibrary.build/Debug-iphoneos/MyLibrary.build/Script<span class="number">-788668</span>C26D171DEEC02CAE5E.sh</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">/Users/lx/Desktop/MyLibrary/iphone/MyLibrary/Pods/MJRefresh/MJRefresh/MJRefresh.bundle</span><br><span class="line">/Users/lx/Desktop/MyLibrary/iphone/MyLibrary/Pods/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle</span><br><span class="line">/Users/lx/Desktop/MyLibrary/iphone/MyLibrary/Pods/UMengSocialCOM/Umeng_SDK_Social_iOS_ARM64_5<span class="number">.2</span><span class="number">.1</span>/UMSocial_Sdk_5<span class="number">.2</span><span class="number">.1</span>/UMSocialSDKResourcesNew.bundle</span><br><span class="line">/Users/lx/Desktop/MyLibrary/iphone/MyLibrary/Pods/UMengSocialCOM/Umeng_SDK_Social_iOS_ARM64_5<span class="number">.2</span><span class="number">.1</span>/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI/TencentOpenApi_IOS_Bundle.bundle</span><br><span class="line">/Users/lx/Desktop/MyLibrary/iphone/MyLibrary/Pods/UMengSocialCOM/Umeng_SDK_Social_iOS_ARM64_5<span class="number">.2</span><span class="number">.1</span>/UMSocial_Sdk_Extra_Frameworks/SinaSSO/WeiboSDK.bundle</span><br><span class="line">ibtool --reference-external-strings-file --errors --warnings --notices --minimum-deployment-target <span class="number">8.0</span> --output-format human-readable-text --compile /Users/lx/Library/Developer/Xcode/DerivedData/iLUXDAYEC-ddrsgsrjpfocjoayxgljcmunezzw/Build/Products/Debug-iphoneos/iLUXDAYEC.app/UMSCommentDetailController.nib /Users/lx/Desktop/MyLibrary/iphone/MyLibrary/Pods/UMengSocialCOM/Umeng_SDK_Social_iOS_ARM64_5<span class="number">.2</span><span class="number">.1</span>/UMSocial_Sdk_5<span class="number">.2</span><span class="number">.1</span>/SocialSDKXib/UMSCommentDetailController.xib --sdk /Users/lx/Desktop/个人/安装包/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11<span class="number">.0</span>.sdk --target-device iphone</span><br><span class="line"><span class="number">2017</span><span class="number">-09</span><span class="number">-22</span> <span class="number">11</span>:<span class="number">22</span>:<span class="number">24.608</span> ibtoold[<span class="number">28644</span>:<span class="number">1474589</span>] WARNING: Unhandled destination metrics: (null)</span><br><span class="line"><span class="number">2017</span><span class="number">-09</span><span class="number">-22</span> <span class="number">11</span>:<span class="number">22</span>:<span class="number">24.608</span> ibtoold[<span class="number">28644</span>:<span class="number">1474589</span>] WARNING: Unhandled destination metrics: (null)</span><br><span class="line"><span class="comment">/* com.apple.ibtool.document.warnings */</span></span><br><span class="line">/Users/lx/Desktop/MyLibrary/iphone/MyLibrary/Pods/UMengSocialCOM/Umeng_SDK_Social_iOS_ARM64_5<span class="number">.2</span><span class="number">.1</span>/UMSocial_Sdk_5<span class="number">.2</span><span class="number">.1</span>/SocialSDKXib/UMSCommentDetailController.xib:global: warning: This file is set to build <span class="keyword">for</span> a version older than the deployment target. Functionality may be limited. [<span class="number">9</span>]</span><br><span class="line"><span class="comment">/* com.apple.ibtool.document.errors */</span></span><br><span class="line">/Users/lx/Desktop/MyLibrary/iphone/MyLibrary/Pods/UMengSocialCOM/Umeng_SDK_Social_iOS_ARM64_5<span class="number">.2</span><span class="number">.1</span>/UMSocial_Sdk_5<span class="number">.2</span><span class="number">.1</span>/SocialSDKXib/UMSCommentDetailController.xib:global: error: Compiling IB documents <span class="keyword">for</span> earlier than iOS <span class="number">7</span> is no longer supported. [<span class="number">12</span>]</span><br><span class="line"><span class="comment">/* com.apple.ibtool.warnings */</span></span><br><span class="line">/Users/lx/Desktop/MyLibrary/iphone/MyLibrary/Pods/UMengSocialCOM/Umeng_SDK_Social_iOS_ARM64_5<span class="number">.2</span><span class="number">.1</span>/UMSocial_Sdk_5<span class="number">.2</span><span class="number">.1</span>/SocialSDKXib/UMSCommentDetailController.xib: warning: Internationalization is not available when compiling <span class="keyword">for</span> targets before iOS <span class="number">6.0</span></span><br><span class="line">Command /bin/sh failed with exit code <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>解决办法：点击Pods–&gt;找到友盟的文件夹 然后找到Resources 找到那一堆XIB 点击右侧展开属性栏 找到interface Builder Document 吧Builds For 换成7.0以后 </p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/10/ERROR/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -338,131 +460,6 @@
 <p>上传AppStore遇到的奇葩问题之ERROR ITMS-90034: “Missing or invalid signature.</p>
 </blockquote>
 <p>今天上传AppStore时遇到了ERROR ITMS-90034: “Missing or invalid signature. 这个错误,找了一些资料也没有解决掉,想起早上钥匙串里证书过期了,就把所有的证书都设置为始终信任,于是改回为系统默认之后,再次提交成功了.</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/04/学习资料备忘录/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hack">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hack'Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/04/学习资料备忘录/" itemprop="url">学习资料备忘录</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-04T18:01:31+08:00">
-                2017-11-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="博客"><a href="#博客" class="headerlink" title="博客"></a>博客</h3><p>天猫无线-基础业务团队主力维护的博客 ：<a href="http://pingguohe.net" target="_blank" rel="noopener">苹果核</a></p>
-<h3 id="LuaViewSDK"><a href="#LuaViewSDK" class="headerlink" title="LuaViewSDK"></a>LuaViewSDK</h3><p>. <a href="https://alibaba.github.io/LuaViewSDK/guide.html" target="_blank" rel="noopener">LuaViewSDK是什么？</a></p>
-<p>LuaViewSDK 主要解决两个问题</p>
-<p>相同的业务逻辑需要在 iOS 和 Android 平台各实现一次，除了成本还有体验的细微差别，是否有一种方案可以 Write once run both？LuaViewSDK 是答案。<br>移动 APP，要体验发布就不灵活（Native），要发布灵活就体验欠缺（H5），有没有一种方案可以兼顾 Nativa 的体验和 H5的发布灵活性？LuaViewSDK 就是答案。<br>LuaView 是一种运行在一个 ViewController/Activity 中，可以灵活加载Lua 脚本，并能够按照 Native 的方式运行的一种面向业务的开发技术方案。可以快速开发电商应用中既要求体验又要求灵活性的页面功能，例如各类活动页面，大促会场页面等。现在使用 LuaViewSDK 完成的线上功能有聚划算的品牌团，聚名品，量贩团，非常大牌，聚家装，全球精选等页面</p>
-<p>LuaViewSDK目前已经在 Alibaba 整体开源框架下完整开源（MIT协议），欢迎大家使用、讨论。 开源地址：<a href="https://github.com/alibaba/LuaViewSDK" target="_blank" rel="noopener">https://github.com/alibaba/LuaViewSDK</a></p>
-<p><a href="http://pingguohe.net/2017/03/02/lazyScrollView-demo.html" target="_blank" rel="noopener">苹果核 - iOS 高性能异构滚动视图构建方案 - LazyScrollView</a></p>
 
           
         

@@ -263,6 +263,144 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/26/68/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hack">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hack'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/26/68/" itemprop="url">Linux平台下快速搭建FTP服务器</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-26T11:30:25+08:00">
+                2018-03-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>首先服务器要安装ftp软件,查看是否已经安装ftp软件下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#which vsftpd</span><br><span class="line">```   </span><br><span class="line">   </span><br><span class="line">如果看到有vsftpd的目录说明服务器已经安装了ftp软件</span><br><span class="line"></span><br><span class="line">### 查看ftp 服务器状态</span><br></pre></td></tr></table></figure>
+<p>#service vsftpd status<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">如果没有安装，查询是否有可用的rpm安装包</span><br></pre></td></tr></table></figure></p>
+<p>[root@centos ~]# yum list |grep vsftpd<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 安装vsftpd服务</span><br></pre></td></tr></table></figure></p>
+<p>[root@centos ~]# yum install -y vsftpd</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">### 启动ftp服务器</span><br></pre></td></tr></table></figure>
+<p>#service vsftpd start</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">### 重启ftp服务器</span><br></pre></td></tr></table></figure>
+<p>#service vsftpd restart<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">   </span><br><span class="line">### 查看服务有没有启动</span><br></pre></td></tr></table></figure></p>
+<p>[root@centos ~]# netstat -lnp<br>tcp     0   0 0.0.0.0:21     0.0.0.0:*         LISTEN      1491/vsftpd</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">   </span><br><span class="line">如果看到以上信息，证明ftp服务已经开启</span><br><span class="line">   </span><br><span class="line">### 添加一个ftp用户</span><br><span class="line">此用户就是用来登录ftp服务器用的。</span><br></pre></td></tr></table></figure>
+<p>[root@bogon ~]# useradd ftpuser<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">这样一个用户建完，可以用这个登录，记得用普通登录不要用匿名了。登录后默认的路径为</span><br></pre></td></tr></table></figure></p>
+<p> /home/ftpuser.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">给ftp用户添加密码。</span><br></pre></td></tr></table></figure></p>
+<p>[root@bogon ~]# passwd ftpuser</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">输入两次密码后修改密码。</span><br><span class="line"></span><br><span class="line">### 防火墙开启21端口</span><br><span class="line">因为ftp默认的端口为21，而centos默认是没有开启的，所以要修改iptables文件</span><br></pre></td></tr></table></figure>
+<p>[root@bogon ~]# vi /etc/sysconfig/iptables</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">在行上面有22 -j ACCEPT 下面另起一行输入跟那行差不多的，只是把22换成21，然后：wq保存。</span><br><span class="line"></span><br><span class="line">还要运行下,重启iptables</span><br></pre></td></tr></table></figure>
+<p>[root@bogon ~]# service iptables restart</p>
+<p><code>`</code></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/14/个人简历/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1578,128 +1716,6 @@
 <p>第四，apache正常重启后，在浏览器里面输入<a href="https://yourdomain.com就能看到安全锁出来啦。" target="_blank" rel="noopener">https://yourdomain.com就能看到安全锁出来啦。</a></p>
 <p>第五，备份好您的SSL证书!</p>
 <p>以上就是phpstudy环境安装配置SSL证书方法，大家在部署的时候尽量找准自己的apache下的路径，上面的仅供参考!另，Linux下的环境同windows配置一样。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/11/升级xcode9-项目而无法调试/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hack">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hack'Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/11/升级xcode9-项目而无法调试/" itemprop="url">升级xcode9,项目而无法调试</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-11T16:39:35+08:00">
-                2017-11-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>之前xcode版本调试都是ok的</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">p.p1 &#123;margin: 0.0px 0.0px 0.0px 12.0px; text-indent: -12.0px; font: 11.0px Menlo&#125;p.p2 &#123;margin: 0.0px 0.0px 0.0px 12.0px; text-indent: -12.0px; font: 11.0px Menlo; min-height: 13.0px&#125;span.s1 &#123;font: 11.0px 'PingFang SC'&#125;</span><br><span class="line">PhaseScriptExecution [CP]\ Copy\ Pods\ Resources /Users/lx/Library/Developer/Xcode/DerivedData/MyLibrary-ddrsgsrjpfocjoayxgljcmunezzw/Build/Intermediates.noindex/MyLibrary.build/Debug-iphoneos/MyLibrary.build/Script<span class="number">-788668</span>C26D171DEEC02CAE5E.sh</span><br><span class="line">cd /Users/lx/Desktop/MyLibrary/iphone/MyLibrary</span><br><span class="line">/bin/sh -c /Users/lx/Library/Developer/Xcode/DerivedData/MyLibrary-ddrsgsrjpfocjoayxgljcmunezzw/Build/Intermediates.noindex/MyLibrary.build/Debug-iphoneos/MyLibrary.build/Script<span class="number">-788668</span>C26D171DEEC02CAE5E.sh</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">/Users/lx/Desktop/MyLibrary/iphone/MyLibrary/Pods/MJRefresh/MJRefresh/MJRefresh.bundle</span><br><span class="line">/Users/lx/Desktop/MyLibrary/iphone/MyLibrary/Pods/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle</span><br><span class="line">/Users/lx/Desktop/MyLibrary/iphone/MyLibrary/Pods/UMengSocialCOM/Umeng_SDK_Social_iOS_ARM64_5<span class="number">.2</span><span class="number">.1</span>/UMSocial_Sdk_5<span class="number">.2</span><span class="number">.1</span>/UMSocialSDKResourcesNew.bundle</span><br><span class="line">/Users/lx/Desktop/MyLibrary/iphone/MyLibrary/Pods/UMengSocialCOM/Umeng_SDK_Social_iOS_ARM64_5<span class="number">.2</span><span class="number">.1</span>/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI/TencentOpenApi_IOS_Bundle.bundle</span><br><span class="line">/Users/lx/Desktop/MyLibrary/iphone/MyLibrary/Pods/UMengSocialCOM/Umeng_SDK_Social_iOS_ARM64_5<span class="number">.2</span><span class="number">.1</span>/UMSocial_Sdk_Extra_Frameworks/SinaSSO/WeiboSDK.bundle</span><br><span class="line">ibtool --reference-external-strings-file --errors --warnings --notices --minimum-deployment-target <span class="number">8.0</span> --output-format human-readable-text --compile /Users/lx/Library/Developer/Xcode/DerivedData/iLUXDAYEC-ddrsgsrjpfocjoayxgljcmunezzw/Build/Products/Debug-iphoneos/iLUXDAYEC.app/UMSCommentDetailController.nib /Users/lx/Desktop/MyLibrary/iphone/MyLibrary/Pods/UMengSocialCOM/Umeng_SDK_Social_iOS_ARM64_5<span class="number">.2</span><span class="number">.1</span>/UMSocial_Sdk_5<span class="number">.2</span><span class="number">.1</span>/SocialSDKXib/UMSCommentDetailController.xib --sdk /Users/lx/Desktop/个人/安装包/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11<span class="number">.0</span>.sdk --target-device iphone</span><br><span class="line"><span class="number">2017</span><span class="number">-09</span><span class="number">-22</span> <span class="number">11</span>:<span class="number">22</span>:<span class="number">24.608</span> ibtoold[<span class="number">28644</span>:<span class="number">1474589</span>] WARNING: Unhandled destination metrics: (null)</span><br><span class="line"><span class="number">2017</span><span class="number">-09</span><span class="number">-22</span> <span class="number">11</span>:<span class="number">22</span>:<span class="number">24.608</span> ibtoold[<span class="number">28644</span>:<span class="number">1474589</span>] WARNING: Unhandled destination metrics: (null)</span><br><span class="line"><span class="comment">/* com.apple.ibtool.document.warnings */</span></span><br><span class="line">/Users/lx/Desktop/MyLibrary/iphone/MyLibrary/Pods/UMengSocialCOM/Umeng_SDK_Social_iOS_ARM64_5<span class="number">.2</span><span class="number">.1</span>/UMSocial_Sdk_5<span class="number">.2</span><span class="number">.1</span>/SocialSDKXib/UMSCommentDetailController.xib:global: warning: This file is set to build <span class="keyword">for</span> a version older than the deployment target. Functionality may be limited. [<span class="number">9</span>]</span><br><span class="line"><span class="comment">/* com.apple.ibtool.document.errors */</span></span><br><span class="line">/Users/lx/Desktop/MyLibrary/iphone/MyLibrary/Pods/UMengSocialCOM/Umeng_SDK_Social_iOS_ARM64_5<span class="number">.2</span><span class="number">.1</span>/UMSocial_Sdk_5<span class="number">.2</span><span class="number">.1</span>/SocialSDKXib/UMSCommentDetailController.xib:global: error: Compiling IB documents <span class="keyword">for</span> earlier than iOS <span class="number">7</span> is no longer supported. [<span class="number">12</span>]</span><br><span class="line"><span class="comment">/* com.apple.ibtool.warnings */</span></span><br><span class="line">/Users/lx/Desktop/MyLibrary/iphone/MyLibrary/Pods/UMengSocialCOM/Umeng_SDK_Social_iOS_ARM64_5<span class="number">.2</span><span class="number">.1</span>/UMSocial_Sdk_5<span class="number">.2</span><span class="number">.1</span>/SocialSDKXib/UMSCommentDetailController.xib: warning: Internationalization is not available when compiling <span class="keyword">for</span> targets before iOS <span class="number">6.0</span></span><br><span class="line">Command /bin/sh failed with exit code <span class="number">1</span></span><br></pre></td></tr></table></figure>
-<p>解决办法：点击Pods–&gt;找到友盟的文件夹 然后找到Resources 找到那一堆XIB 点击右侧展开属性栏 找到interface Builder Document 吧Builds For 换成7.0以后 </p>
 
           
         
