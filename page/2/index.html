@@ -263,6 +263,125 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/27/materials/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hack">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hack'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/27/materials/" itemprop="url">materials</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-27T15:13:14+08:00">
+                2018-03-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/26/68/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1613,149 +1732,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/14/phpstudy环境安装配置SSL证书方法/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hack">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hack'Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/14/phpstudy环境安装配置SSL证书方法/" itemprop="url">phpstudy环境安装配置SSL证书方法</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-14T17:28:35+08:00">
-                2017-12-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>phpstudy环境下如何安装配置SSL证书?有很多集成式的web服务器无法按照一般站点的配置来部署ssl证书，本文以集成式phpstudye为例(apache+mysql)，为大家介绍phpstudy环境安装配置SSL证书方法。</p>
-<p><img src="https://www.wosign.com/faq/images/phpstudy2016.jpg" alt=""></p>
-<p>首先，确保你的apache编译了ssl模块，这是支持ssl证书必要的条件(如果没有，请编译,打开phpstudy——设置——PHP模块扩展——php-openssl前面勾选上)。</p>
-<p>第一：进入到apache目录下，httpd.conf找到#LoadModule ssl_module modules/mod_ssl.so，去掉前面的注释符，使得ssl模块生效(如果该模块已去掉注释，请不用操作)。</p>
-<p>第二，找到网站配置文件vhosts.conf，一般在如下路径：D:\phpStudy\Apache\conf，按照80的配置，另起一个VirtualHost443，如下所示:</p>
-<p>Listen 443</p>
-<p>ServerName <a href="http://www.yourdomain.com" target="_blank" rel="noopener">www.yourdomain.com</a> #(和80一样)</p>
-<p>ServerAlias yourdomain.com #(和80一样)</p>
-<p>DocumentRoot “D:\phpStudy\WWW” #(和80一样)</p>
-<p>SSLEngine on</p>
-<p>SSLProtocol all -SSLv2 -SSLv3</p>
-<p>SSLCipherSuite AESGCM:ALL:!DH:!EXPORT:!RC4:+HIGH:!MEDIUM:!LOW:!aNULL:!eNULL</p>
-<p>SSLCertificateFile “C:\phpStudy\Apache\conf\ssl\2_yourdomainame.crt” #(服务器上公钥证书路径)</p>
-<p>SSLCertificateKeyFile “C:\phpStudy\Apache\conf\ssl\3_yourdomainame.key” #(服务器上私钥证书路径)</p>
-<p>SSLCertificateChainFile “C:\phpStudy\Apache\conf\ssl\1_root_bundle.crt” #(服务器上证书链路径)</p>
-<p>第三，重启apache(有可能报错，看一下443端口是否被防火墙拦截或被占用)</p>
-<p>第四，apache正常重启后，在浏览器里面输入<a href="https://yourdomain.com就能看到安全锁出来啦。" target="_blank" rel="noopener">https://yourdomain.com就能看到安全锁出来啦。</a></p>
-<p>第五，备份好您的SSL证书!</p>
-<p>以上就是phpstudy环境安装配置SSL证书方法，大家在部署的时候尽量找准自己的apache下的路径，上面的仅供参考!另，Linux下的环境同windows配置一样。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1801,7 +1782,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">40</span>
+                <span class="site-state-item-count">41</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

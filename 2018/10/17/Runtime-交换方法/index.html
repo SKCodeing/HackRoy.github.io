@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Xcode," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -94,22 +94,17 @@
 
 
 
-<meta name="description" content="由于项目、所用语言或者编码习惯的差别，不同的程序员习惯用的代码片段也不尽相同，这就有了自定义代码片段的需求，好在Xcode是支持该功能的。他的好处是使程序员以最快的速度输入很常用的代码片段，提高编程效率。 该功能是从Xcode4开始引入的。在Xcode中的位置如下图所示： 如上图，右边系统就定义很对的代码块，包括一些我们很常用的@interface 和@implementation的声明和实现。">
-<meta name="keywords" content="Xcode">
+<meta name="description" content="需求：每次UIImage加载图片。告诉我是否加载成功 1.自定义UIImage 弊端：每次使用，都需要导入头文件 2.给UIImage添加分类">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Xcode创建自定义代码块">
-<meta property="og:url" content="http://yoursite.com/2017/10/19/Xcode创建自定义代码块/index.html">
+<meta property="og:title" content="Runtime:交换方法">
+<meta property="og:url" content="http://yoursite.com/2018/10/17/Runtime-交换方法/index.html">
 <meta property="og:site_name" content="Hack&#39;Blog">
-<meta property="og:description" content="由于项目、所用语言或者编码习惯的差别，不同的程序员习惯用的代码片段也不尽相同，这就有了自定义代码片段的需求，好在Xcode是支持该功能的。他的好处是使程序员以最快的速度输入很常用的代码片段，提高编程效率。 该功能是从Xcode4开始引入的。在Xcode中的位置如下图所示： 如上图，右边系统就定义很对的代码块，包括一些我们很常用的@interface 和@implementation的声明和实现。">
+<meta property="og:description" content="需求：每次UIImage加载图片。告诉我是否加载成功 1.自定义UIImage 弊端：每次使用，都需要导入头文件 2.给UIImage添加分类">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/5977975-3f977414479d57c8.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://img.blog.csdn.net/20130929182943812?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3p6dmljdG9yeQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:image" content="http://img.blog.csdn.net/20130929183935093?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3p6dmljdG9yeQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:updated_time" content="2018-02-27T08:22:51.000Z">
+<meta property="og:updated_time" content="2018-10-17T09:37:43.753Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Xcode创建自定义代码块">
-<meta name="twitter:description" content="由于项目、所用语言或者编码习惯的差别，不同的程序员习惯用的代码片段也不尽相同，这就有了自定义代码片段的需求，好在Xcode是支持该功能的。他的好处是使程序员以最快的速度输入很常用的代码片段，提高编程效率。 该功能是从Xcode4开始引入的。在Xcode中的位置如下图所示： 如上图，右边系统就定义很对的代码块，包括一些我们很常用的@interface 和@implementation的声明和实现。">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/5977975-3f977414479d57c8.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:title" content="Runtime:交换方法">
+<meta name="twitter:description" content="需求：每次UIImage加载图片。告诉我是否加载成功 1.自定义UIImage 弊端：每次使用，都需要导入头文件 2.给UIImage添加分类">
 
 
 
@@ -138,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/10/19/Xcode创建自定义代码块/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/17/Runtime-交换方法/"/>
 
 
 
 
 
-  <title>Xcode创建自定义代码块 | Hack'Blog</title>
+  <title>Runtime:交换方法 | Hack'Blog</title>
   
 
 
@@ -267,7 +262,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/19/Xcode创建自定义代码块/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/17/Runtime-交换方法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hack">
@@ -284,7 +279,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Xcode创建自定义代码块</h1>
+          <h1 class="post-title" itemprop="name headline">Runtime:交换方法</h1>
         
 
         <div class="post-meta">
@@ -296,8 +291,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-19T10:31:00+08:00">
-                2017-10-19
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-17T17:31:38+08:00">
+                2018-10-17
               </time>
             
 
@@ -334,41 +329,10 @@
       
 
       
-        <p>由于项目、所用语言或者编码习惯的差别，不同的程序员习惯用的代码片段也不尽相同，这就有了自定义代码片段的需求，好在Xcode是支持该功能的。他的好处是使程序员以最快的速度输入很常用的代码片段，提高编程效率。</p>
-<p>该功能是从Xcode4开始引入的。在Xcode中的位置如下图所示：</p>
-<p>如上图，右边系统就定义很对的代码块，包括一些我们很常用的@interface 和@implementation的声明和实现。</p>
-<p>二、自定义我们常用的代码块步骤</p>
-<p>Ｅｇ：@property属性的定义是Cocoa程序开发中很常用的一个功能，下面就以此为例说明如何自定义代码片段。</p>
-<p>1、书写代码片段</p>
-<p>在声明@property属性的地方写下如下语句：</p>
-<p>@property (nonatomic, retain) &lt;#type#&gt; &lt;#name#&gt;;</p>
-<p>这里&lt;#type#&gt;和&lt;#name#&gt;起什么作用可以在后面的使用效果中看出来。<br><img src="http://upload-images.jianshu.io/upload_images/5977975-3f977414479d57c8.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>2、新建代码片段</p>
-<p>１）点击Code Snippet Library</p>
-<p>2)选择User 用户自定义</p>
-<p>3）出现如下空白界面</p>
-<p>4）把刚编辑好的代码选中，拖到上面的空白处，出现如下的编辑窗口</p>
-<p><img src="http://img.blog.csdn.net/20130929182943812?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3p6dmljdG9yeQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
-<p>图中从上到下的含义依次是：</p>
-<p>①Title</p>
-<p>代码片段的标题</p>
-<p>②Summary</p>
-<p>代码片段的描述文字</p>
-<p>③Platform</p>
-<p>可以使用代码片段的平台，有IOS/OS X/All三个选项</p>
-<p>④Language</p>
-<p>可以在哪些语言中使用该代码片段</p>
-<p>⑤Completion Shortcut</p>
-<p>代码片段的快捷方式，比如本文开头用到的dowhile，在这里，把属性设置的快捷方式设为property</p>
-<p>⑥Completion Scopes</p>
-<p>可以在哪些文件中使用当前代码片段，比如全部位置，头文件中等，当然可以添加多个支持的位置。</p>
-<p>最后的一个大得空白区域是对代码片段的效果预览。</p>
-<p>一切设置完成以后，点击该菜单右下角的Done按钮，新建工作就结束了。</p>
-<p>5）验证效果：我在代码里面输入”pro“ 即出现如下提示：（直接点击Enter键，一整条语句就自动补齐了）</p>
-<p><img src="http://img.blog.csdn.net/20130929183935093?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3p6dmljdG9yeQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
-<p>三、代码片段的备份</p>
-<p>Xcode中的代码片段默认放在下面的目录中：</p>
-<p>~/Library/Developer/Xcode/UserData/CodeSnippets</p>
-<p>我们可以将目录中的代码片段备份，也可以将其直接拷出来放在不同的电脑上使用，因此多台电脑之间的协作也毫无压力。</p>
+        <p>需求：每次UIImage加载图片。告诉我是否加载成功</p>
+<p>1.自定义UIImage</p>
+<p>弊端：每次使用，都需要导入头文件</p>
+<p>2.给UIImage添加分类</p>
 
       
     </div>
@@ -384,12 +348,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Xcode/" rel="tag"># Xcode</a>
-          
-        </div>
-      
 
       
       
@@ -399,8 +357,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/17/［基本解决］使用iOS模拟器iPhone 6结果编译出错：file was built for i386 which is not the architecture being linked x86_64/" rel="next" title="使用iOS模拟器iPhone 6结果编译出错：file was built for i386 which is not the architecture being linked x86_64">
-                <i class="fa fa-chevron-left"></i> 使用iOS模拟器iPhone 6结果编译出错：file was built for i386 which is not the architecture being linked x86_64
+              <a href="/2018/10/15/学习资料备忘录/" rel="next" title="学习资料备忘录">
+                <i class="fa fa-chevron-left"></i> 学习资料备忘录
               </a>
             
           </div>
@@ -408,10 +366,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/10/27/面试题/" rel="prev" title="iOS 面试题收藏录">
-                iOS 面试题收藏录 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
