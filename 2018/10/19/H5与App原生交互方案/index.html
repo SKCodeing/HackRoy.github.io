@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="H5与App原生交互，一般会是前端页面中的JavaScript与App使用的原生开发语言的交互。技术方案应能达到以下要求： 在JS与原生进行交互的时候能保证正常的正向调用逻辑返回，反向可以处理异步回调，因为对js来说，大部分逻辑都是回调与监听。要保证H5与Native App通讯效率高、安全性强，能有效防止通过H5页面进行App注入、中间人攻击或者钓鱼。方便测试阶段，H5嵌入到App当中，开发人员">
+<meta property="og:type" content="article">
+<meta property="og:title" content="H5与App原生交互方案">
+<meta property="og:url" content="http://yoursite.com/2018/10/19/H5与App原生交互方案/index.html">
+<meta property="og:site_name" content="Hack&#39;Blog">
+<meta property="og:description" content="H5与App原生交互，一般会是前端页面中的JavaScript与App使用的原生开发语言的交互。技术方案应能达到以下要求： 在JS与原生进行交互的时候能保证正常的正向调用逻辑返回，反向可以处理异步回调，因为对js来说，大部分逻辑都是回调与监听。要保证H5与Native App通讯效率高、安全性强，能有效防止通过H5页面进行App注入、中间人攻击或者钓鱼。方便测试阶段，H5嵌入到App当中，开发人员">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-10-19T14:14:47.797Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="H5与App原生交互方案">
+<meta name="twitter:description" content="H5与App原生交互，一般会是前端页面中的JavaScript与App使用的原生开发语言的交互。技术方案应能达到以下要求： 在JS与原生进行交互的时候能保证正常的正向调用逻辑返回，反向可以处理异步回调，因为对js来说，大部分逻辑都是回调与监听。要保证H5与Native App通讯效率高、安全性强，能有效防止通过H5页面进行App注入、中间人攻击或者钓鱼。方便测试阶段，H5嵌入到App当中，开发人员">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/10/19/H5与App原生交互方案/"/>
+
+
+
+
+
+  <title>H5与App原生交互方案 | Hack'Blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hack'Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">iOS And Mac OS dev</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/19/H5与App原生交互方案/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hack">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hack'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">H5与App原生交互方案</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-19T21:28:08+08:00">
+                2018-10-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>H5与App原生交互，一般会是前端页面中的JavaScript与App使用的原生开发语言的交互。技术方案应能达到以下要求：</p>
+<p>在JS与原生进行交互的时候能保证正常的正向调用逻辑返回，反向可以处理异步回调，因为对js来说，大部分逻辑都是回调与监听。<br>要保证H5与Native App通讯效率高、安全性强，能有效防止通过H5页面进行App注入、中间人攻击或者钓鱼。<br>方便测试阶段，H5嵌入到App当中，开发人员方便调试与Debug。</p>
+<h3 id="目前主流的技术方案："><a href="#目前主流的技术方案：" class="headerlink" title="目前主流的技术方案："></a>目前主流的技术方案：</h3><ul>
+<li><ol>
+<li>在iOS7以前，在UIWebView中实现一些代理方法拦截带有约定好的protocol的Url，从Url上获取get方式的参数传递，映射成本地原生方法，如下：</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">-(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType&#123;</span><br><span class="line">    NSString *urlString = request.URL.absoluteString;</span><br><span class="line">    if ([urlString rangeOfString:@&quot;js-call://&quot;].location != NSNotFound) &#123;</span><br><span class="line">        NSString * host = [self sliceHost:urlString];</span><br><span class="line">        NSDictionary * params = [self sliceParams:urlString];</span><br><span class="line">        if ([host isEqualToString:@&quot;openOrderDetail&quot;]) &#123;</span><br><span class="line">            [self openOrderDetail:params];</span><br><span class="line">        &#125;</span><br><span class="line">        return NO;</span><br><span class="line">    &#125;</span><br><span class="line">    return YES;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">会在页面加载完毕后主动去取页面上设置的回调方法的名称，然后在原生方法中处理完逻辑再进行回调。</span><br></pre></td></tr></table></figure>
+<p>-(void)OpenOrderDetail:(NSDictionary *)params{<br>    //do someting<br>    [self.webView stringByEvaluatingJavaScriptFromString:[NSString stringWithFormat:@”%@()”,self.orderDetailCallBackFuncName ]];<br>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">2.iOS7以后，大家都使用JavaScriptCore这个官方的WebKit 的 JavaScript 引擎，实现oc与JavaScript的语言穿梭。</span><br></pre></td></tr></table></figure>
+<p>-(void)configJsCallBack{<br>    WeakSelf;<br>    self.jsContext = [self.webView valueForKeyPath:@”documentView.webView.mainFrame.javaScriptContext”];<br>    self.jsContext.exceptionHandler = ^(JSContext <em> con,JSValue </em> exception){<br>        NSLog(@”JS Error:%@”,exception);<br>    };<br>    Coordinator * coordinator = [[Coordinator alloc]init];<br>    self.jsContext[@”mobileCoordinator”] = coordinator;<br>    self.jsContext[@”console”] = coordinator;<br>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">不太了解JavaScriptCore的同学可以自己查阅一下官方文档或者学习资料。这里我们使用一些技巧，将所有的App开放给js的方法都由一个叫Coordinator的调度器来调度，而这个调度器实现了JSExport协议：</span><br></pre></td></tr></table></figure>
+<p>#import &lt;Foundation/Foundation.h&gt;</p>
+<p>#import &lt;JavaScriptCore/JavaScriptCore.h&gt;<br>@protocol CoordinatorExport <jsexport><br>-(void)log:(NSString <em>)msg;<br>-(BOOL)callNativeModule:(NSString </em>)url;<br>/<em><br>    js调用原生分享<br>    shareOpinion为json对象<br>    {<br>        “type”:”share”,<br>        “title”:”share title”,<br>        “content”:”share content”,<br>        “imgUrl”:””,<br>        “clickUrl”:””<br>    }<br>    其中类型type有以下几种:<br>    share(只有朋友圈和微信好友),doubleShare(包含所有分享渠道),allShare(分享全部渠道)
+ </em>/<br>JSExportAs(showShareMenu, -(BOOL)showShareMenu:(NSString <em>)url opinion:(NSString </em>)opinion);<br>@end<br>@interface Coordinator : NSObject&lt; CoordinatorExport &gt;<br>@property(nonatomic,copy)BOOL (^openShareCallBack)(NSDictionary * opinion);<br>@end</jsexport></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">上面的做法就是我们会在合适的实际向JavaScript的运行的环境中注入一个叫做mobileCoordinator的对象，这个对象会注入到JavaScript环境中的window对象上，全局可用。为什么要封装到一个对象上，是因为js没有命名空间的概念并且有变量提升向上查找，会引起命名冲突，所以我们把对外暴露的方法都进行一个对象封装。还有一个好处就是JavaScript的开发者与app的开发者都会像编写各自语言的代码一样书写代码，没有语法损失，js同步调用原生方法，原生实现的时候具备返回值，js的调用者就可以获取返回值，如果是异步回调，那可以对外暴露方法的时候提供一个callback的入参，在异步完成后进行回调。</span><br><span class="line">3.其他方案例如JavaScriptBridge等与第二种方案类似。</span><br><span class="line"></span><br><span class="line">### 方案比较：</span><br><span class="line">方案1的流程如下：</span><br><span class="line">交互方式为单向</span><br><span class="line">H5调用Native:</span><br></pre></td></tr></table></figure>
+<p>H5页面 —&gt;发起Url Redirect(Url上携带带有动作语义的参数)-&gt;Native App-&gt;拦截Url Redirect-&gt;解析动作语义参数-&gt;调用相关Native代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Native调用H5页面:</span><br></pre></td></tr></table></figure>
+<p>Native App—&gt;获取页面上预留参数和解析动作语义参数-&gt;调用相关JavaScript代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">这样使得一个简单的方法调用变得非常割裂，而且双端维护成本非常高，不易debug。</span><br><span class="line">方案2的流程如下：</span><br><span class="line">交互为双向</span><br></pre></td></tr></table></figure>
+<p>H5页面(Native App)<->调用Native代码(调用JavaScript代码)<->Native App执行被调用Native代码返回调用结果(H5页面执行被调用JavaScript代码并返回调用结果)</-></-></p>
+<p><code>`</code></p>
+<p> 方案2优势比较明显，一般会采用第二种。</p>
+<h3 id="实现细节"><a href="#实现细节" class="headerlink" title="实现细节"></a>实现细节</h3><p>细节上有一些需要注意的东西：<br>1.oc方法是带有参数标签的，js的方法并没有，注意使用JSExportAs这个宏来将oc原生语言转换为js语法风格的代码。<br>2.注意获取jscontext上下文并注入方法与对象的时机，这取决于H5页面上的js引用时机，如果H5页面上使用require来进行顺序引用，就不会出现问题，如果与原生交互的js的代码加载与原生注入的注入顺序混乱，则调用不到原生暴露的方法会引起js执行异常。建议结合拦截url的方式让H5决定何时注入，或者是前端工程师梳理规范，在H5引用js的时候做顺序控制。</p>
+<h3 id="防止注入与钓鱼"><a href="#防止注入与钓鱼" class="headerlink" title="防止注入与钓鱼"></a>防止注入与钓鱼</h3><p>其实这个不太算是技术方案，不过可以提一下。有时候手机在危险的网络环境中比方说链接在不安全的路由器中，DNS进行恶意中转到钓鱼网站上，如果页面调用已知的原生暴露出来的方法，同步数据或者是调用关键业务，就会有注入攻击的风险。一般需要做的是，H5在调用app原生关键业务的时候，需要在调用原生方法的时候传入票据，原生通过服务端的认证中心验证票据，通过才可以处理页面调用请求，在同步数据与状态的时候，比方说将app中的用户登录状态同步到H5页面上，一般app会同步cookie，不过这种方式维护成本较高。对于同步状态与数据，app应该使用业务票据来传递给H5，H5通过票据中心置换出真正的用户状态或者是关键业务数据。更高级别的方案还有H5与App临时握手等。</p>
+<p>H5在WebView中的Debug<br>这个是一个比较恶心的事情，不过我们可以替换js的window对象上的console对象，将log函数转接到原生，再通过一些其他方式进行输出，JavaScriptCore中提供了exceptionHandler</p>
+<p>context.exceptionHandler = ^(JSContext <em>context, JSValue </em>exception) { NSLog(@”JS Error: %@”, exception);};<br>下一篇文章将会介绍一下用websocket协议，将app中的WebView的调试信息输出到指定IP的电脑上，方便开发调试，这样就能减少沟通与配合联调，提高开发效率。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/17/Runtime-交换方法/" rel="next" title="Runtime:交换方法">
+                <i class="fa fa-chevron-left"></i> Runtime:交换方法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/30/iOS大牛技术博客收藏/" rel="prev" title="iOS大牛技术博客收藏">
+                iOS大牛技术博客收藏 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMTEyNi83Njc1"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Hack" />
+          <p class="site-author-name" itemprop="name">Hack</p>
+           
+              <p class="site-description motion-element" itemprop="description">an iOS And Mac OS dev</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">43</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">categories</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">tags</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#目前主流的技术方案："><span class="nav-number">1.</span> <span class="nav-text">目前主流的技术方案：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现细节"><span class="nav-number">2.</span> <span class="nav-text">实现细节</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#防止注入与钓鱼"><span class="nav-number">3.</span> <span class="nav-text">防止注入与钓鱼</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hack</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

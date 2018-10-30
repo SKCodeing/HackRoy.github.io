@@ -263,6 +263,319 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/12/carthage/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hack">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hack'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/12/carthage/" itemprop="url">carthage</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-12T09:15:34+08:00">
+                2018-02-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>iOS-Carthage 安装以及使用</p>
+<h4 id="1、Carthage-简介"><a href="#1、Carthage-简介" class="headerlink" title="1、Carthage 简介"></a>1、Carthage 简介</h4><ul>
+<li>Carthage 类似于 CocoaPods，为用户管理第三方框架和依赖，但不会自动修改项目文件和生成配置</li>
+<li>Carthage 是去中心化的依赖管理工具，安装依赖时不需要去中心仓库获取 CocoaPods 所有依赖的索引，节省时间</li>
+<li>对项目无侵入性，Carthage 设计上也比较简单，利用的都是 Xcode 自身的功能，开发者在创建依赖时，相比CocoaPods 也简单许多</li>
+<li>Carthage 管理的依赖只需编译一次，项目干净编译时，不会再去重新编译依赖，节省时间</li>
+<li>自动将第三方框架编程为 Dynamic framework( 动态库 )</li>
+<li>与 CocoaPods 无缝集成，一个项目能同时拥有 CocoaPods 和 Carthage</li>
+</ul>
+<h4 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h4><ul>
+<li>仅支持 iOS8 +</li>
+<li>它只支持框架，所以不能用来针对 iOS 8 以前的系统版本进行开发</li>
+<li>支持的 Carthage 安装的第三方框架和依赖不如 CocoaPods 丰富</li>
+<li>无法在 Xcode 里定位到源码</li>
+<li>安装包的大小比用CocoaPods安装的包大</li>
+</ul>
+<p>安装 Homebrew</p>
+<p>可以使用 <a href="https://brew.sh/" target="_blank" rel="noopener">Homebrew</a> 来安装 Carthage</p>
+<blockquote>
+<p>将以上命令粘贴至终端<br>脚本会在执行前暂停，并说明将它将做什么。高级安装选项在 这里（需要OSX 10.5+）</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ /usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>安装完 homebrew 后执行下面命令，获取最新版本【可选】</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew update</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：如果遇到 Error: The /usr/local directory is not writable.错误，就执行以下命令 sudo chown -R $(whoami):admin /usr/local，再更新。</p>
+</blockquote>
+<h4 id="其他-brew-命令"><a href="#其他-brew-命令" class="headerlink" title="其他 brew 命令:"></a>其他 brew 命令:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">brew install git    // 使用brew安装软件</span><br><span class="line">brew uninstall wget // 使用brew卸载软件</span><br><span class="line">brew search /wge*/  // 使用brew查询软件，其中/wge*/是个正则表达式，需要包含在/中</span><br><span class="line">brew list           // 列出已安装的软件</span><br><span class="line">brew home           // 用浏览器打开brew的官方网站</span><br><span class="line">brew info           // 显示软件信息</span><br><span class="line">brew deps           // 显示包依赖</span><br></pre></td></tr></table></figure>
+<h4 id="2、安装-Carthage"><a href="#2、安装-Carthage" class="headerlink" title="2、安装 Carthage"></a>2、安装 Carthage</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew install carthage</span><br></pre></td></tr></table></figure>
+<p>安装 Carthage 之后，可查看版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">carthage version // 目前的版本号为:0.20.1</span><br></pre></td></tr></table></figure>
+<h4 id="3、使用-Carthage-安装依赖"><a href="#3、使用-Carthage-安装依赖" class="headerlink" title="3、使用 Carthage 安装依赖"></a>3、使用 Carthage 安装依赖</h4><p>进入项目所在文件夹</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ~/路径/项目文件夹</span><br></pre></td></tr></table></figure>
+<p>创建一个空的 Carthage 文件 Cartfile</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch Cartfile</span><br></pre></td></tr></table></figure>
+<p>使用 Xcode 打开 Cartfile 文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">open -a Xcode Cartfile</span><br></pre></td></tr></table></figure>
+<p>编辑 Cartfile【可手动打开进行编辑】</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">github &quot;Alamofire/Alamofire&quot; == 4.4.0</span><br></pre></td></tr></table></figure>
+<p>执行更新命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ carthage update --platform iOS</span><br></pre></td></tr></table></figure>
+<p>更新成功后，项目文件夹中会多出三个文件</p>
+<ul>
+<li>cartfile</li>
+<li>Cartfile.resolved</li>
+<li>Carthage/ </li>
+<li>Build/</li>
+<li>Checkouts/</li>
+</ul>
+<p>Carthage 会 clone 文件中对应的 git 第三方库，把每一个第三方库编译成二进制文件的 framework 文件。<br>其中 “–platform iOS” 命令是可选的，作用是保证只为 iOS 编译framework，如果不指定平台，会为全平台编译 framework 文件。如果想要了解更多的命令，可以运行 carthage help update查看。</p>
+<h4 id="4、添加-Frameworks-到项目中"><a href="#4、添加-Frameworks-到项目中" class="headerlink" title="4、添加 Frameworks 到项目中"></a>4、添加 Frameworks 到项目中</h4><ul>
+<li>点击”项目名称”–&gt; “TARGETS” –&gt; “General”，在最底部找到 “Linked Frameworks and Libraries”</li>
+<li>点击 + 号，选择左下角 Add Other… 按钮，选择项目下 Carthage/Build/iOS/Alamofire.framework 文件，点击 Open 加入到项目中</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">目的是告诉Xcode链接你的app到这个 framework，允许你在代码中使用</span><br></pre></td></tr></table></figure>
+<ul>
+<li>下一步选择菜单上的 Build Phases，点击左上角 + 号添加一个新的 Run Script，并添加以下命令：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/bin/carthage copy-frameworks</span><br></pre></td></tr></table></figure>
+<ul>
+<li>点击 Input Files 下面的 + 号为每一个 framework 添加访问路径</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">carthage copy-frameworks 命令剔除了额外的框架</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Import 框架名到控制器，Command + B 编译项目，如果成功，就可以使用了<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import Alamofire</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/29/php学习遇到问题集锦/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hack">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hack'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/29/php学习遇到问题集锦/" itemprop="url">No application encryption key has been specified.</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-29T10:56:12+08:00">
+                2018-01-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>环境：php7.1.10<br>laravel5.5<br>出现：<br><img src="https://images2017.cnblogs.com/blog/1102222/201711/1102222-20171104161629841-1764260339.png" alt=""></p>
+<p>解决：<br>在根目录下执行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php artisan key:generate</span><br></pre></td></tr></table></figure>
+<p>终端打印：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Application key [base64:LvcrejzLdgyaqyCDVQI/fUyUd6Ktf/JAL1szXdGiu30=] set successfully.</span><br></pre></td></tr></table></figure></p>
+<p>OK问题解决</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/14/phpstudy环境安装配置SSL证书方法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1395,281 +1708,6 @@ printf(“%d,%d”,*(a+<span class="number">1</span>),*(ptr<span class="number">
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/19/Xcode创建自定义代码块/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hack">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hack'Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/19/Xcode创建自定义代码块/" itemprop="url">Xcode创建自定义代码块</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-19T10:31:00+08:00">
-                2017-10-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>由于项目、所用语言或者编码习惯的差别，不同的程序员习惯用的代码片段也不尽相同，这就有了自定义代码片段的需求，好在Xcode是支持该功能的。他的好处是使程序员以最快的速度输入很常用的代码片段，提高编程效率。</p>
-<p>该功能是从Xcode4开始引入的。在Xcode中的位置如下图所示：</p>
-<p>如上图，右边系统就定义很对的代码块，包括一些我们很常用的@interface 和@implementation的声明和实现。</p>
-<p>二、自定义我们常用的代码块步骤</p>
-<p>Ｅｇ：@property属性的定义是Cocoa程序开发中很常用的一个功能，下面就以此为例说明如何自定义代码片段。</p>
-<p>1、书写代码片段</p>
-<p>在声明@property属性的地方写下如下语句：</p>
-<p>@property (nonatomic, retain) &lt;#type#&gt; &lt;#name#&gt;;</p>
-<p>这里&lt;#type#&gt;和&lt;#name#&gt;起什么作用可以在后面的使用效果中看出来。<br><img src="http://upload-images.jianshu.io/upload_images/5977975-3f977414479d57c8.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>2、新建代码片段</p>
-<p>１）点击Code Snippet Library</p>
-<p>2)选择User 用户自定义</p>
-<p>3）出现如下空白界面</p>
-<p>4）把刚编辑好的代码选中，拖到上面的空白处，出现如下的编辑窗口</p>
-<p><img src="http://img.blog.csdn.net/20130929182943812?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3p6dmljdG9yeQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
-<p>图中从上到下的含义依次是：</p>
-<p>①Title</p>
-<p>代码片段的标题</p>
-<p>②Summary</p>
-<p>代码片段的描述文字</p>
-<p>③Platform</p>
-<p>可以使用代码片段的平台，有IOS/OS X/All三个选项</p>
-<p>④Language</p>
-<p>可以在哪些语言中使用该代码片段</p>
-<p>⑤Completion Shortcut</p>
-<p>代码片段的快捷方式，比如本文开头用到的dowhile，在这里，把属性设置的快捷方式设为property</p>
-<p>⑥Completion Scopes</p>
-<p>可以在哪些文件中使用当前代码片段，比如全部位置，头文件中等，当然可以添加多个支持的位置。</p>
-<p>最后的一个大得空白区域是对代码片段的效果预览。</p>
-<p>一切设置完成以后，点击该菜单右下角的Done按钮，新建工作就结束了。</p>
-<p>5）验证效果：我在代码里面输入”pro“ 即出现如下提示：（直接点击Enter键，一整条语句就自动补齐了）</p>
-<p><img src="http://img.blog.csdn.net/20130929183935093?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd3p6dmljdG9yeQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
-<p>三、代码片段的备份</p>
-<p>Xcode中的代码片段默认放在下面的目录中：</p>
-<p>~/Library/Developer/Xcode/UserData/CodeSnippets</p>
-<p>我们可以将目录中的代码片段备份，也可以将其直接拷出来放在不同的电脑上使用，因此多台电脑之间的协作也毫无压力。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/17/［基本解决］使用iOS模拟器iPhone 6结果编译出错：file was built for i386 which is not the architecture being linked x86_64/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hack">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hack'Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/17/［基本解决］使用iOS模拟器iPhone 6结果编译出错：file was built for i386 which is not the architecture being linked x86_64/" itemprop="url">使用iOS模拟器iPhone 6结果编译出错：file was built for i386 which is not the architecture being linked x86_64</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-17T11:06:37+08:00">
-                2017-10-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Build Settings-》Build Active Architecture Only－》Debug的Yes改为No<br>结果编译出现警告了：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Target ‘Pods-QorosSales’ of project ‘Pods’ was rejected as an implicit dependency for ‘Pods_QorosSales.framework’ because its architectures ‘x86_64’ didn’t contain all required architectures ‘i386 x86_64’</span><br></pre></td></tr></table></figure></p>
-<p>如图：<br><img src="https://www.crifan.com/files/pic/uploads/2016/05/Target-of-project-Pods-was-rejected-as-an-implicit-dependency-for-because-its-architectures-x86_.png" alt=""><br>【解决过程】<br>1.Architectures中添加i386和x86_64<br><img src="https://www.crifan.com/files/pic/uploads/2016/05/add-x86_64-and-i386-for-architectures-of-xcode_thumb.png" alt=""><br><img src="https://www.crifan.com/files/pic/uploads/2016/05/add-x86_64-and-i386-for-valid-architectures_thumb.png" alt=""></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1720,7 +1758,7 @@ printf(“%d,%d”,*(a+<span class="number">1</span>),*(ptr<span class="number">
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">41</span>
+                <span class="site-state-item-count">43</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
