@@ -263,6 +263,179 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/12/爬虫之简介和基本原理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hack">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hack'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/12/爬虫之简介和基本原理/" itemprop="url">爬虫之简介和基本原理</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-12T15:56:37+08:00">
+                2018-02-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="爬虫简介"><a href="#爬虫简介" class="headerlink" title="爬虫简介"></a>爬虫简介</h3><blockquote>
+<p>爬虫，即网络爬虫，可理解为在网络上爬行的一直蜘蛛，互联网就比作一张大网，而爬虫便是在这张网上爬来爬去的蜘蛛，如果它遇到资源，那么它就会抓取下来。</p>
+</blockquote>
+<p>一句话形容爬虫：一段自定抓取互联网信息的程序</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1335668-4f072d4ea842f92f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>爬虫的作用<br>取互联网数据，为我所用！</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1335668-236e7de9711272c6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>简单爬虫架构</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1335668-db4d7eb3f4fa72e2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>运行流程</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1335668-d6e72bf10890b54f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="URL管理器"><a href="#URL管理器" class="headerlink" title="URL管理器"></a>URL管理器</h3><h4 id="URL简单介绍"><a href="#URL简单介绍" class="headerlink" title="URL简单介绍"></a>URL简单介绍</h4><blockquote>
+<p>URL，即统一资源定位符，也就是我们说的网址，统一资源定位符是对可以从互联网上得到的资源的位置和访问方法的一种简洁的表示，是互联网上标准资源的地址。互联网上的每个文件都有一个唯一的URL，它包含的信息指出文件的位置以及浏览器应该怎么处理它。</p>
+</blockquote>
+<p>URL的格式由三部分组成：</p>
+<ul>
+<li>①第一部分是协议(或称为服务方式)</li>
+<li>②第二部分是存有该资源的主机IP地址(有时也包括端口号)</li>
+<li>③第三部分是主机资源的具体地址，如目录和文件名等</li>
+</ul>
+<p>爬虫爬取数据时必须要有一个目标的URL才可以获取数据，因此，它是爬虫获取数据的基本依据</p>
+<p>URL管理器</p>
+<blockquote>
+<p>管理待抓取URL的集合和已抓取的URL集合</p>
+</blockquote>
+<p>目的：防止重复抓取、防止循环抓取</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1335668-8107d2782cc66e8f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h4 id="URL管理器几种常见实现方式"><a href="#URL管理器几种常见实现方式" class="headerlink" title="URL管理器几种常见实现方式"></a>URL管理器几种常见实现方式</h4><ul>
+<li>内存：Python 内存，set()</li>
+<li>关系数据库：MySQL</li>
+<li>缓存数据库：Redis</li>
+</ul>
+<h3 id="网页下载器"><a href="#网页下载器" class="headerlink" title="网页下载器"></a>网页下载器</h3><h4 id="Python-中常用网页下载器"><a href="#Python-中常用网页下载器" class="headerlink" title="Python 中常用网页下载器"></a>Python 中常用网页下载器</h4><ul>
+<li>urllib（Python3）</li>
+<li><a href="http://cn.python-requests.org/zh_CN/latest/" target="_blank" rel="noopener">Requests</a> （很强大的第三方库）</li>
+</ul>
+<h5 id="urllib-简单使用一"><a href="#urllib-简单使用一" class="headerlink" title="urllib 简单使用一"></a>urllib 简单使用一</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import urllib.request</span><br><span class="line"># 核心方法</span><br><span class="line">response = urllib.request.urlopen(&quot;http://www.baidu.com&quot;)</span><br><span class="line"># 输出请求结果</span><br><span class="line">print(response.read().decode(&apos;utf-8&apos;))</span><br></pre></td></tr></table></figure>
+<h5 id="urllib-简单使用二"><a href="#urllib-简单使用二" class="headerlink" title="urllib 简单使用二"></a>urllib 简单使用二</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import urllib.request</span><br><span class="line"># 创建request</span><br><span class="line">request = urllib.request.Request(&quot;http://www.baidu.com&quot;)</span><br><span class="line"># 获取相应体</span><br><span class="line">response = urllib.request.urlopen(request)</span><br><span class="line"># 输出</span><br><span class="line">print(response.read().decode(&quot;utf-8&quot;))</span><br></pre></td></tr></table></figure>
+<h3 id="网页解析器"><a href="#网页解析器" class="headerlink" title="网页解析器"></a>网页解析器</h3><blockquote>
+<p>从网页中获取有价值数据的工具</p>
+</blockquote>
+<p>图例：<br><img src="http://upload-images.jianshu.io/upload_images/1335668-c198b576ab63119f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h4 id="Python-常见网页解析器实现"><a href="#Python-常见网页解析器实现" class="headerlink" title="Python 常见网页解析器实现"></a>Python 常见网页解析器实现</h4><ul>
+<li>正则表达式：模糊匹配</li>
+<li>html.parser</li>
+<li><a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/" target="_blank" rel="noopener">BeautifulSoup</a></li>
+</ul>
+<h4 id="实战：通过用户输入词条和数量，爬取百度百科词条相关内容"><a href="#实战：通过用户输入词条和数量，爬取百度百科词条相关内容" class="headerlink" title="实战：通过用户输入词条和数量，爬取百度百科词条相关内容"></a>实战：通过用户输入词条和数量，爬取百度百科词条相关内容</h4><h4 id="目录结构："><a href="#目录结构：" class="headerlink" title="目录结构："></a>目录结构：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">|-- Baike_spider（文件夹）</span><br><span class="line">   |-- spider_main.py（爬虫调度器————程序入口，管理各个模块）</span><br><span class="line">   |-- url_manager.py（URL 管理器————管理 url）</span><br><span class="line">   |-- html_downloader.py （网页下载器————通过url获取网页内容）</span><br><span class="line">   |-- html_parser.py （网页解析器————通过网页内容解析出新的 url 和 新的内容）</span><br><span class="line">   |-- html_outputer.py （输出————将获取到的数据输出）</span><br></pre></td></tr></table></figure>
+<h5 id="用到的知识点："><a href="#用到的知识点：" class="headerlink" title="用到的知识点："></a>用到的知识点：</h5><ul>
+<li>使用 urllib 请求数据</li>
+<li>使用 BeautifulSoup 解析网页</li>
+<li>使用 re 正则匹配 url 数据</li>
+<li>使用 urljoin 将拼接 url</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/12/carthage/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1575,139 +1748,6 @@ printf(“%d,%d”,*(a+<span class="number">1</span>),*(ptr<span class="number">
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/27/面试题/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hack">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hack'Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/27/面试题/" itemprop="url">iOS 面试题收藏录</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-27T14:24:43+08:00">
-                2017-10-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>由于很多同学在面试中总是被噱，群里很多同学都要求整理一份经典的 iOS 面试题，所以开了一份面试题收藏录，专门收藏 iOS 面试的经典题目，希望能够给各位 iOS coder 一些帮助，也祝大家能够早点面试成功，顺利进入自己理想的公司！</p>
-<p>###1、把 “<a href="http://www.zhidao.baidu.com&quot;" target="_blank" rel="noopener">www.zhidao.baidu.com&quot;</a> 这样的字符串改成 “com/baidu/zhidao/www”###</p>
-<p>此题目来自百度的面试题，博爱不才，用了几分钟整理了答案，如果有问题，请及时联系本人更改，多谢</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> 题目：把 "www.zhidao.baidu.com" 这样的字符串改成 "com/baidu/zhidao/www"</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">- (<span class="keyword">void</span>)test1</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">NSString</span> *string1 = <span class="string">@"www.zhidao.baidu.com"</span>;</span><br><span class="line">    <span class="comment">// 1、根据小数点 '.' 拆分字符串成数组</span></span><br><span class="line">    <span class="built_in">NSArray</span> *stringArray = [string1 componentsSeparatedByString:<span class="string">@"."</span>];</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"拆分结果：%@"</span>, stringArray);</span><br><span class="line">    <span class="comment">// 2、数组倒叙排列</span></span><br><span class="line">    <span class="built_in">NSArray</span> *array = [[stringArray reverseObjectEnumerator] allObjects];</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"拆分结果2：%@"</span>, array);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 3、遍历倒叙后的数组，拼接 '/'</span></span><br><span class="line">    __block <span class="built_in">NSString</span> *string2 = <span class="string">@""</span>;</span><br><span class="line">    [array enumerateObjectsUsingBlock:^(<span class="built_in">NSString</span>  *_Nonnull obj, <span class="built_in">NSUInteger</span> idx, <span class="built_in">BOOL</span> * _Nonnull stop) &#123;</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">NSString</span> *str = obj;</span><br><span class="line">        <span class="comment">// 4、判断最后一位时，不要拼接 '/'</span></span><br><span class="line">        <span class="keyword">if</span> (idx != array.count<span class="number">-1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            str = [obj stringByAppendingString:<span class="string">@"/"</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        string2 = [string2 stringByAppendingString:str];</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"结果1：%@"</span>, string2);</span><br><span class="line">    &#125;];</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"最后结果：%@"</span>, string2);</span><br><span class="line">    <span class="comment">// 最后结果：com/baidu/zhidao/www</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 简单写法，感谢 群里 @哈尔滨-吴迪 大神提供的方案！</span></span><br><span class="line">- (<span class="keyword">void</span>)test2</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">NSString</span> *str = <span class="string">@"www.zhidao.baidu.com"</span>;</span><br><span class="line">    <span class="built_in">NSArray</span> *array = [str componentsSeparatedByString:<span class="string">@"."</span>];</span><br><span class="line">    <span class="built_in">NSArray</span> *resultArr = [[array reverseObjectEnumerator] allObjects];</span><br><span class="line">    <span class="built_in">NSString</span> *resultStr = [resultArr componentsJoinedByString:<span class="string">@"/"</span>];</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"最后结果：%@"</span>, resultStr);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">// swift 写法</span></span><br><span class="line">func test() -&gt; Void &#123;</span><br><span class="line">    let string1 = <span class="string">"www.zhidao.baidu.com"</span></span><br><span class="line">    let array = string1.components(separatedBy: <span class="string">"."</span>)</span><br><span class="line">    let resultArray = array.reversed().joined(separator: <span class="string">"/"</span>)</span><br><span class="line">        </span><br><span class="line">    print(<span class="string">"结果1：\(array)\n结果2：\(resultArray)"</span>);</span><br><span class="line">    <span class="comment">// 结果1：["www", "zhidao", "baidu", "com"]</span></span><br><span class="line">    <span class="comment">// 结果2：com/baidu/zhidao/www</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>####2、如果页面 A 跳转到 页面 B，A 的 viewDidDisappear 方法和 B 的 viewDidAppear 方法哪个先调用？####<br>ViewController 为一级界面，BViewController 和 CViewController为两个二级界面</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 我在两个 VC 里面都写了如下代码：</span></span><br><span class="line">- (<span class="keyword">void</span>)viewWillAppear:(<span class="built_in">BOOL</span>)animated</span><br><span class="line">&#123;</span><br><span class="line">    [<span class="keyword">super</span> viewWillAppear:animated];</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%@ == %s"</span>, <span class="built_in">NSStringFromClass</span>([<span class="keyword">self</span> <span class="keyword">class</span>]), __func__);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)viewDidAppear:(<span class="built_in">BOOL</span>)animated</span><br><span class="line">&#123;</span><br><span class="line">    [<span class="keyword">super</span> viewDidAppear:animated];</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%@ == %s"</span>, <span class="built_in">NSStringFromClass</span>([<span class="keyword">self</span> <span class="keyword">class</span>]), __func__);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)viewWillDisappear:(<span class="built_in">BOOL</span>)animated</span><br><span class="line">&#123;</span><br><span class="line">    [<span class="keyword">super</span> viewWillDisappear:animated];</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%@ == %s"</span>, <span class="built_in">NSStringFromClass</span>([<span class="keyword">self</span> <span class="keyword">class</span>]), __func__);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)viewDidDisappear:(<span class="built_in">BOOL</span>)animated</span><br><span class="line">&#123;</span><br><span class="line">    [<span class="keyword">super</span> viewDidDisappear:animated];</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%@ == %s"</span>, <span class="built_in">NSStringFromClass</span>([<span class="keyword">self</span> <span class="keyword">class</span>]), __func__);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">注意：这里的跳转有两种情况</span><br></pre></td></tr></table></figure>
-<p>1、A push B</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2017</span><span class="number">-10</span><span class="number">-26</span> <span class="number">16</span>:<span class="number">38</span>:<span class="number">44.748403</span>+<span class="number">0800</span> test2[<span class="number">3452</span>:<span class="number">1288708</span>] ViewController == -[ViewController viewWillDisappear:]</span><br><span class="line"><span class="number">2017</span><span class="number">-10</span><span class="number">-26</span> <span class="number">16</span>:<span class="number">38</span>:<span class="number">44.748551</span>+<span class="number">0800</span> test2[<span class="number">3452</span>:<span class="number">1288708</span>] BViewController == -[BViewController viewWillAppear:]</span><br><span class="line"><span class="number">2017</span><span class="number">-10</span><span class="number">-26</span> <span class="number">16</span>:<span class="number">38</span>:<span class="number">45.304422</span>+<span class="number">0800</span> test2[<span class="number">3452</span>:<span class="number">1288708</span>] ViewController == -[ViewController viewDidDisappear:]</span><br><span class="line"><span class="number">2017</span><span class="number">-10</span><span class="number">-26</span> <span class="number">16</span>:<span class="number">38</span>:<span class="number">45.304572</span>+<span class="number">0800</span> test2[<span class="number">3452</span>:<span class="number">1288708</span>] BViewController == -[BViewController viewDidAppear:]</span><br><span class="line"></span><br><span class="line">从打印结果先后顺序看：【A--&gt;B--&gt;A--&gt;B】</span><br><span class="line"><span class="number">1</span>、调用 A 的 viewWillDisappear 方法，</span><br><span class="line"><span class="number">2</span>、调用 B 的 viewWillAppear 方法</span><br><span class="line"><span class="number">3</span>、调用 A 的 viewDidDisappear 方法</span><br><span class="line"><span class="number">4</span>、调用 B 的 viewDidDAppear 方法</span><br></pre></td></tr></table></figure>
-<p>####2、A present C####</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">2017-10-26 16:45:17.957380+0800 test2[3456:1291552] ViewController == -[ViewController viewWillDisappear:]</span><br><span class="line">2017-10-26 16:45:17.957632+0800 test2[3456:1291552] CViewController == -[CViewController viewWillAppear:]</span><br><span class="line">2017-10-26 16:45:18.471787+0800 test2[3456:1291552] CViewController == -[CViewController viewDidAppear:]</span><br><span class="line">2017-10-26 16:45:18.472829+0800 test2[3456:1291552] ViewController == -[ViewController viewDidDisappear:]</span><br><span class="line"></span><br><span class="line">从打印结果先后顺序看：【A--&gt;C--&gt;C--&gt;A】</span><br><span class="line">1、调用 A 的 viewWillDisappear 方法，</span><br><span class="line">2、调用 C 的 viewWillAppear 方法</span><br><span class="line">3、调用 C 的 viewDidAppear 方法</span><br><span class="line">4、调用 A 的 viewDidDisappear 方法</span><br></pre></td></tr></table></figure>
-<p>所以，如果遇到此面试题，大家注意回答 跳转方式，不同的跳转方式执行顺序会不同！<br>详见 demo：【<a href="https://github.com/boai/iOS_PushPresentDemo】" target="_blank" rel="noopener">https://github.com/boai/iOS_PushPresentDemo】</a></p>
-<p>####3、使用 GCD 如何实现这个需求：A、B、C 三个任务并发，完成后执行任务 D（感谢群里@北京-QQ小冰 大神的答案）####</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)test</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"=== A ==="</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"=== B ==="</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"=== C ==="</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    dispatch_group_t group = dispatch_group_create();</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//    dispatch_group_async(group, dispatch_get_global_queue(0, 0), ^&#123;</span></span><br><span class="line">    <span class="comment">//        NSLog(@"=== 任务 D 完成 ===");</span></span><br><span class="line">    <span class="comment">//        NSLog(@"=== 任务 E 完成 ===");</span></span><br><span class="line">    <span class="comment">//        NSLog(@"=== 任务 F 完成 ===");</span></span><br><span class="line">    <span class="comment">//    &#125;);</span></span><br><span class="line">    <span class="comment">// 这里执行三次</span></span><br><span class="line">    <span class="built_in">dispatch_queue_t</span> aaa = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>);</span><br><span class="line">    dispatch_group_enter(group);</span><br><span class="line">    <span class="built_in">dispatch_async</span>(aaa,^&#123;</span><br><span class="line">        </span><br><span class="line">        dispatch_group_leave(group);</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"=== 任务 D 完成 ==="</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">dispatch_queue_t</span> bbb = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>);</span><br><span class="line">    dispatch_group_enter(group);</span><br><span class="line">    <span class="built_in">dispatch_async</span>(bbb,^&#123;</span><br><span class="line">        </span><br><span class="line">        dispatch_group_leave(group);</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"=== 任务 E 完成 ==="</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">dispatch_queue_t</span> ccc = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>);</span><br><span class="line">    dispatch_group_enter(group);</span><br><span class="line">    <span class="built_in">dispatch_async</span>(ccc,^&#123;</span><br><span class="line">        </span><br><span class="line">        dispatch_group_leave(group);</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"=== 任务 F 完成 ==="</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 三次结束</span></span><br><span class="line">    dispatch_group_notify(group, dispatch_get_main_queue(), ^&#123;</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"=== 任务 M 完成 ==="</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//  打印结果：</span></span><br><span class="line"><span class="number">2017</span><span class="number">-10</span><span class="number">-26</span> <span class="number">16</span>:<span class="number">19</span>:<span class="number">07.898792</span>+<span class="number">0800</span> BAKit[<span class="number">3447</span>:<span class="number">1281688</span>] === 任务 D 完成 ===</span><br><span class="line"><span class="number">2017</span><span class="number">-10</span><span class="number">-26</span> <span class="number">16</span>:<span class="number">19</span>:<span class="number">07.898871</span>+<span class="number">0800</span> BAKit[<span class="number">3447</span>:<span class="number">1281688</span>] === 任务 E 完成 ===</span><br><span class="line"><span class="number">2017</span><span class="number">-10</span><span class="number">-26</span> <span class="number">16</span>:<span class="number">19</span>:<span class="number">07.898900</span>+<span class="number">0800</span> BAKit[<span class="number">3447</span>:<span class="number">1281633</span>] BAUIKitViewController：-[BAUIKitViewController ba_base_viewWillDisappear]</span><br><span class="line"><span class="number">2017</span><span class="number">-10</span><span class="number">-26</span> <span class="number">16</span>:<span class="number">19</span>:<span class="number">07.898914</span>+<span class="number">0800</span> BAKit[<span class="number">3447</span>:<span class="number">1281688</span>] === 任务 F 完成 ===</span><br><span class="line"><span class="number">2017</span><span class="number">-10</span><span class="number">-26</span> <span class="number">16</span>:<span class="number">19</span>:<span class="number">07.899002</span>+<span class="number">0800</span> BAKit[<span class="number">3447</span>:<span class="number">1281633</span>] BAKitVC_BAGridView：-[BAKitVC_BAGridView ba_base_viewWillAppear]</span><br><span class="line"><span class="number">2017</span><span class="number">-10</span><span class="number">-26</span> <span class="number">16</span>:<span class="number">19</span>:<span class="number">07.949885</span>+<span class="number">0800</span> BAKit[<span class="number">3447</span>:<span class="number">1281633</span>] === A ===</span><br><span class="line"><span class="number">2017</span><span class="number">-10</span><span class="number">-26</span> <span class="number">16</span>:<span class="number">19</span>:<span class="number">07.949950</span>+<span class="number">0800</span> BAKit[<span class="number">3447</span>:<span class="number">1281633</span>] === B ===</span><br><span class="line"><span class="number">2017</span><span class="number">-10</span><span class="number">-26</span> <span class="number">16</span>:<span class="number">19</span>:<span class="number">07.949961</span>+<span class="number">0800</span> BAKit[<span class="number">3447</span>:<span class="number">1281633</span>] === C ===</span><br><span class="line"><span class="number">2017</span><span class="number">-10</span><span class="number">-26</span> <span class="number">16</span>:<span class="number">19</span>:<span class="number">07.949985</span>+<span class="number">0800</span> BAKit[<span class="number">3447</span>:<span class="number">1281633</span>] === 任务 M 完成 ===</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1758,7 +1798,7 @@ printf(“%d,%d”,*(a+<span class="number">1</span>),*(ptr<span class="number">
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">43</span>
+                <span class="site-state-item-count">44</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -1822,7 +1862,7 @@ printf(“%d,%d”,*(a+<span class="number">1</span>),*(ptr<span class="number">
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
