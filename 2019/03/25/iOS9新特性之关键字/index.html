@@ -94,17 +94,17 @@
 
 
 
-<meta name="description" content="an iOS And Mac OS dev">
+<meta name="description" content="iOS9新出的关键字:用来修饰属性,或者方法的参数,方法的返回值 好处:  迎合swift  提高我们开发人员开发规范,减少程序员之间交流    注意:  iOS9新出关键字nonnull,nullable,null_resettable,_Null_unspecified只能修饰对象,不能修饰基本数据类型.  nullable`作用:表示可以为空    1234567nullable书写规范:/">
 <meta property="og:type" content="article">
-<meta property="og:title" content="materials">
-<meta property="og:url" content="http://yoursite.com/2018/03/27/materials/index.html">
+<meta property="og:title" content="iOS9新特性之关键字">
+<meta property="og:url" content="http://yoursite.com/2019/03/25/iOS9新特性之关键字/index.html">
 <meta property="og:site_name" content="Hack&#39;Blog">
-<meta property="og:description" content="an iOS And Mac OS dev">
+<meta property="og:description" content="iOS9新出的关键字:用来修饰属性,或者方法的参数,方法的返回值 好处:  迎合swift  提高我们开发人员开发规范,减少程序员之间交流    注意:  iOS9新出关键字nonnull,nullable,null_resettable,_Null_unspecified只能修饰对象,不能修饰基本数据类型.  nullable`作用:表示可以为空    1234567nullable书写规范:/">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-03-27T07:13:14.000Z">
+<meta property="og:updated_time" content="2019-03-25T05:43:23.338Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="materials">
-<meta name="twitter:description" content="an iOS And Mac OS dev">
+<meta name="twitter:title" content="iOS9新特性之关键字">
+<meta name="twitter:description" content="iOS9新出的关键字:用来修饰属性,或者方法的参数,方法的返回值 好处:  迎合swift  提高我们开发人员开发规范,减少程序员之间交流    注意:  iOS9新出关键字nonnull,nullable,null_resettable,_Null_unspecified只能修饰对象,不能修饰基本数据类型.  nullable`作用:表示可以为空    1234567nullable书写规范:/">
 
 
 
@@ -133,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/27/materials/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/03/25/iOS9新特性之关键字/"/>
 
 
 
 
 
-  <title>materials | Hack'Blog</title>
+  <title>iOS9新特性之关键字 | Hack'Blog</title>
   
 
 
@@ -262,7 +262,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/27/materials/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/25/iOS9新特性之关键字/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hack">
@@ -279,7 +279,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">materials</h1>
+          <h1 class="post-title" itemprop="name headline">iOS9新特性之关键字</h1>
         
 
         <div class="post-meta">
@@ -291,8 +291,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-27T15:13:14+08:00">
-                2018-03-27
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-25T13:35:00+08:00">
+                2019-03-25
               </time>
             
 
@@ -329,7 +329,38 @@
       
 
       
-        
+        <h2 id="iOS9新出的关键字-用来修饰属性-或者方法的参数-方法的返回值"><a href="#iOS9新出的关键字-用来修饰属性-或者方法的参数-方法的返回值" class="headerlink" title="iOS9新出的关键字:用来修饰属性,或者方法的参数,方法的返回值"></a>iOS9新出的关键字:用来修饰属性,或者方法的参数,方法的返回值</h2><ul>
+<li><p>好处:</p>
+<ul>
+<li><p>迎合swift</p>
+</li>
+<li><p>提高我们开发人员开发规范,减少程序员之间交流</p>
+</li>
+</ul>
+</li>
+<li><p>注意:</p>
+<ul>
+<li>iOS9新出关键字<code>nonnull,nullable,null_resettable,_Null_unspecified</code>只能修饰对象,不能修饰基本数据类型. </li>
+<li>nullable`作用:表示可以为空</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">nullable书写规范:</span><br><span class="line">// 方式一:</span><br><span class="line">@property (nonatomic, strong, nullable) NSString *name;</span><br><span class="line">// 方式二:</span><br><span class="line">@property (nonatomic, strong) NSString *_Nullable name;</span><br><span class="line">// 方式三:</span><br><span class="line">@property (nonatomic, strong) NSString *__nullable name;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>nonnull</code>作用:不能为空</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">nonnull: non:非 null:空</span><br><span class="line"></span><br><span class="line">书写格式:</span><br><span class="line"> @property (nonatomic, strong, nonnull) NSString *icon;</span><br><span class="line"></span><br><span class="line"> @property (nonatomic, strong) NSString * _Nonnull icon;</span><br><span class="line"></span><br><span class="line"> @property (nonatomic, strong) NSString * __nonnull icon;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>在<code>NS_ASSUME_NONNULL_BEGIN</code>和<code>NS_ASSUME_NONNULL_END</code>之间,定义的所有对象属性和方法默认都是<code>nonnull</code></p>
+</li>
+<li><p><code>null_resettable</code>作用: get:不能返回为空, set可以为空</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 书写方式:</span><br><span class="line">@property (nonatomic, strong, null_resettable) NSString *name;</span><br><span class="line"></span><br><span class="line"> // 注意;如果使用null_resettable,必须 重写get方法或者set方法,处理传递的值为空的情况</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>_Null_unspecified:</code>不确定是否为空</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">书写方式只有这种</span><br><span class="line">    方式一</span><br><span class="line">    @property (nonatomic, strong) NSString *_Null_unspecified name;</span><br><span class="line">    方式二</span><br><span class="line">    @property (nonatomic, strong) NSString *__null_unspecified name;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -353,8 +384,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/26/68/" rel="next" title="Linux平台下快速搭建FTP服务器">
-                <i class="fa fa-chevron-left"></i> Linux平台下快速搭建FTP服务器
+              <a href="/2019/03/25/runtime学习/" rel="next" title="Runtime学习">
+                <i class="fa fa-chevron-left"></i> Runtime学习
               </a>
             
           </div>
@@ -362,10 +393,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/17/Version”/" rel="prev" title="“Swift Language Version”">
-                “Swift Language Version” <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -419,8 +446,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -482,6 +518,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#iOS9新出的关键字-用来修饰属性-或者方法的参数-方法的返回值"><span class="nav-number">1.</span> <span class="nav-text">iOS9新出的关键字:用来修饰属性,或者方法的参数,方法的返回值</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

@@ -263,6 +263,156 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/25/iOS9新特性之关键字/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hack">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hack'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/25/iOS9新特性之关键字/" itemprop="url">iOS9新特性之关键字</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-25T13:35:00+08:00">
+                2019-03-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="iOS9新出的关键字-用来修饰属性-或者方法的参数-方法的返回值"><a href="#iOS9新出的关键字-用来修饰属性-或者方法的参数-方法的返回值" class="headerlink" title="iOS9新出的关键字:用来修饰属性,或者方法的参数,方法的返回值"></a>iOS9新出的关键字:用来修饰属性,或者方法的参数,方法的返回值</h2><ul>
+<li><p>好处:</p>
+<ul>
+<li><p>迎合swift</p>
+</li>
+<li><p>提高我们开发人员开发规范,减少程序员之间交流</p>
+</li>
+</ul>
+</li>
+<li><p>注意:</p>
+<ul>
+<li>iOS9新出关键字<code>nonnull,nullable,null_resettable,_Null_unspecified</code>只能修饰对象,不能修饰基本数据类型. </li>
+<li>nullable`作用:表示可以为空</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">nullable书写规范:</span><br><span class="line">// 方式一:</span><br><span class="line">@property (nonatomic, strong, nullable) NSString *name;</span><br><span class="line">// 方式二:</span><br><span class="line">@property (nonatomic, strong) NSString *_Nullable name;</span><br><span class="line">// 方式三:</span><br><span class="line">@property (nonatomic, strong) NSString *__nullable name;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>nonnull</code>作用:不能为空</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">nonnull: non:非 null:空</span><br><span class="line"></span><br><span class="line">书写格式:</span><br><span class="line"> @property (nonatomic, strong, nonnull) NSString *icon;</span><br><span class="line"></span><br><span class="line"> @property (nonatomic, strong) NSString * _Nonnull icon;</span><br><span class="line"></span><br><span class="line"> @property (nonatomic, strong) NSString * __nonnull icon;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>在<code>NS_ASSUME_NONNULL_BEGIN</code>和<code>NS_ASSUME_NONNULL_END</code>之间,定义的所有对象属性和方法默认都是<code>nonnull</code></p>
+</li>
+<li><p><code>null_resettable</code>作用: get:不能返回为空, set可以为空</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 书写方式:</span><br><span class="line">@property (nonatomic, strong, null_resettable) NSString *name;</span><br><span class="line"></span><br><span class="line"> // 注意;如果使用null_resettable,必须 重写get方法或者set方法,处理传递的值为空的情况</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>_Null_unspecified:</code>不确定是否为空</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">书写方式只有这种</span><br><span class="line">    方式一</span><br><span class="line">    @property (nonatomic, strong) NSString *_Null_unspecified name;</span><br><span class="line">    方式二</span><br><span class="line">    @property (nonatomic, strong) NSString *__null_unspecified name;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/25/runtime学习/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1532,126 +1682,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/25/ios渐变色设置/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hack">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hack'Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/25/ios渐变色设置/" itemprop="url">ios渐变色设置</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-25T11:18:24+08:00">
-                2018-06-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//    [self.navigationController.navigationBar setBarTintColor:RGBCOLOR(255, 255, 255)];</span><br><span class="line"></span><br><span class="line">//    CAGradientLayer *gradientLayer = [CAGradientLayer layer];</span><br><span class="line">//    gradientLayer.colors = [NSArray arrayWithObjects:</span><br><span class="line">//                                                   (id)[UIColor colorWithRed:240 green:101/255.0 blue:101/255.0 alpha:1.0].CGColor,</span><br><span class="line">//                                                   (id)[UIColor colorWithRed:242 green:85/255.0 blue:85/255.0 alpha:1.0].CGColor,</span><br><span class="line">//                                                   (id)[UIColor whiteColor].CGColor, nil];</span><br><span class="line">//    gradientLayer.locations = @[@0, @0.5, @2.0];</span><br><span class="line">//    gradientLayer.startPoint = CGPointMake(0, 0);</span><br><span class="line">//    gradientLayer.endPoint = CGPointMake(0, 1.0);</span><br><span class="line">//    gradientLayer.frame = self.navigationController.navigationBar.bounds;</span><br><span class="line">//    [self.navigationController.navigationBar.layer addSublayer:gradientLayer];</span><br><span class="line">//</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1702,7 +1732,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">45</span>
+                <span class="site-state-item-count">46</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

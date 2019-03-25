@@ -263,6 +263,155 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/13/完美升级Mac自带Python/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hack">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hack'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/13/完美升级Mac自带Python/" itemprop="url">完美升级Mac自带Python2.7~3.6</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-13T16:48:42+08:00">
+                2018-02-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
+<p>Mac系统自带python2.7，本文目的是将自带的python升级到3.6版本。<br>网上有本多的做法是让python2.7和python3.X两个版本共存，博主并不知道，是两版本共存好，还是直接升级好，所以读者要慎重选择方法。</p>
+</blockquote>
+<blockquote>
+<p>关闭Rootless机制<br>由于Mac下的python2.7 默认是安装在／System目录下的。但是～～～Mac有个Rootless机制，默认不允许直接在／System下作修改。所以要先关闭Rootless机制。</p>
+</blockquote>
+<h3 id="关闭Rootless机制的方法"><a href="#关闭Rootless机制的方法" class="headerlink" title="关闭Rootless机制的方法:"></a>关闭Rootless机制的方法:</h3><h4 id="关闭"><a href="#关闭" class="headerlink" title="关闭:"></a>关闭:</h4><ul>
+<li>1）.重启电脑, 重启过程中按住command+R, 进入恢复模式 </li>
+<li>2）.打开terminal，键入: csrutil disable </li>
+<li>3）.重启电脑</li>
+</ul>
+<p>如果之后要再开启Rootless机制，方法如下： </p>
+<h4 id="开启"><a href="#开启" class="headerlink" title="开启:"></a>开启:</h4><ul>
+<li>1）.重启电脑, 重启过程中按住command+R, 进入恢复模式 </li>
+<li>2）.打开terminal，键入: csrutil enable </li>
+<li>3）.重启电脑</li>
+</ul>
+<h3 id="下载安装python3-6"><a href="#下载安装python3-6" class="headerlink" title="下载安装python3.6"></a>下载安装python3.6</h3><p>从<a href="https://www.python.org/downloads/" target="_blank" rel="noopener">官网</a><br>下载pkg版本，并安装。安装选默认路径，会安装到</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/Library/Frameworks/Python.framework/Versions/</span><br></pre></td></tr></table></figure>
+<p>目录下</p>
+<h3 id="删除python2-7"><a href="#删除python2-7" class="headerlink" title="删除python2.7"></a>删除python2.7</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rm -R /System/Library/Frameworks/Python.framework/Versions/2.7</span><br></pre></td></tr></table></figure>
+<h3 id="移动python3-6"><a href="#移动python3-6" class="headerlink" title="移动python3.6"></a>移动python3.6</h3><p>将python3.6安装到/System/Library/Frameworks/Python.framework/Versions/</p>
+<figure class="highlight plain"><figcaption><span>mv</span><a href="/Library/Frameworks/Python.framework/Versions/3.6">/System/Library/Frameworks/Python.framework/Versions</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line"></span><br><span class="line">### 修改文件所属的Group</span><br><span class="line"></span><br><span class="line">设置Group为wheel，原来系统自带的就是这样的。</span><br></pre></td></tr></table></figure>
+<p>sudo chown -R root:wheel /System/Library/Frameworks/Python.framework/Versions/3.6<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 更新一下Current的Link</span><br><span class="line"></span><br><span class="line">在Versions的目录里有一个Current的link，是指向当前的Python版本，原始是指向系统自带的Python2.7，我们把它删除后，link就失效了，所以需要重新链一下</span><br></pre></td></tr></table></figure></p>
+<p>sudo rm /System/Library/Frameworks/Python.framework/Versions/Current<br>sudo ln -s /System/Library/Frameworks/Python.framework/Versions/3.6 /System/Library/Frameworks/Python.framework/Versions/Current<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 重新链接可执行文件</span><br><span class="line"></span><br><span class="line">#### 先把系统原来的执行文件删掉</span><br></pre></td></tr></table></figure></p>
+<p>sudo rm /usr/bin/pydoc<br>sudo rm /usr/bin/python<br>sudo rm /usr/bin/pythonw<br>sudo rm /usr/bin/python-config<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#### 建立新的链接</span><br></pre></td></tr></table></figure></p>
+<p>sudo ln -s /System/Library/Frameworks/Python.framework/Versions/3.6/bin/pydoc3.6 /usr/bin/pydoc<br>sudo ln -s /System/Library/Frameworks/Python.framework/Versions/3.6/bin/python3.6 /usr/bin/python<br>sudo ln -s /System/Library/Frameworks/Python.framework/Versions/3.6/bin/pythonw3.6 /usr/bin/pythonw<br>sudo ln -s /System/Library/Frameworks/Python.framework/Versions/3.6/bin/python3.6m-config /usr/bin/python-config<br><code>`</code></p>
+<h4 id="更新-bash-profile文件"><a href="#更新-bash-profile文件" class="headerlink" title="更新.bash_profile文件"></a>更新.bash_profile文件</h4><p>默认的bash_profile里python的bin是指向/Library/Frameworks/Python.framework/Versions/3.6/<br>bin</p>
+<p>的。要改到/System/目录下</p>
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p>在命令行中，用pip -V和pip3 -V查看版本和位置。用python进入。<br>Mac下升级python2.7到python3.6，升级成功。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/13/完美安装Scrapy/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1621,133 +1770,6 @@ printf(“%d,%d”,*(a+<span class="number">1</span>),*(ptr<span class="number">
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/02/如何复制NSView、UIButton/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hack">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hack'Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/02/如何复制NSView、UIButton/" itemprop="url">如何复制NSView、UIButton</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-02T15:32:08+08:00">
-                2017-11-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>场景:</p>
-<ol>
-<li>一般我们使用ib设计器设计好一个NSView之后(通常用NSView组合多个控件), 需要复制一个NSView来重新布局显示.</li>
-</ol>
-<p>如果调用[view copy] 消息的话会抛异常.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[XXView copyWithZone:]: unrecognized selector sent to instance 0x600000124240</span><br></pre></td></tr></table></figure>
-<p>解决办法就是使用 NSKeyedArchiver 档案来序列化之后再用 NSKeyedUnarchiver 还原.</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSData</span> * archivedView       = [<span class="built_in">NSKeyedArchiver</span> archivedDataWithRootObject:productView];</span><br><span class="line">DhProductView * myViewCopy  = [[<span class="built_in">NSKeyedUnarchiver</span> unarchiveObjectWithData:archivedView] <span class="keyword">retain</span>];</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1798,7 +1820,7 @@ printf(“%d,%d”,*(a+<span class="number">1</span>),*(ptr<span class="number">
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">45</span>
+                <span class="site-state-item-count">46</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
