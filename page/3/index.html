@@ -263,6 +263,135 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/14/pip报错解决方案/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hack">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hack'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/14/pip报错解决方案/" itemprop="url">pip报错解决方案</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-14T11:07:37+08:00">
+                2018-02-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>python3.6 pip无法安装插件</p>
+<p>pip is configured with locations that require TLS/SSL, however the ssl module in Python is not available.</p>
+<p>pip is configured with locations that require TLS/SSL, however the ssl module in Python is not available.<br>Collecting flask<br>Could not fetch URL <a href="https://pypi.python.org/simple/flask/" target="_blank" rel="noopener">https://pypi.python.org/simple/flask/</a>: There was a problem confirming the ssl certificate: Can’t connect to HTTPS URL because the SSL module is not available. - skipping<br>Could not find a version that satisfies the requirement flask (from versions: )<br>No matching distribution found for flask</p>
+<p>新版的pip 默认要求使用https了，</p>
+<p>pip 的源可以使用国内的源，下载速度会很快。</p>
+<p>参考这个 <a href="http://mirrors.aliyun.com/help/pypi" target="_blank" rel="noopener">http://mirrors.aliyun.com/help/pypi</a></p>
+<p>pip.conf中要有trusted-host，就可以不用https了。同时也可以解决你的问题。</p>
+<p>CentOS 7安装Python3.5<br><a href="http://www.linuxidc.com/Linux/2016-04/129784.htm" target="_blank" rel="noopener">http://www.linuxidc.com/Linux/2016-04/129784.htm</a></p>
+<p>在~/.pip/pip.conf文件中添加或修改<br>[global]<br>index-url = <a href="http://mirrors.aliyun.com/pypi/simple/" target="_blank" rel="noopener">http://mirrors.aliyun.com/pypi/simple/</a></p>
+<p>[install]<br>trusted-host=mirrors.aliyun.com</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/13/完美升级Mac自带Python/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1649,127 +1778,6 @@ printf(“%d,%d”,*(a+<span class="number">1</span>),*(ptr<span class="number">
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/02/获取控件相对屏幕的坐标位置/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hack">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hack'Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/02/获取控件相对屏幕的坐标位置/" itemprop="url">获取控件相对屏幕的坐标位置</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-02T15:35:33+08:00">
-                2017-11-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>需求：需要获取的对象为view1，则该视图相对屏幕的位置可使用下面方法实现：</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">UIWindow</span> * window  = [[[<span class="built_in">UIApplication</span> sharedApplication] delegate] window];</span><br><span class="line"><span class="built_in">CGRect</span>  rect       = [view1 convertRect: view1.bounds toView:window];</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1820,7 +1828,7 @@ printf(“%d,%d”,*(a+<span class="number">1</span>),*(ptr<span class="number">
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">46</span>
+                <span class="site-state-item-count">47</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

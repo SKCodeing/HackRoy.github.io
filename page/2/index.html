@@ -263,6 +263,132 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/21/NSRunLoopCommonModes/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hack">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hack'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/21/NSRunLoopCommonModes/" itemprop="url">NSRunLoopCommonModes</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-21T15:52:04+08:00">
+                2018-09-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>当使用NSTimer的scheduledTimerWithTimeInterval方法时。事实上此时Timer会被加入到当前线程的Run Loop中，且模式是默认的NSDefaultRunLoopMode。而如果当前线程就是主线程，也就是UI线程时，某些UI事件，比如UIScrollView的拖动操作，会将Run Loop切换成NSEventTrackingRunLoopMode模式，在这个过程中，默认的NSDefaultRunLoopMode模式中注册的事件是不会被执行的。也就是说，此时使用scheduledTimerWithTimeInterval添加到Run Loop中的Timer就不会执行。</p>
+<p>所以为了设置一个不被UI干扰的Timer，我们需要手动创建一个Timer，然后使用NSRunLoop的addTimer:forMode:方法来把Timer按照指定模式加入到Run Loop中。这里使用的模式是：NSRunLoopCommonModes，这个模式等效于NSDefaultRunLoopMode和NSEventTrackingRunLoopMode的结合。（参考Apple文档）</p>
+<p>经过我自己的实验，确实是这样，当我滑动UIScrollView的时候，NSTimer的处理时间根本没有调用，当我松手的时候，又执行了。</p>
+<p>但是如果换成</p>
+<p>NSTimer *timer=[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(Handlete) userInfo:nil repeats:YES];</p>
+<p>[[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];</p>
+<p>这样滑动是没有影响的。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/25/ios渐变色设置/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1478,135 +1604,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/14/pip报错解决方案/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hack">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hack'Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/14/pip报错解决方案/" itemprop="url">pip报错解决方案</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-14T11:07:37+08:00">
-                2018-02-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>python3.6 pip无法安装插件</p>
-<p>pip is configured with locations that require TLS/SSL, however the ssl module in Python is not available.</p>
-<p>pip is configured with locations that require TLS/SSL, however the ssl module in Python is not available.<br>Collecting flask<br>Could not fetch URL <a href="https://pypi.python.org/simple/flask/" target="_blank" rel="noopener">https://pypi.python.org/simple/flask/</a>: There was a problem confirming the ssl certificate: Can’t connect to HTTPS URL because the SSL module is not available. - skipping<br>Could not find a version that satisfies the requirement flask (from versions: )<br>No matching distribution found for flask</p>
-<p>新版的pip 默认要求使用https了，</p>
-<p>pip 的源可以使用国内的源，下载速度会很快。</p>
-<p>参考这个 <a href="http://mirrors.aliyun.com/help/pypi" target="_blank" rel="noopener">http://mirrors.aliyun.com/help/pypi</a></p>
-<p>pip.conf中要有trusted-host，就可以不用https了。同时也可以解决你的问题。</p>
-<p>CentOS 7安装Python3.5<br><a href="http://www.linuxidc.com/Linux/2016-04/129784.htm" target="_blank" rel="noopener">http://www.linuxidc.com/Linux/2016-04/129784.htm</a></p>
-<p>在~/.pip/pip.conf文件中添加或修改<br>[global]<br>index-url = <a href="http://mirrors.aliyun.com/pypi/simple/" target="_blank" rel="noopener">http://mirrors.aliyun.com/pypi/simple/</a></p>
-<p>[install]<br>trusted-host=mirrors.aliyun.com</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1657,7 +1654,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">46</span>
+                <span class="site-state-item-count">47</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
