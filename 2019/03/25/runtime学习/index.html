@@ -94,20 +94,20 @@
 
 
 
-<meta name="description" content="Runtime简介 RunTime简称运行时。OC就是运行时机制，也就是在运行时候的一些机制，其中最主要的是消息机制。 对于C语言，函数的调用在编译的时候会决定调用哪个函数。对于OC的函数，属于动态调用过程，在编译的时候并不能决定真正调用哪个函数，只有在真正运行的时候才会根据函数的名称找到对应的函数来调用。 事实证明： 在编译阶段，OC可以调用任何函数，即使这个函数并未实现，只要声明过就不会报错。">
+<meta name="description" content="1.Runtime简介 RunTime简称运行时。OC就是运行时机制，也就是在运行时候的一些机制，其中最主要的是消息机制。 对于C语言，函数的调用在编译的时候会决定调用哪个函数。对于OC的函数，属于动态调用过程，在编译的时候并不能决定真正调用哪个函数，只有在真正运行的时候才会根据函数的名称找到对应的函数来调用。 事实证明： 在编译阶段，OC可以调用任何函数，即使这个函数并未实现，只要声明过就不会报">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Runtime学习">
 <meta property="og:url" content="http://yoursite.com/2019/03/25/runtime学习/index.html">
 <meta property="og:site_name" content="Hack&#39;Blog">
-<meta property="og:description" content="Runtime简介 RunTime简称运行时。OC就是运行时机制，也就是在运行时候的一些机制，其中最主要的是消息机制。 对于C语言，函数的调用在编译的时候会决定调用哪个函数。对于OC的函数，属于动态调用过程，在编译的时候并不能决定真正调用哪个函数，只有在真正运行的时候才会根据函数的名称找到对应的函数来调用。 事实证明： 在编译阶段，OC可以调用任何函数，即使这个函数并未实现，只要声明过就不会报错。">
+<meta property="og:description" content="1.Runtime简介 RunTime简称运行时。OC就是运行时机制，也就是在运行时候的一些机制，其中最主要的是消息机制。 对于C语言，函数的调用在编译的时候会决定调用哪个函数。对于OC的函数，属于动态调用过程，在编译的时候并不能决定真正调用哪个函数，只有在真正运行的时候才会根据函数的名称找到对应的函数来调用。 事实证明： 在编译阶段，OC可以调用任何函数，即使这个函数并未实现，只要声明过就不会报">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2019/03/25/runtime学习/Snip20151013_4.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/25/runtime学习/Snip20151013_2.png">
 <meta property="og:image" content="http://yoursite.com/2019/03/25/runtime学习/Snip20151013_3.png">
-<meta property="og:updated_time" content="2019-03-25T02:57:34.843Z">
+<meta property="og:updated_time" content="2019-03-25T02:58:51.085Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Runtime学习">
-<meta name="twitter:description" content="Runtime简介 RunTime简称运行时。OC就是运行时机制，也就是在运行时候的一些机制，其中最主要的是消息机制。 对于C语言，函数的调用在编译的时候会决定调用哪个函数。对于OC的函数，属于动态调用过程，在编译的时候并不能决定真正调用哪个函数，只有在真正运行的时候才会根据函数的名称找到对应的函数来调用。 事实证明： 在编译阶段，OC可以调用任何函数，即使这个函数并未实现，只要声明过就不会报错。">
+<meta name="twitter:description" content="1.Runtime简介 RunTime简称运行时。OC就是运行时机制，也就是在运行时候的一些机制，其中最主要的是消息机制。 对于C语言，函数的调用在编译的时候会决定调用哪个函数。对于OC的函数，属于动态调用过程，在编译的时候并不能决定真正调用哪个函数，只有在真正运行的时候才会根据函数的名称找到对应的函数来调用。 事实证明： 在编译阶段，OC可以调用任何函数，即使这个函数并未实现，只要声明过就不会报">
 <meta name="twitter:image" content="http://yoursite.com/2019/03/25/runtime学习/Snip20151013_4.png">
 
 
@@ -333,7 +333,7 @@
       
 
       
-        <h2 id="Runtime简介"><a href="#Runtime简介" class="headerlink" title="Runtime简介"></a>Runtime简介</h2><ul>
+        <h2 id="1-Runtime简介"><a href="#1-Runtime简介" class="headerlink" title="1.Runtime简介"></a>1.Runtime简介</h2><ul>
 <li>RunTime简称运行时。OC就是<code>运行时机制</code>，也就是在运行时候的一些机制，其中最主要的是消息机制。</li>
 <li>对于C语言，<code>函数的调用在编译的时候会决定调用哪个函数。</code><br>对于OC的函数，属于动态调用过程，在编译的时候并不能决定真正调用哪个函数，只有在真正运行的时候才会根据函数的名称找到对应的函数来调用。</li>
 <li>事实证明：<ul>
@@ -572,7 +572,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Runtime简介"><span class="nav-number">1.</span> <span class="nav-text">Runtime简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Runtime作用"><span class="nav-number">2.</span> <span class="nav-text">Runtime作用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#发送消息"><span class="nav-number">2.1.</span> <span class="nav-text">发送消息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#交换方法"><span class="nav-number">2.2.</span> <span class="nav-text">交换方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动态添加方法"><span class="nav-number">2.3.</span> <span class="nav-text">动态添加方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#给分类添加属性"><span class="nav-number">2.4.</span> <span class="nav-text">给分类添加属性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#字典转模型"><span class="nav-number">2.4.1.</span> <span class="nav-text">字典转模型</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Runtime简介"><span class="nav-number">1.</span> <span class="nav-text">1.Runtime简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Runtime作用"><span class="nav-number">2.</span> <span class="nav-text">Runtime作用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#发送消息"><span class="nav-number">2.1.</span> <span class="nav-text">发送消息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#交换方法"><span class="nav-number">2.2.</span> <span class="nav-text">交换方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动态添加方法"><span class="nav-number">2.3.</span> <span class="nav-text">动态添加方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#给分类添加属性"><span class="nav-number">2.4.</span> <span class="nav-text">给分类添加属性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#字典转模型"><span class="nav-number">2.4.1.</span> <span class="nav-text">字典转模型</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
