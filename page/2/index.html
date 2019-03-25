@@ -263,6 +263,137 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/08/关于gitignore的一些笔记-忽略已经提交的文件/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hack">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hack'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/08/关于gitignore的一些笔记-忽略已经提交的文件/" itemprop="url">关于gitignore的一些笔记_忽略已经提交的文件</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-08T14:05:04+08:00">
+                2018-06-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h5 id="要养成一开始就设置好-gitignore的好习惯-以免将来误提交了这类无用的文件"><a href="#要养成一开始就设置好-gitignore的好习惯-以免将来误提交了这类无用的文件" class="headerlink" title="要养成一开始就设置好.gitignore的好习惯,以免将来误提交了这类无用的文件"></a>要养成一开始就设置好.gitignore的好习惯,以免将来误提交了这类无用的文件</h5><h5 id="忽略已经提交的文件"><a href="#忽略已经提交的文件" class="headerlink" title="忽略已经提交的文件"></a>忽略已经提交的文件</h5><p>为了避免麻烦,最好是一开始就设定好.gitignore文件,避免误提交了这些无用的文件。但是并不是所有情况都能在最开始就考虑周全的。因为.gitignore只能忽略掉那些原来没有被track的文件,如果有一些文件已经被纳入版本控制管理当中,那么直接修改.gitignore是无效的</p>
+<p>忽略已经提交的文件场景分为很多种</p>
+<p>例如说，有些文件已经被提交，但是后期做项目的过程中，我们想要忽略这些文件的跟踪。这些文件在本地磁盘中还想保留着此时我们可以这样做:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm --cache somefiles 删除本地缓存</span><br></pre></td></tr></table></figure>
+<p>更新gitignore文件,忽略目标文件(somefiles)</p>
+<p>最后</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &apos;We don&apos;t need that somefiles</span><br></pre></td></tr></table></figure>
+<p>又比如说,有些文件已经被提交,但是后期做项目的过程中,我们发现我们并不需要跟踪这些文件。这些文件的存在只会让冲突更加频繁。我们想要让这些文件彻底的移除出版本控制系统</p>
+<p>此时我们可以这样做:</p>
+<p>git rm somefiles 从本地移除这个文件,并且删除本地缓存</p>
+<p>更新gitignore文件,忽略目标文件(somefiles)</p>
+<p>最后</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &apos;We don&apos;t need that somefiles</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/24/离屏渲染的研究/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1505,126 +1636,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/13/完美安装Scrapy/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Hack">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hack'Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/13/完美安装Scrapy/" itemprop="url">完美安装Scrapy</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-13T11:04:08+08:00">
-                2018-02-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>一句代码完美安装Scrapy</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pip install scrapy --upgrade --ignore-installed six</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1675,7 +1686,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">44</span>
+                <span class="site-state-item-count">45</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
